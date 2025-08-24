@@ -12,10 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-mainBg">
+      <div className="bg-mainBg flex flex-col items-start h-screen">
         {children}
-      </body>
-    </html>
+      </div>
   );
 }

@@ -12,11 +12,13 @@ const typeClassMap: Record<ButtonProps["type"], string> = {
 };
 
 function getButtonClass(type: ButtonProps["type"]) {
-    return `${typeClassMap[type]} px-2.5 py-1.5 rounded-md text-base`;
-}         
- 
-export default function Button({ type, text }: ButtonProps) {
+    return `${typeClassMap[type]} px-2.5 py-1.5 rounded-md text-base w`;
+}
+
+const Button = ({ type, text }: ButtonProps) => {
     return (
         <button className={getButtonClass(type)} >{text}</ button>
     )
 }
+
+export default Button

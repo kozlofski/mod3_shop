@@ -3,35 +3,15 @@
 @theme {
   /* backgrounds */
   --color-mainBg: #1a1a1a;
+  --color-secondaryBg: #262626;
 
   /* buttons */
   --color-primaryBtn: #e5610a;
   --color-primaryBtnTxt: #fdedd7;
   --color-secondaryBtn: #f29145;
   --color-tertiaryBtn: #fcfcfc;
-}
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* borders */
+  --color-border: #616674;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
