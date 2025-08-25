@@ -2,7 +2,7 @@ import React from "react";
 
 interface ButtonProps {
     type: "primary" | "secondary" | "tertiary",
-    text: string,
+    children: React.ReactNode,
     onClick?: () => void
 }
 
@@ -13,12 +13,12 @@ const typeClassMap: Record<ButtonProps["type"], string> = {
 };
 
 function getButtonClass(type: ButtonProps["type"]) {
-    return `${typeClassMap[type]} px-2.5 py-1.5 rounded-md text-base w`;
+    return `${typeClassMap[type]} px-[20px] h-[54px] rounded-md text-base w-fit flex gap-[14px] items-center`;
 }
 
-const Button = ({ type, text }: ButtonProps) => {
+const Button = ({ type, children }: ButtonProps) => {
     return (
-        <button className={getButtonClass(type)} >{text}</ button>
+        <button className={getButtonClass(type)} >{children}</ button>
     )
 }
 

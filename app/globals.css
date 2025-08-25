@@ -17,4 +17,8 @@
   /* dots */
   --color-inactiveDot: #383b42;
 
+  /* typography */
+  --color-header: #fcfcfc;
+  --color-paragraph: #e7e7e7;
+
 }
