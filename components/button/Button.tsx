@@ -3,6 +3,7 @@ import React from "react";
 interface ButtonProps {
     type: "primary" | "secondary" | "tertiary",
     children: React.ReactNode,
+    className?: string,
     onClick?: () => void
 }
 
@@ -12,13 +13,13 @@ const typeClassMap: Record<ButtonProps["type"], string> = {
     tertiary: "bg-transparent border-tertiaryBtn border text-tertiaryBtn"
 };
 
-function getButtonClass(type: ButtonProps["type"]) {
-    return `${typeClassMap[type]} px-[20px] h-[54px] rounded-md text-base w-fit flex gap-[14px] items-center`;
+function getButtonClass(type: ButtonProps["type"], className?: string) {
+    return `${typeClassMap[type]} px-[20px] rounded-md text-base flex gap-[14px] items-center ${className || ""}`;
 }
 
-const Button = ({ type, children }: ButtonProps) => {
+const Button = ({ type, children, className }: ButtonProps) => {
     return (
-        <button className={getButtonClass(type)} >{children}</ button>
+        <button className={getButtonClass(type, className)} >{children}</ button>
     )
 }
 

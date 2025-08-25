@@ -3,6 +3,7 @@ import Button from "@/components/button/Button";
 import Carousel from "@/components/carousel/Carousel";
 import CarouselButton from "@/components/carouselButton/CarouselButton";
 import DotIndicator from "@/components/dotIndicator/DotIndicator";
+import ProductTile from "@/components/productTile/ProductTile";
 
 export default function Home() {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
       {/* <CarouselButton direction="left" />
       <CarouselButton direction="right" />
       <DotIndicator dots={5} active={1} /> */}
-      <Carousel />
+      {/* <Carousel /> */}
+      <ProductTile product={{ productName: "Logitech G502 hero", category: "Mouse", price: 52.99, oldPrice: 72.99 }} />
     </>
   );
 }
