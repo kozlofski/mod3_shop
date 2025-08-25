@@ -3,6 +3,7 @@ import { MonitorIcon, MouseIcon, HeadphonesIcon, KeyboardIcon, WebcamIcon } from
 
 interface BrandCategoryButtonProps {
     text: string;
+    onClick?: () => void
 }
 
 const BrandCategoryButton: React.FC<BrandCategoryButtonProps> = ({ text }) => {

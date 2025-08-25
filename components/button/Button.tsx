@@ -2,7 +2,8 @@ import React from "react";
 
 interface ButtonProps {
     type: "primary" | "secondary" | "tertiary",
-    text: string
+    text: string,
+    onClick?: () => void
 }
 
 const typeClassMap: Record<ButtonProps["type"], string> = {
