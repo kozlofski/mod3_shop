@@ -6,10 +6,32 @@
   --color-secondaryBg: #262626;
 
   /* buttons */
-  --color-primaryBtn: #e5610a;
-  --color-primaryBtnTxt: #fdedd7;
-  --color-secondaryBtn: #f29145;
-  --color-tertiaryBtn: #fcfcfc;
+  --color-primaryBtnBg: #e5610a;
+  --color-primaryBtnTxt: #ffffff;
+  --color-primaryBtnBgHover: #e05816;
+  --color-primaryBtnTxtHover: #ffffff;
+  --color-primaryBtnBgPressed: #e05816;
+  --color-primaryBtnTxtPressed: #d8d8df;
+  --color-primaryBtnBgDisabled: #F7B87A;
+  --color-primaryBtnTxtDisabled: #FFFFFF;
+
+  --color-secondaryBtnBor: #EE701D;
+  --color-secondaryBtnTxt: #EE701D;
+  --color-secondaryBtnBorHover: #F29145;
+  --color-secondaryBtnTxtHover: #EE701D;
+  --color-secondaryBtnBorPressed: #F29145;
+  --color-secondaryBtnTxtPressed: #F29145;
+  --color-secondaryBtnBorDisabled: #F7B87A;
+  --color-secondaryBtnTxtDisabled: #F7B87A;
+
+  --color-tertiaryBtnBor: #fcfcfc;
+  --color-tertiaryBtnTxt: #fcfcfc;
+  --color-tertiaryBtnBorHover: #ffffff;
+  --color-tertiaryBtnTxtHover: #fcfcfc;
+  --color-tertiaryBtnBorPressed: #ffffff;
+  --color-tertiaryBtnTxtPressed: #ffffff;
+  --color-tertiaryBtnBorDisabled: #888888;
+  --color-tertiaryBtnTxtDisabled: #888888;
 
   /* borders */
   --color-border: #616674;
@@ -21,6 +43,89 @@
   --color-header: #fcfcfc;
   --color-paragraph: #e7e7e7;
 
+}
+
+@layer components {
+  .btn {
+    @apply flex flex-row gap-[14px] justify-center items-center;
+    @apply rounded-md px-[20px] min-w-[139px];
+    @apply font-medium;
+  }
+
+  .btn-primary {
+    @apply bg-primaryBtnBg text-primaryBtnTxt;
+
+    @variant hover {
+      @apply bg-primaryBtnBgHover text-primaryBtnTxtHover;
+    }
+
+    @variant active {
+      @apply bg-primaryBtnBgPressed text-primaryBtnTxtPressed
+    }
+
+    @variant disabled {
+      @apply bg-primaryBtnBgDisabled text-primaryBtnTxtDisabled
+    }
+  }
+
+  .btn-secondary {
+    @apply bg-transparent;
+    @apply border border-secondaryBtnBor text-secondaryBtnTxt;
+
+
+    @variant hover {
+      @apply border border-secondaryBtnBorHover text-secondaryBtnTxtHover;
+    }
+
+    @variant active {
+      @apply border border-secondaryBtnBorPressed text-secondaryBtnTxtPressed
+    }
+
+    @variant disabled {
+      @apply border border-secondaryBtnBorDisabled text-secondaryBtnTxtDisabled
+    }
+  }
+
+  .btn-tertiary {
+    @apply border border-tertiaryBtnBor text-tertiaryBtnTxt;
+
+    @variant hover {
+      @apply border border-tertiaryBtnBorHover text-tertiaryBtnTxtHover;
+    }
+
+    @variant active {
+      @apply border border-tertiaryBtnBorPressed text-tertiaryBtnTxtPressed
+    }
+
+    @variant disabled {
+      @apply border border-tertiaryBtnBorDisabled text-tertiaryBtnTxtDisabled
+    }
+  }
+
+
+  .btn-xxl {
+    @apply text-[18px] h-[60px]
+  }
+
+  .btn-xl {
+    @apply text-[16px] h-[54px]
+  }
+
+  .btn-l {
+    @apply text-[16px] h-[50px]
+  }
+
+  .btn-m {
+    @apply text-[14px] h-[44px]
+  }
+
+  .btn-s {
+    @apply text-[14px] h-[40px]
+  }
+
+  .btn-xs {
+    @apply text-[12px] h-[34px]
+  }
 }
 
 /*
