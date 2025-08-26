@@ -12,14 +12,14 @@ import ProductTile from "@/components/productTile/ProductTile";
 export default function Home() {
   return (
     <>
-      <Button className="btn btn-tertiary btn-xs">
+      <Button className="btn btn-white btn-xl">
         <PlusSign />
-        Primary
+        Dupa dupa
         <PlusSign />
       </Button>
-      <Badge className="badge badge-pending badge-stroke badge-s ">Text</Badge>
+      {/* <Badge className="badge badge-pending badge-stroke badge-s">Text</Badge> */}
 
-
+      <Button className="btn btn-alert btn-success btn-alertStroke ">Text</Button>
       {/* <Button type="secondary" >Secondary</Button>
       <Button type="tertiary" >Tertiary</Button>
       <BrandCategoryButton text="Mouse"></BrandCategoryButton> */}

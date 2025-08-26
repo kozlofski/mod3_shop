@@ -6,32 +6,48 @@
   --color-secondaryBg: #262626;
 
   /* buttons */
-  --color-primaryBtnBg: #e5610a;
-  --color-primaryBtnTxt: #ffffff;
-  --color-primaryBtnBgHover: #e05816;
-  --color-primaryBtnTxtHover: #ffffff;
-  --color-primaryBtnBgPressed: #e05816;
-  --color-primaryBtnTxtPressed: #d8d8df;
-  --color-primaryBtnBgDisabled: #F7B87A;
-  --color-primaryBtnTxtDisabled: #FFFFFF;
+  --color-fullBtnBg: #e5610a;
+  --color-fullBtnTxt: #ffffff;
+  --color-fullBtnBgHover: #e05816;
+  --color-fullBtnTxtHover: #ffffff;
+  --color-fullBtnBgPressed: #e05816;
+  --color-fullBtnTxtPressed: #d8d8df;
+  --color-fullBtnBgDisabled: #F7B87A;
+  --color-fullBtnTxtDisabled: #FFFFFF;
 
-  --color-secondaryBtnBor: #EE701D;
-  --color-secondaryBtnTxt: #EE701D;
-  --color-secondaryBtnBorHover: #F29145;
-  --color-secondaryBtnTxtHover: #EE701D;
-  --color-secondaryBtnBorPressed: #F29145;
-  --color-secondaryBtnTxtPressed: #F29145;
-  --color-secondaryBtnBorDisabled: #F7B87A;
-  --color-secondaryBtnTxtDisabled: #F7B87A;
+  --color-strokeBtnBor: #EE701D;
+  --color-strokeBtnTxt: #EE701D;
+  --color-strokeBtnBorHover: #F29145;
+  --color-strokeBtnTxtHover: #EE701D;
+  --color-strokeBtnBorPressed: #F29145;
+  --color-strokeBtnTxtPressed: #F29145;
+  --color-strokeBtnBorDisabled: #F7B87A;
+  --color-strokeBtnTxtDisabled: #F7B87A;
 
-  --color-tertiaryBtnBor: #fcfcfc;
-  --color-tertiaryBtnTxt: #fcfcfc;
-  --color-tertiaryBtnBorHover: #ffffff;
-  --color-tertiaryBtnTxtHover: #fcfcfc;
-  --color-tertiaryBtnBorPressed: #ffffff;
-  --color-tertiaryBtnTxtPressed: #ffffff;
-  --color-tertiaryBtnBorDisabled: #888888;
-  --color-tertiaryBtnTxtDisabled: #888888;
+  --color-nakedBtnBor: #EE701D;
+  --color-nakedBtnTxt: #EE701D;
+  --color-nakedBtnBorHover: #F29145;
+  --color-nakedBtnTxtHover: #EE701D;
+  --color-nakedBtnBorPressed: #F29145;
+  --color-nakedBtnTxtPressed: #F29145;
+  --color-nakedBtnBorDisabled: #F7B87A;
+  --color-nakedBtnTxtDisabled: #F7B87A;
+
+  --color-whiteBtnBor: #fcfcfc;
+  --color-whiteBtnTxt: #fcfcfc;
+  --color-whiteBtnBorHover: #ffffff;
+  --color-whiteBtnTxtHover: #fcfcfc;
+  --color-whiteBtnBorPressed: #ffffff;
+  --color-whiteBtnTxtPressed: #ffffff;
+  --color-whiteBtnBorDisabled: #888888;
+  --color-whiteBtnTxtDisabled: #888888;
+
+  --color-alertBtnDefault: #4A4E5A;
+  --color-alertBtnSuccess: #16A34A;
+  --color-alertBtnDanger: #DC2626;
+  --color-alertBtnWarning: #CA9A04;
+  --color-alertBtnPrimary: #E05816;
+  --color-alertWhiteTxt: #ffffff;
 
   /* badges */
   --color-badgeDefault: #EE701D;
@@ -91,75 +107,112 @@
     @apply text-[12px] h-[34px]
   }
 
-  .btn-primary {
-    @apply bg-primaryBtnBg text-primaryBtnTxt;
+  .btn-full {
+    @apply bg-fullBtnBg text-fullBtnTxt;
 
     @variant hover {
-      @apply bg-primaryBtnBgHover text-primaryBtnTxtHover;
+      @apply bg-fullBtnBgHover text-fullBtnTxtHover;
     }
 
     @variant active {
-      @apply bg-primaryBtnBgPressed text-primaryBtnTxtPressed
+      @apply bg-fullBtnBgPressed text-fullBtnTxtPressed;
     }
 
     @variant disabled {
-      @apply bg-primaryBtnBgDisabled text-primaryBtnTxtDisabled
+      @apply bg-fullBtnBgDisabled text-fullBtnTxtDisabled;
     }
   }
 
-  .btn-secondary {
+  .btn-stroke {
     @apply bg-transparent;
-    @apply border border-secondaryBtnBor text-secondaryBtnTxt;
+    @apply border border-strokeBtnBor text-strokeBtnTxt;
 
 
     @variant hover {
-      @apply border border-secondaryBtnBorHover text-secondaryBtnTxtHover;
+      @apply border border-strokeBtnBorHover text-strokeBtnTxtHover;
     }
 
     @variant active {
-      @apply border border-secondaryBtnBorPressed text-secondaryBtnTxtPressed
+      @apply border border-strokeBtnBorPressed text-strokeBtnTxtPressed;
     }
 
     @variant disabled {
-      @apply border border-secondaryBtnBorDisabled text-secondaryBtnTxtDisabled
+      @apply border border-strokeBtnBorDisabled text-strokeBtnTxtDisabled;
     }
   }
 
-  .btn-tertiary {
+  .btn-naked {
     @apply bg-transparent;
-    @apply text-secondaryBtnTxt;
+    @apply text-nakedBtnTxt;
     @apply h-fit w-fit;
 
     @variant hover {
-      @apply text-secondaryBtnTxtHover;
+      @apply text-nakedBtnTxtHover;
     }
 
     @variant active {
-      @apply text-secondaryBtnTxtPressed
+      @apply text-nakedBtnTxtPressed;
     }
 
     @variant disabled {
-      @apply text-secondaryBtnTxtDisabled
+      @apply text-nakedBtnTxtDisabled;
     }
   }
 
   /* this white button was not included in figma components section
   but is used in the project */
-  .btn-quaternary {
-    @apply border border-tertiaryBtnBor text-tertiaryBtnTxt;
+  .btn-white {
+    @apply border border-whiteBtnBor text-whiteBtnTxt;
 
     @variant hover {
-      @apply border border-tertiaryBtnBorHover text-tertiaryBtnTxtHover;
+      @apply border border-whiteBtnBorHover text-whiteBtnTxtHover;
     }
 
     @variant active {
-      @apply border border-tertiaryBtnBorPressed text-tertiaryBtnTxtPressed
+      @apply border border-whiteBtnBorPressed text-whiteBtnTxtPressed
     }
 
     @variant disabled {
-      @apply border border-tertiaryBtnBorDisabled text-tertiaryBtnTxtDisabled
+      @apply border border-whiteBtnBorDisabled text-whiteBtnTxtDisabled
     }
   }
+
+  .btn-alert {
+    @apply text-[14px] h-[44px] text-alertWhiteTxt;
+  }
+
+  .btn-default {
+    @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
+  }
+
+  .btn-success {
+    @apply bg-alertBtnSuccess border border-alertBtnSuccess text-alertBtnSuccess
+  }
+
+  .btn-danger {
+    @apply bg-alertBtnDanger border border-alertBtnDanger text-alertBtnDanger
+  }
+
+  .btn-warning {
+    @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
+  }
+
+  .btn-alertPrimary {
+    @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary
+  }
+
+  .btn-alertStroke {
+    @apply bg-transparent
+  }
+
+  .btn-alertFull {
+    @apply text-alertWhiteTxt
+  }
+
+  .btn-alertNaked {
+    @apply bg-transparent border-none
+  }
+
 }
 
 @layer badges {
@@ -221,4 +274,10 @@
 
 
 
+}
+
+@layer alerts {
+  .alert {
+    @apply w-full
+  }
 }
