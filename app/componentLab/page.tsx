@@ -1,3 +1,4 @@
+import Badge from "@/components/badge/Badge";
 import BrandCategoryButton from "@/components/brandCategoryButton/BrandCategoryButton";
 import Button from "@/components/button/Button";
 import Carousel from "@/components/carousel/Carousel";
@@ -16,6 +17,7 @@ export default function Home() {
         Primary
         <PlusSign />
       </Button>
+      <Badge className="badge badge-pending badge-stroke badge-s ">Text</Badge>
       {/* <Button type="secondary" >Secondary</Button>
       <Button type="tertiary" >Tertiary</Button>
       <BrandCategoryButton text="Mouse"></BrandCategoryButton> */}

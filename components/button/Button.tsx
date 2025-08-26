@@ -7,8 +7,6 @@ interface ButtonProps {
     onClick?: () => void
 }
 
-
-
 const Button = ({ children, className, disabled }: ButtonProps) => {
     return (<button className={className} disabled={disabled}>{children}</button>
     )

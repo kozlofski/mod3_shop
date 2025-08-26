@@ -33,6 +33,21 @@
   --color-tertiaryBtnBorDisabled: #888888;
   --color-tertiaryBtnTxtDisabled: #888888;
 
+  /* badges */
+  --color-badgeDefault: #EE701D;
+  --color-badgeSuccess: #22C55E;
+  --color-badgeFailed: #EF4444;
+  --color-badgePending: #EAB308;
+  --color-badgeWhiteTxt: #ffffff;
+  --color-badgeAccentBgDefault: #FFF0E7;
+  --color-badgeAccentTxtDefault: #943518;
+  --color-badgeAccentBgSuccess: #F0FDF5;
+  --color-badgeAccentTxtSuccess: #14532B;
+  --color-badgeAccentBgFailed: #FEF2F2;
+  --color-badgeAccentTxtFailed: #7F1D1D;
+  --color-badgeAccentBgPending: #FEF9E8;
+  --color-badgeAccentTxtPending: #85680E;
+
   /* borders */
   --color-border: #616674;
 
@@ -46,6 +61,8 @@
 }
 
 @layer components {
+  /* ===== BUTTON ===== */
+
   .btn {
     @apply flex flex-row gap-[14px] justify-center items-center;
     @apply rounded-md px-[20px] min-w-[139px];
@@ -102,7 +119,6 @@
     }
   }
 
-
   .btn-xxl {
     @apply text-[18px] h-[60px]
   }
@@ -126,6 +142,67 @@
   .btn-xs {
     @apply text-[12px] h-[34px]
   }
+
+  /* ===== BADGE ===== */
+
+  .badge {
+    @apply flex flex-row px-[10px] rounded-md justify-center items-center;
+  }
+
+  .badge-default {
+    @apply border border-badgeDefault bg-badgeDefault text-badgeDefault;
+  }
+
+  .badge-success {
+    @apply border border-badgeSuccess bg-badgeSuccess text-badgeSuccess;
+  }
+
+  .badge-failed {
+    @apply border border-badgeFailed bg-badgeFailed text-badgeFailed;
+  }
+
+  .badge-pending {
+    @apply border border-badgePending bg-badgePending text-badgePending;
+  }
+
+  .badge-fill {
+    @apply text-badgeWhiteTxt
+  }
+
+  .badge-stroke {
+    @apply bg-transparent
+  }
+
+  .badge-default.badge-accent {
+    @apply bg-badgeAccentBgDefault text-badgeAccentTxtDefault border-none;
+  }
+
+  .badge-success.badge-accent {
+    @apply bg-badgeAccentBgSuccess text-badgeAccentTxtSuccess border-none;
+  }
+
+  .badge-failed.badge-accent {
+    @apply bg-badgeAccentBgFailed text-badgeAccentTxtFailed border-none;
+  }
+
+  .badge-pending.badge-accent {
+    @apply bg-badgeAccentBgPending text-badgeAccentTxtPending border-none;
+  }
+
+  .badge-l {
+    @apply h-[36px] text-[14px]
+  }
+
+  .badge-m {
+    @apply h-[26px] text-[14px]
+  }
+
+  .badge-s {
+    @apply h-[20px] text-[14px]
+  }
+
+
+
 }
 
 /*
