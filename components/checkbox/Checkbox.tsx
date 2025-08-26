@@ -46,6 +46,7 @@ const Checkbox = ({ name, className, filterSettings, onClickProps }: CheckboxPro
         }
     }
 
+    // #TODO move simple checkbox to separate component
     return (
         <div
             className={`${getCheckboxClass(checked)} w-[32px] h-[32px] flex justify-center items-center rounded-md ${className || ""}`}
