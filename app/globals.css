@@ -60,13 +60,35 @@
 
 }
 
-@layer components {
-  /* ===== BUTTON ===== */
-
+@layer buttons {
   .btn {
     @apply flex flex-row gap-[14px] justify-center items-center;
-    @apply rounded-md px-[20px] min-w-[139px];
+    @apply rounded-md px-[20px];
     @apply font-medium;
+  }
+
+  .btn-xxl {
+    @apply text-[18px] h-[60px]
+  }
+
+  .btn-xl {
+    @apply text-[16px] h-[54px]
+  }
+
+  .btn-l {
+    @apply text-[16px] h-[50px]
+  }
+
+  .btn-m {
+    @apply text-[14px] h-[44px]
+  }
+
+  .btn-s {
+    @apply text-[14px] h-[40px]
+  }
+
+  .btn-xs {
+    @apply text-[12px] h-[34px]
   }
 
   .btn-primary {
@@ -104,6 +126,26 @@
   }
 
   .btn-tertiary {
+    @apply bg-transparent;
+    @apply text-secondaryBtnTxt;
+    @apply h-fit w-fit;
+
+    @variant hover {
+      @apply text-secondaryBtnTxtHover;
+    }
+
+    @variant active {
+      @apply text-secondaryBtnTxtPressed
+    }
+
+    @variant disabled {
+      @apply text-secondaryBtnTxtDisabled
+    }
+  }
+
+  /* this white button was not included in figma components section
+  but is used in the project */
+  .btn-quaternary {
     @apply border border-tertiaryBtnBor text-tertiaryBtnTxt;
 
     @variant hover {
@@ -118,33 +160,9 @@
       @apply border border-tertiaryBtnBorDisabled text-tertiaryBtnTxtDisabled
     }
   }
+}
 
-  .btn-xxl {
-    @apply text-[18px] h-[60px]
-  }
-
-  .btn-xl {
-    @apply text-[16px] h-[54px]
-  }
-
-  .btn-l {
-    @apply text-[16px] h-[50px]
-  }
-
-  .btn-m {
-    @apply text-[14px] h-[44px]
-  }
-
-  .btn-s {
-    @apply text-[14px] h-[40px]
-  }
-
-  .btn-xs {
-    @apply text-[12px] h-[34px]
-  }
-
-  /* ===== BADGE ===== */
-
+@layer badges {
   .badge {
     @apply flex flex-row px-[10px] rounded-md justify-center items-center;
   }
@@ -204,7 +222,3 @@
 
 
 }
-
-/*
-make generic className for rounded things with border and bg
-*/

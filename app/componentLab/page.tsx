@@ -18,6 +18,8 @@ export default function Home() {
         <PlusSign />
       </Button>
       <Badge className="badge badge-pending badge-stroke badge-s ">Text</Badge>
+
+
       {/* <Button type="secondary" >Secondary</Button>
       <Button type="tertiary" >Tertiary</Button>
       <BrandCategoryButton text="Mouse"></BrandCategoryButton> */}
