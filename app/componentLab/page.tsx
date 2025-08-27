@@ -37,7 +37,7 @@ export default function Home() {
       <DotIndicator dots={5} active={1} /> */}
       {/* <Carousel /> */}
       {/* <ProductTile product={{ productName: "Logitech G502 hero", category: "Mouse", price: 52.99, oldPrice: 72.99 }} /> */}
-      {/* <CategoryFilter /> */}
+      <CategoryFilter />
       {/* <Checkbox /> */}
     </>
   );

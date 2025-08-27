@@ -11,8 +11,8 @@ interface CheckboxProps {
 }
 
 const getCheckboxClass = (checked: boolean) => {
-    if (checked) return "bg-secondaryBtn"
-    return "border border-border bg-secondaryBg"
+    if (checked) return "bg-checked"
+    return "framedComponent"
 }
 
 const Checkbox = ({ name, className, filterSettings, onClickProps }: CheckboxProps) => {
@@ -49,7 +49,7 @@ const Checkbox = ({ name, className, filterSettings, onClickProps }: CheckboxPro
     // #TODO move simple checkbox to separate component
     return (
         <div
-            className={`${getCheckboxClass(checked)} w-[32px] h-[32px] flex justify-center items-center rounded-md ${className || ""}`}
+            className={`${getCheckboxClass(checked)} checkbox ${className || ""}`}
             onClick={handleOnClick}
         >
             {checked && <Tick />}

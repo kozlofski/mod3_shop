@@ -30,7 +30,7 @@ const CategoryFilter = () => {
     return (
         <div className="text-header w-[263px]">
             <div className="flex flex-row justify-between items-center h-[46px] mb-[16px]" onClick={setFilterVisibility}>
-                <h2 className=" text-[20px] font-semibold" >Category</h2>
+                <h2 className="text-[20px] font-semibold" >Category</h2>
                 <div className={`${isVisible ? "rotate-180" : ""}`}>
                     <FilterArrow />
                 </div>

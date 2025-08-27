@@ -2,6 +2,10 @@
 
 @import "./../styles/theme.css";
 
+
 @import "./../styles/buttons.css";
 @import "./../styles/badges.css";
 @import "./../styles/alerts.css";
+@import "./../styles/checkboxes.css";
+
+@import "./../styles/biggerComponents.css";

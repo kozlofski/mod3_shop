@@ -62,6 +62,9 @@
     --color-badgeAccentBgPending: #FEF9E8;
     --color-badgeAccentTxtPending: #85680E;
 
+    /* checkboxes */
+    --color-checked: #F29145;
+
     /* borders */
     --color-border: #616674;
 

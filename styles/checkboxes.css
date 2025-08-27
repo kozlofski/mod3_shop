@@ -1,0 +1,11 @@
+@layer {
+    .checkbox {
+        @apply w-[32px] h-[32px] rounded-md;
+        @apply flex flex-row justify-center items-center;
+    }
+
+    .checkbox-checked {
+        @apply bg-checked
+    }
+
+}

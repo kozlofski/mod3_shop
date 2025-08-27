@@ -1,0 +1,5 @@
+@layer {
+    .framedComponent {
+        @apply border border-border rounded-md bg-secondaryBg;
+    }
+}
