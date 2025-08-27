@@ -11,6 +11,7 @@ import Checkbox from "@/components/checkbox/Checkbox";
 import DotIndicator from "@/components/dotIndicator/DotIndicator";
 import { PlusSign } from "@/components/icons/icons";
 import ProductTile from "@/components/productTile/ProductTile";
+import Dropdown from "@/components/dropdown/Dropdown";
 
 const alertText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sunt tempore fuga ab cupiditate sapiente, adipisci necessitatibus minus non ut aut, quas recusandae beatae aspernatur amet hic eum cumque possimus?"
 const shortAlertText = "Lorem, ipsum dolor sit amet"
@@ -26,7 +27,8 @@ export default function Home() {
       {/* <Badge className="badge badge-pending badge-stroke badge-s">Text</Badge> */}
 
       <Button className="btn btn-alert btn-success btn-alertStroke ">Text</Button>
-      <Alert type="primary" alertHeader="Dupa dupa" alertText={shortAlertText} variant="l" />
+      <Dropdown></Dropdown>
+      {/* <Alert type="primary" alertHeader="Dupa dupa" alertText={shortAlertText} variant="l" /> */}
       {/* <Button type="secondary" >Secondary</Button>
       <Button type="tertiary" >Tertiary</Button>
       <BrandCategoryButton text="Mouse"></BrandCategoryButton> */}
