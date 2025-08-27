@@ -124,4 +124,22 @@ export const MinusSign = () => {
     )
 }
 
+export const QuestionMarkCircled = () => {
+    return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 21.25V21.2411M15 18.5714C15 14.5536 18.75 15.4464 18.75 12.3214C18.75 10.349 17.0711 8.75 15 8.75C13.3209 8.75 11.8995 9.80103 11.4217 11.25M26.25 15C26.25 21.2132 21.2132 26.25 15 26.25C8.7868 26.25 3.75 21.2132 3.75 15C3.75 8.7868 8.7868 3.75 15 3.75C21.2132 3.75 26.25 8.7868 26.25 15Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+    )
+}
+
+export const XSign = () => {
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.75 1.25L1.25 18.75M1.25004 1.25L18.7501 18.75" stroke="#262626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+    )
+}
+
 

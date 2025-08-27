@@ -67,6 +67,19 @@
   /* borders */
   --color-border: #616674;
 
+  /* alerts */
+  --color-alertBorDefault: #8E95A2;
+  --color-alertBorSuccess: #4ADE80;
+  --color-alertBorDanger: #F87171;
+  --color-alertBorWarning: #FAC215;
+  --color-alertBorPrimary: #F29145;
+
+  --color-alertBgDefault: #F7F8F8;
+  --color-alertBgSuccess: #F0FDF5;
+  --color-alertBgDanger: #FEF2F2;
+  --color-alertBgWarning: #FEF9E8;
+  --color-alertBgPrimary: #FEF7EE;
+
   /* dots */
   --color-inactiveDot: #383b42;
 
@@ -79,7 +92,7 @@
 @layer buttons {
   .btn {
     @apply flex flex-row gap-[14px] justify-center items-center;
-    @apply rounded-md px-[20px];
+    @apply rounded-md px-[20px] border-1;
     @apply font-medium;
   }
 
@@ -144,7 +157,7 @@
   .btn-naked {
     @apply bg-transparent;
     @apply text-nakedBtnTxt;
-    @apply h-fit w-fit;
+    @apply h-fit w-fit px-0;
 
     @variant hover {
       @apply text-nakedBtnTxtHover;
@@ -197,7 +210,7 @@
     @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
   }
 
-  .btn-alertPrimary {
+  .btn-primary {
     @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary
   }
 
@@ -210,7 +223,7 @@
   }
 
   .btn-alertNaked {
-    @apply bg-transparent border-none
+    @apply bg-transparent border-none px-0
   }
 
 }
@@ -278,6 +291,35 @@
 
 @layer alerts {
   .alert {
-    @apply w-full
+    @apply w-full border border-1 rounded-md p-[18px];
+    @apply flex flex-row gap-[16px];
+  }
+
+  .alert-default {
+    @apply border-alertBorDefault bg-alertBgDefault
+  }
+
+  .alert-danger {
+    @apply border-alertBorDanger bg-alertBgDanger
+  }
+
+  .alert-success {
+    @apply border-alertBorSuccess bg-alertBgSuccess
+  }
+
+  .alert-warning {
+    @apply border-alertBorWarning bg-alertBgWarning
+  }
+
+  .alert-primary {
+    @apply border-alertBorPrimary bg-alertBgPrimary
+  }
+
+  .alert-buttonsL {
+    @apply flex flex-row justify-end gap-[16px]
+  }
+
+  .alert-buttonsSM {
+    @apply flex flex-row justify-start gap-[32px]
   }
 }
