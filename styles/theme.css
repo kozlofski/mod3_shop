@@ -1,0 +1,88 @@
+@theme {
+    /* backgrounds */
+    --color-mainBg: #1a1a1a;
+    --color-secondaryBg: #262626;
+
+    /* buttons */
+    --color-fullBtnBg: #e5610a;
+    --color-fullBtnTxt: #ffffff;
+    --color-fullBtnBgHover: #e05816;
+    --color-fullBtnTxtHover: #ffffff;
+    --color-fullBtnBgPressed: #e05816;
+    --color-fullBtnTxtPressed: #d8d8df;
+    --color-fullBtnBgDisabled: #F7B87A;
+    --color-fullBtnTxtDisabled: #FFFFFF;
+
+    --color-strokeBtnBor: #EE701D;
+    --color-strokeBtnTxt: #EE701D;
+    --color-strokeBtnBorHover: #F29145;
+    --color-strokeBtnTxtHover: #EE701D;
+    --color-strokeBtnBorPressed: #F29145;
+    --color-strokeBtnTxtPressed: #F29145;
+    --color-strokeBtnBorDisabled: #F7B87A;
+    --color-strokeBtnTxtDisabled: #F7B87A;
+
+    --color-nakedBtnBor: #EE701D;
+    --color-nakedBtnTxt: #EE701D;
+    --color-nakedBtnBorHover: #F29145;
+    --color-nakedBtnTxtHover: #EE701D;
+    --color-nakedBtnBorPressed: #F29145;
+    --color-nakedBtnTxtPressed: #F29145;
+    --color-nakedBtnBorDisabled: #F7B87A;
+    --color-nakedBtnTxtDisabled: #F7B87A;
+
+    --color-whiteBtnBor: #fcfcfc;
+    --color-whiteBtnTxt: #fcfcfc;
+    --color-whiteBtnBorHover: #ffffff;
+    --color-whiteBtnTxtHover: #fcfcfc;
+    --color-whiteBtnBorPressed: #ffffff;
+    --color-whiteBtnTxtPressed: #ffffff;
+    --color-whiteBtnBorDisabled: #888888;
+    --color-whiteBtnTxtDisabled: #888888;
+
+    --color-alertBtnDefault: #4A4E5A;
+    --color-alertBtnSuccess: #16A34A;
+    --color-alertBtnDanger: #DC2626;
+    --color-alertBtnWarning: #CA9A04;
+    --color-alertBtnPrimary: #E05816;
+    --color-alertWhiteTxt: #ffffff;
+
+    /* badges */
+    --color-badgeDefault: #EE701D;
+    --color-badgeSuccess: #22C55E;
+    --color-badgeFailed: #EF4444;
+    --color-badgePending: #EAB308;
+    --color-badgeWhiteTxt: #ffffff;
+    --color-badgeAccentBgDefault: #FFF0E7;
+    --color-badgeAccentTxtDefault: #943518;
+    --color-badgeAccentBgSuccess: #F0FDF5;
+    --color-badgeAccentTxtSuccess: #14532B;
+    --color-badgeAccentBgFailed: #FEF2F2;
+    --color-badgeAccentTxtFailed: #7F1D1D;
+    --color-badgeAccentBgPending: #FEF9E8;
+    --color-badgeAccentTxtPending: #85680E;
+
+    /* borders */
+    --color-border: #616674;
+
+    /* alerts */
+    --color-alertBorDefault: #8E95A2;
+    --color-alertBorSuccess: #4ADE80;
+    --color-alertBorDanger: #F87171;
+    --color-alertBorWarning: #FAC215;
+    --color-alertBorPrimary: #F29145;
+
+    --color-alertBgDefault: #F7F8F8;
+    --color-alertBgSuccess: #F0FDF5;
+    --color-alertBgDanger: #FEF2F2;
+    --color-alertBgWarning: #FEF9E8;
+    --color-alertBgPrimary: #FEF7EE;
+
+    /* dots */
+    --color-inactiveDot: #383b42;
+
+    /* typography */
+    --color-header: #fcfcfc;
+    --color-paragraph: #e7e7e7;
+
+}

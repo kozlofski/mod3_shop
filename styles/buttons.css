@@ -1,0 +1,138 @@
+@layer buttons {
+    .btn {
+        @apply flex flex-row gap-[14px] justify-center items-center;
+        @apply rounded-md px-[20px] border-1;
+        @apply font-medium;
+    }
+
+    .btn-xxl {
+        @apply text-[18px] h-[60px]
+    }
+
+    .btn-xl {
+        @apply text-[16px] h-[54px]
+    }
+
+    .btn-l {
+        @apply text-[16px] h-[50px]
+    }
+
+    .btn-m {
+        @apply text-[14px] h-[44px]
+    }
+
+    .btn-s {
+        @apply text-[14px] h-[40px]
+    }
+
+    .btn-xs {
+        @apply text-[12px] h-[34px]
+    }
+
+    .btn-full {
+        @apply bg-fullBtnBg text-fullBtnTxt;
+
+        @variant hover {
+            @apply bg-fullBtnBgHover text-fullBtnTxtHover;
+        }
+
+        @variant active {
+            @apply bg-fullBtnBgPressed text-fullBtnTxtPressed;
+        }
+
+        @variant disabled {
+            @apply bg-fullBtnBgDisabled text-fullBtnTxtDisabled;
+        }
+    }
+
+    .btn-stroke {
+        @apply bg-transparent;
+        @apply border border-strokeBtnBor text-strokeBtnTxt;
+
+
+        @variant hover {
+            @apply border border-strokeBtnBorHover text-strokeBtnTxtHover;
+        }
+
+        @variant active {
+            @apply border border-strokeBtnBorPressed text-strokeBtnTxtPressed;
+        }
+
+        @variant disabled {
+            @apply border border-strokeBtnBorDisabled text-strokeBtnTxtDisabled;
+        }
+    }
+
+    .btn-naked {
+        @apply bg-transparent;
+        @apply text-nakedBtnTxt;
+        @apply h-fit w-fit px-0;
+
+        @variant hover {
+            @apply text-nakedBtnTxtHover;
+        }
+
+        @variant active {
+            @apply text-nakedBtnTxtPressed;
+        }
+
+        @variant disabled {
+            @apply text-nakedBtnTxtDisabled;
+        }
+    }
+
+    /* this white button was not included in figma components section
+    but is used in the project */
+    .btn-white {
+        @apply border border-whiteBtnBor text-whiteBtnTxt;
+
+        @variant hover {
+            @apply border border-whiteBtnBorHover text-whiteBtnTxtHover;
+        }
+
+        @variant active {
+            @apply border border-whiteBtnBorPressed text-whiteBtnTxtPressed
+        }
+
+        @variant disabled {
+            @apply border border-whiteBtnBorDisabled text-whiteBtnTxtDisabled
+        }
+    }
+
+    .btn-alert {
+        @apply text-[14px] h-[44px] text-alertWhiteTxt;
+    }
+
+    .btn-default {
+        @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
+    }
+
+    .btn-success {
+        @apply bg-alertBtnSuccess border border-alertBtnSuccess text-alertBtnSuccess
+    }
+
+    .btn-danger {
+        @apply bg-alertBtnDanger border border-alertBtnDanger text-alertBtnDanger
+    }
+
+    .btn-warning {
+        @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
+    }
+
+    .btn-primary {
+        @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary
+    }
+
+    .btn-alertStroke {
+        @apply bg-transparent
+    }
+
+    .btn-alertFull {
+        @apply text-alertWhiteTxt
+    }
+
+    .btn-alertNaked {
+        @apply bg-transparent border-none px-0
+    }
+
+}
