@@ -6,7 +6,7 @@ import BrandCategoryButton from "@/components/brandCategoryButton/BrandCategoryB
 import Button from "@/components/button/Button";
 import Carousel from "@/components/carousel/Carousel";
 import CarouselButton from "@/components/carouselButton/CarouselButton";
-import CategoryFilter from "@/components/categoryFilter/CategoryFilter";
+import CategoryFilter from "@/components/filterSections/CategoryFilter";
 import Checkbox from "@/components/checkbox/Checkbox";
 import DotIndicator from "@/components/dotIndicator/DotIndicator";
 import { PlusSign } from "@/components/icons/icons";

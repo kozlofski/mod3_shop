@@ -24,11 +24,11 @@ const CategoryFilter = () => {
 
     return (
         <div>
-            <ul className="flex flex-col gap-[20px]">
+            <ul className="filterOptionsList">
                 {Object.entries(categoryFilterInitialSettings).map((category, idx) => {
                     if (!loadAll && idx > 4) return
                     const categoryName = category[0]
-                    return <li className="flex flex-row gap-[16px] capitalize" key={idx}>
+                    return <li className="filterOptionItem" key={idx}>
                         <Checkbox
                             name={categoryName}
                             filterSettings={filter}
@@ -38,7 +38,7 @@ const CategoryFilter = () => {
                     </li>
                 })}
             </ul>
-            <div className="flex flex-row justify-between items-center w-[120px] h-[26px] pl-[8px]" onClick={handleLoadMore}>
+            <div className="filterLoadMoreFooter" onClick={handleLoadMore}>
                 <p className="text-base font-medium">Load {loadAll ? "less" : "more"}</p>
                 {loadAll ? <MinusSign /> : <PlusSign />}
             </div>
