@@ -1,3 +1,5 @@
+import Accordion from "@/components/accordion/Accordion";
+import FilterAccordion from "@/components/accordion/FilterAccordion";
 import Alert from "@/components/alert/Alert";
 import Badge from "@/components/badge/Badge";
 import BrandCategoryButton from "@/components/brandCategoryButton/BrandCategoryButton";
@@ -37,7 +39,12 @@ export default function Home() {
       <DotIndicator dots={5} active={1} /> */}
       {/* <Carousel /> */}
       {/* <ProductTile product={{ productName: "Logitech G502 hero", category: "Mouse", price: 52.99, oldPrice: 72.99 }} /> */}
-      <CategoryFilter />
+      <FilterAccordion header="Category">
+        <CategoryFilter />
+      </FilterAccordion>
+      <Accordion header="Info" className="acc-xs">
+        Dupa dupa dupa dupa aduf sfhjsdhfisadhfasdh f f sdh fsdh fklasd hfk asdkjlf asdkljf asdk
+      </Accordion>
       {/* <Checkbox /> */}
     </>
   );
