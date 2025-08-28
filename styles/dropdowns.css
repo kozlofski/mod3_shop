@@ -1,0 +1,58 @@
+@layer {
+    .dropdown {
+        @apply text-header w-full flex flex-col;
+        @apply gap-[6px]
+    }
+
+    .dropdown-bar {
+        @apply flex flex-row justify-between items-center;
+        @apply px-[16px]
+    }
+
+    .dropdown-bar-xxl {
+        @apply h-[60px] text-[18px] px-[16px];
+        @apply text-[18px]
+    }
+
+    .dropdown-options {
+        @apply overflow-y-scroll overflow-x-hidden;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--color-slider);
+            border-radius: 4px;
+            /* margin is not supported on scrollbar thumbs in most browsers */
+            /* Instead, use 'border' with transparent color to simulate margin: */
+            border: 2px solid transparent;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+
+    .dropdown-option {
+        @apply flex flex-row justify-between items-center;
+    }
+
+    .option-selected {
+        @apply bg-option-selected-dark;
+    }
+
+    .dropdown-options-xxl {
+        @apply p-[16px] max-h-[172];
+    }
+
+    .dropdown-option-xxl {
+        @apply p-[8px] h-[44px];
+    }
+
+}

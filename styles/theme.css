@@ -88,5 +88,11 @@
     --color-header: #fcfcfc;
     --color-paragraph: #e7e7e7;
 
+    /* scrollbar */
+    --color-slider: #EDEEF1;
+
+    /* dropdowns */
+    --color-option-selected: #FEF7EE;
+    --color-option-selected-dark: #434343;
 
 }
