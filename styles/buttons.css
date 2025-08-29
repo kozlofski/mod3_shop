@@ -1,6 +1,6 @@
 @layer buttons {
     .btn {
-        @apply flex flex-row gap-[14px] justify-center items-center;
+        @apply flex flex-row gap-[14px] justify-center items-center shrink-0;
         @apply rounded-md px-[20px] border-1;
         @apply font-medium;
     }

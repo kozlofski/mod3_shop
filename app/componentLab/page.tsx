@@ -27,7 +27,7 @@ export default function Home() {
       {/* <Badge className="badge badge-pending badge-stroke badge-s">Text</Badge> */}
 
       <Button className="btn btn-alert btn-success btn-alertStroke ">Text</Button>
-      <Dropdown className="xxl" options={["dupa", "blada", "paput", "kotowaty"]}></Dropdown>
+      <Dropdown className="xxl" options={["paput", "kotowaty", "dupa", "blada"]}></Dropdown>
       {/* <Alert type="primary" alertHeader="Dupa dupa" alertText={shortAlertText} variant="l" /> */}
       {/* <Button type="secondary" >Secondary</Button>
       <Button type="tertiary" >Tertiary</Button>
