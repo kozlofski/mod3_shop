@@ -2,4 +2,23 @@
     .framedComponent {
         @apply border border-border rounded-md bg-secondaryBg;
     }
+
+    /* header */
+    .header {
+        @apply w-full
+    }
+
+    .header-upperHalf {
+        @apply flex flex-row items-center justify-between gap-[106px]
+    }
+
+    .header-lowerHalf {}
+
+    .header-buttons {
+        @apply flex flex-row gap-[28px]
+    }
+
+    .icon-header-button {
+        @apply w-[24px] h-[24px] stroke-header
+    }
 }

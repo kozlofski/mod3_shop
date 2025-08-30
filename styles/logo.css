@@ -1,0 +1,13 @@
+@layer {
+    .simple-logo {
+        @apply font-semibold text-[32px];
+    }
+
+    .simple-logo-left {
+        @apply text-simpleLogo-left
+    }
+
+    .simple-logo-right {
+        @apply text-simpleLogo-right
+    }
+}

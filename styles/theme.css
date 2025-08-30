@@ -108,4 +108,9 @@
     /* toggles */
     --color-toggle-off: #8E95A2;
     --color-toggle-on: #EE701D;
+
+    /* simple logo */
+    --color-simpleLogo-left: #EE701D;
+    --color-simpleLogo-right: #FDFDFD;
+
 }

@@ -84,8 +84,8 @@ export const WebcamIcon = () => {
 
 export const CartIcon = () => {
     return (
-        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1H3.5L5.5 15H16M16 15C14.8954 15 14 15.8954 14 17C14 18.1046 14.8954 19 16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15ZM5.07142 12H17L20 3H3.78571M10 17C10 18.1046 9.10457 19 8 19C6.89543 19 6 18.1046 6 17C6 15.8954 6.89543 15 8 15C9.10457 15 10 15.8954 10 17Z" stroke="#FCFCFC" strokeLinecap="round" strokeLinejoin="round" />
+        <svg width="100%" height="100%" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1H3.5L5.5 15H16M16 15C14.8954 15 14 15.8954 14 17C14 18.1046 14.8954 19 16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15ZM5.07142 12H17L20 3H3.78571M10 17C10 18.1046 9.10457 19 8 19C6.89543 19 6 18.1046 6 17C6 15.8954 6.89543 15 8 15C9.10457 15 10 15.8954 10 17Z" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
 
     )
@@ -139,6 +139,32 @@ export const XSign = () => {
     return (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.75 1.25L1.25 18.75M1.25004 1.25L18.7501 18.75" stroke="#262626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+    )
+}
+
+export const Bell = () => {
+    return (
+        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.99982 17.5V18.5C8.99982 20.1569 10.343 21 11.9998 21C13.6567 21 14.9998 20.1569 14.9998 18.5V17.5M5.9998 8.5C5.9998 5.18629 8.6861 3.5 11.9998 3.5C15.3135 3.5 17.9998 5.18629 17.9998 8.5C17.9998 10.4392 18.7049 12.6133 19.4314 14.3389C20.0346 15.7717 19.022 17.5 17.4674 17.5H6.53219C4.9776 17.5 3.965 15.7717 4.56823 14.3389C5.29474 12.6133 5.9998 10.4392 5.9998 8.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}
+
+export const Message = () => {
+    return (
+        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C5.11765 3 3 4.64706 3 10C3 13.7383 4.0328 15.6692 7 16.4939V21L11.0124 16.9876C11.3301 16.996 11.6592 17 12 17C18.8824 17 21 15.3529 21 10C21 4.64706 18.8824 3 12 3Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+    )
+}
+
+export const Search = () => {
+    return (
+        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
     )
