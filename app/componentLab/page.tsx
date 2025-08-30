@@ -13,6 +13,7 @@ import { PlusSign } from "@/components/icons/icons";
 import ProductTile from "@/components/productTile/ProductTile";
 import Dropdown from "@/components/dropdown/Dropdown";
 import Input from "@/components/input/Input";
+import Toggle from "@/components/toggle/Toggle";
 
 const alertText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sunt tempore fuga ab cupiditate sapiente, adipisci necessitatibus minus non ut aut, quas recusandae beatae aspernatur amet hic eum cumque possimus?"
 const shortAlertText = "Lorem, ipsum dolor sit amet"
@@ -27,15 +28,7 @@ const inputData = {
 export default function Home() {
   return (
     <>
-      <Input
-        id="test-input"
-        value=""
-        data={inputData}
-        size="xl"
-        leftIcon={<PlusSign />}
-        // text="tekst"
-        rightIcon={<PlusSign />}
-      />
+      <Toggle id="toggleId" size="m" />
     </>
   );
 }

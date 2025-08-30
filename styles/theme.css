@@ -104,4 +104,8 @@
     --color-active-error-outline: #FEF2F2;
     --color-active-valid-outline: #fef7ee;
     --color-active-border: #F7B87A;
+
+    /* toggles */
+    --color-toggle-off: #8E95A2;
+    --color-toggle-on: #EE701D;
 }

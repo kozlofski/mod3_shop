@@ -9,4 +9,10 @@ export type InputData = {
     helper: string,
 }
 
+export type ToggleState = "on" | "off"
+
+export type ComponentSize = "xxl" | "xl" | "l" | "m" | "s" | "xs"
+
+export type ToggleComponentSize = "m" | "s"
+
 // export type AccordionInitState = "opened" | "closed"
