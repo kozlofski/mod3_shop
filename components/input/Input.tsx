@@ -32,7 +32,7 @@ const Input = ({ value, data: { placeholder, error, label, helper }, id, classNa
                     onClick={undefined}
                 />
                 {text && <div className={`inner-input-text inner-input-text-${size}`}>{text}</div> || ""}
-                {rightIcon && <div className={`input-icon input-icon-${size}`}>{rightIcon}</div> || ""}
+                {rightIcon && <div className={`input-icon input-icon-${size} ${text && "input-right-icon-nextToText"}`}>{rightIcon}</div> || ""}
             </div>
             <p className={`input-lower-message ${error.length > 0 ? "input-error-message" : "input-helper-message"}`}>
                 {error.length > 0 ? error : helper}

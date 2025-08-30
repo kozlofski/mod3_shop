@@ -31,9 +31,9 @@ export default function Home() {
         id="test-input"
         value=""
         data={inputData}
-        size="xs"
+        size="xl"
         leftIcon={<PlusSign />}
-        text="tekst"
+        // text="tekst"
         rightIcon={<PlusSign />}
       />
     </>

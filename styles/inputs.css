@@ -41,8 +41,11 @@
     }
 
     .input-icon {
-        @apply stroke-red-600;
-        /* #todo ogarnąć to, czerowne roboczo */
+        @apply stroke-placeholder;
+    }
+
+    .input-right-icon-nextToText {
+        @apply stroke-input-label;
     }
 
     .input-icon svg {
@@ -56,7 +59,7 @@
     }
 
     .input-lower-message {
-        @apply text-[14px];
+        @apply mt-[8px];
     }
 
     .input-error-message {
@@ -100,6 +103,13 @@
 
     .inner-input-text-xl {
         @apply text-[16px]
+    }
+
+    .input-lower-message-xxl,
+    .input-lower-message-xl,
+    .input-lower-message-l,
+    .input-lower-message-m {
+        @apply text-[14px] leading-[24px];
     }
 
     /* l */
@@ -153,6 +163,10 @@
         @apply text-[14px]
     }
 
+    .input-lower-message-s {
+        @apply text-[12px] leading-[22px];
+    }
+
     /* xs */
     .input-xs {
         @apply h-[34px] text-[12px] leading-[22px];
@@ -168,5 +182,9 @@
 
     .inner-input-text-xs {
         @apply text-[12px]
+    }
+
+    .input-lower-message-xs {
+        @apply text-[10px] leading-[20px];
     }
 }
