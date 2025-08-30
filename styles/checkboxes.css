@@ -1,6 +1,32 @@
 @layer {
+    .checkbox-with-label {
+        @apply flex flex-row items-center
+    }
+
+    .checkbox-wrapper {
+        @apply relative;
+        /* @apply border border-red-700 */
+    }
+
+    .checkbox-wrapper-l {
+        @apply w-[26px] h-[26px]
+    }
+
+    .checkbox-wrapper-m {
+        @apply w-[18px] h-[18px]
+    }
+
+    .checkbox-wrapper-s {
+        @apply w-[18px] h-[18px]
+    }
+
+    input[type="checkbox"] {
+        @apply opacity-0 absolute w-full h-full cursor-pointer z-20;
+    }
+
     .checkbox {
-        @apply w-[32px] h-[32px] rounded-md;
+        @apply w-full h-full;
+        @apply absolute top-[0] left-[0] rounded-[23%];
         @apply flex flex-row justify-center items-center;
     }
 
@@ -8,4 +34,32 @@
         @apply bg-checked
     }
 
+    .tick {
+        @apply z-1
+    }
+
+    .tick-l {
+        @apply w-[18px] h-[18px]
+    }
+
+    .tick-m,
+    .tick-s {
+        @apply w-[8.31px] h-[8.31px]
+    }
+
+    .checkbox-label {
+        @apply font-medium text-header
+    }
+
+    .checkbox-label-l {
+        @apply text-[16px] ml-[16px]
+    }
+
+    .checkbox-label-m {
+        @apply text-[14px] ml-[12px]
+    }
+
+    .checkbox-label-s {
+        @apply text-[12px] ml-[12px]
+    }
 }

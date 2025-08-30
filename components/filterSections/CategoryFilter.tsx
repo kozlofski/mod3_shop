@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
-import Checkbox from '../checkbox/Checkbox'
+import Checkbox from '../checkbox/FilterCheckbox'
 import { MinusSign, PlusSign } from '../icons/icons'
 
 // #todo mock data

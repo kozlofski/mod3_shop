@@ -15,4 +15,6 @@ export type ComponentSize = "xxl" | "xl" | "l" | "m" | "s" | "xs"
 
 export type ToggleComponentSize = "m" | "s"
 
+export type CheckboxSize = "l" | "m" | "s"
+
 // export type AccordionInitState = "opened" | "closed"

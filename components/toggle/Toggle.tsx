@@ -23,7 +23,7 @@ const Toggle = ({ id, size, className }: ToggleProps) => {
     return (
         <div id={id} className={`${className || ""} toggle toggle-${size}`}
             onClick={handleClickToggle}>
-            <div className={`${className || ""} dot dot-${toggleState === "on" ? "on" : "off"}`} ></div>
+            <div className={`${className || ""} dot dot-${toggleState}`} ></div>
         </div>
     )
 }

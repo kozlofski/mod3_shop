@@ -7,13 +7,13 @@ import Button from "@/components/button/Button";
 import Carousel from "@/components/carousel/Carousel";
 import CarouselButton from "@/components/carouselButton/CarouselButton";
 import CategoryFilter from "@/components/filterSections/CategoryFilter";
-import Checkbox from "@/components/checkbox/Checkbox";
 import DotIndicator from "@/components/dotIndicator/DotIndicator";
 import { PlusSign } from "@/components/icons/icons";
 import ProductTile from "@/components/productTile/ProductTile";
 import Dropdown from "@/components/dropdown/Dropdown";
 import Input from "@/components/input/Input";
 import Toggle from "@/components/toggle/Toggle";
+import Checkbox from "@/components/checkbox/Checkbox";
 
 const alertText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sunt tempore fuga ab cupiditate sapiente, adipisci necessitatibus minus non ut aut, quas recusandae beatae aspernatur amet hic eum cumque possimus?"
 const shortAlertText = "Lorem, ipsum dolor sit amet"
@@ -29,6 +29,7 @@ export default function Home() {
   return (
     <>
       <Toggle id="toggleId" size="m" />
+      <Checkbox id="checkboxik" size="l" label="label"></Checkbox>
     </>
   );
 }

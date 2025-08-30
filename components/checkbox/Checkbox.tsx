@@ -1,59 +1,37 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import { CheckboxSize } from '@/types/componentTypes'
+import React, { useState } from 'react'
 import { Tick } from '../icons/icons'
 
 interface CheckboxProps {
-    name: string,
+    id: string,
+    label: string,
+    size: CheckboxSize,
     className?: string,
-    filterSettings: Record<string, boolean>,
-    onClickProps?: React.Dispatch<React.SetStateAction<Record<string, boolean>>>
 }
 
-const getCheckboxClass = (checked: boolean) => {
-    if (checked) return "bg-checked"
-    return "framedComponent"
-}
+const Checkbox = ({ size, className, id, label }: CheckboxProps) => {
+    const [checked, setChecked] = useState(false)
 
-const Checkbox = ({ name, className, filterSettings, onClickProps }: CheckboxProps) => {
-    const [checked, setChecked] = useState(filterSettings[name])
+    const handleOnClick = () => { setChecked(prev => !prev) }
 
-    useEffect(() => {
-        setChecked(filterSettings[name]);
-    }, [filterSettings, name]);
-
-    const handleOnClick = () => {
-        let newChecked = !checked;
-
-        const newFilterState = { ...filterSettings }
-        if (name !== 'all') {
-            newFilterState[name] = !checked
-            newFilterState["all"] = false
-        } else {
-            if (newChecked === false) newChecked = true;
-            else {
-                for (const property in newFilterState) {
-                    newFilterState[property] = false
-                }
-                newFilterState["all"] = true
-            }
-        }
-
-        setChecked(newFilterState[name]);
-
-        if (onClickProps) {
-            onClickProps(newFilterState)
-        }
-    }
-
-    // #TODO move simple checkbox to separate component
     return (
-        <div
-            className={`${getCheckboxClass(checked)} checkbox ${className || ""}`}
-            onClick={handleOnClick}
-        >
-            {checked && <Tick />}
+        <div className={`checkbox-with-label`}>
+            <div className={`checkbox-wrapper checkbox-wrapper-${size}`}>
+                <input
+                    id={id}
+                    type="checkbox"
+                    onClick={handleOnClick}
+                >
+                </input>
+                <div className={`${checked ? "checkbox-checked" : "framedComponent"} checkbox checkbox-${size} ${className || ""}`}>
+                    {checked && <div className={`tick tick-${size}`}><Tick /></div>}
+                </div>
+            </div>
+            <label className={`checkbox-label checkbox-label-${size}`} htmlFor={id}>{label}</label>
         </div>
+
     )
 }
 
