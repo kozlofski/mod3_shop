@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @import "./../styles/theme.css";
+@import "./../styles/biggerComponents.css";
 
 /* components imports */
 @import "./../styles/buttons.css";
@@ -10,5 +11,4 @@
 @import "./../styles/accordions.css";
 @import "./../styles/filterSections.css";
 @import "./../styles/dropdowns.css";
-
-@import "./../styles/biggerComponents.css";
+@import "./../styles/inputs.css";

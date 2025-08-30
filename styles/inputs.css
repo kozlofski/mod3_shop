@@ -1,0 +1,172 @@
+@layer {
+    .input-container {
+        @apply flex flex-col w-full;
+    }
+
+    .input-label {
+        @apply text-input-label;
+        @apply mb-[16px]
+    }
+
+    .input-wrapper {
+        @apply relative flex flex-row items-center justify-between gap-[18px];
+        @apply w-full h-full;
+        @apply px-[18px]
+    }
+
+    .input-valid-wrapper:has(.input:focus) {
+        @apply border-active-border;
+        @apply outline-active-valid-outline outline-offset-2;
+        @apply outline-4;
+    }
+
+    .input-error-wrapper {
+        @apply border-error-border;
+    }
+
+    .input-error-wrapper:has(.input:focus) {
+        @apply border-error-border;
+        @apply outline-active-error-outline outline-offset-2;
+        @apply outline-4;
+    }
+
+    .input {
+        @apply text-input-text;
+        @apply placeholder-placeholder;
+        @apply w-full;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .input-icon {
+        @apply stroke-red-600;
+        /* #todo ogarnąć to, czerowne roboczo */
+    }
+
+    .input-icon svg {
+        @apply w-full h-full;
+    }
+
+    .inner-input-text {
+        @apply h-full text-input-label pl-[18px] font-medium;
+        @apply border-l border-l-border;
+        @apply flex items-center;
+    }
+
+    .input-lower-message {
+        @apply text-[14px];
+    }
+
+    .input-error-message {
+        @apply text-input-error-message;
+    }
+
+    .input-helper-message {
+        @apply text-placeholder
+    }
+
+    /* xxl */
+    .input-xxl {
+        @apply h-[60px] text-[18px] leading-[28px];
+        /* @apply py-[16px]; */
+    }
+
+    .input-label-xxl {
+        @apply text-[18px];
+    }
+
+    .input-icon-xxl {
+        @apply w-[24px] h-[24px];
+    }
+
+    .inner-input-text-xxl {
+        @apply pl-[18px]
+    }
+
+    /* xl */
+    .input-xl {
+        @apply h-[54px] text-[16px] leading-[28px];
+    }
+
+    .input-label-xl {
+        @apply text-[18px];
+    }
+
+    .input-icon-xl {
+        @apply w-[24px] h-[24px];
+    }
+
+    .inner-input-text-xl {
+        @apply text-[16px]
+    }
+
+    /* l */
+    .input-l {
+        @apply h-[50px] text-[16px] leading-[26px];
+    }
+
+    .input-label-l {
+        @apply text-[18px];
+    }
+
+    .input-icon-l {
+        @apply w-[24px] h-[24px];
+    }
+
+    .inner-input-text-l {
+        @apply text-[16px]
+    }
+
+    /* m */
+    .input-m {
+        @apply h-[44px] text-[14px] leading-[24px];
+    }
+
+    .input-label-m {
+        @apply text-[16px];
+    }
+
+    .input-icon-m {
+        @apply w-[20px] h-[20px];
+    }
+
+    .inner-input-text-m {
+        @apply text-[14px]
+    }
+
+    /* s */
+    .input-s {
+        @apply h-[40px] text-[14px] leading-[24px];
+    }
+
+    .input-label-s {
+        @apply text-[16px];
+    }
+
+    .input-icon-s {
+        @apply w-[20px] h-[20px];
+    }
+
+    .inner-input-text-s {
+        @apply text-[14px]
+    }
+
+    /* xs */
+    .input-xs {
+        @apply h-[34px] text-[12px] leading-[22px];
+    }
+
+    .input-label-xs {
+        @apply text-[14px];
+    }
+
+    .input-icon-xs {
+        @apply w-[16px] h-[16px];
+    }
+
+    .inner-input-text-xs {
+        @apply text-[12px]
+    }
+}

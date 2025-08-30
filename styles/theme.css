@@ -95,4 +95,13 @@
     --color-option-selected: #FEF7EE;
     --color-option-selected-dark: #434343;
 
+    /* inputs */
+    --color-input-text: #FCFCFC;
+    --color-placeholder: #B0B0B0;
+    --color-error-border: #DC2626;
+    --color-input-label: #FCFCFC;
+    --color-input-error-message: #F87171;
+    --color-active-error-outline: #FEF2F2;
+    --color-active-valid-outline: #fef7ee;
+    --color-active-border: #F7B87A;
 }

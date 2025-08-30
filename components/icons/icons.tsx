@@ -1,3 +1,5 @@
+import { inherits } from "util"
+
 export function MouseIcon() {
     return (
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,8 +110,8 @@ export const FilterArrow = () => {
 
 export const PlusSign = () => {
     return (
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 1V11M1 6H11" stroke="#E7E7E7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <svg width="100%" height="100%" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 1V11M1 6H11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
     )
