@@ -1,7 +1,7 @@
 import { AlertType, AlertVariant } from '@/types/componentTypes';
 import React from 'react'
 import { QuestionMarkCircled, XSign } from '../icons/icons';
-import Button from '../button/Button';
+import Button from './Button';
 
 // header, text, etc. should be in an alert object
 

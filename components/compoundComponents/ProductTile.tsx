@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 import tempImg from "@/app/assets/mouse.png" // #TODO remove
-import Button from '../button/Button';
+import Button from '../basicComponents/Button';
 import CartMiniButton from '../cartMiniButton/CartMiniButton';
 
 interface ProductProps {

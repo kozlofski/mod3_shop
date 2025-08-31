@@ -1,7 +1,7 @@
 import React from 'react'
 import { ApplePay, GooglePay, MasterCard, PayPal, Visa } from '../icons/icons'
-import Badge from '../badge/Badge'
-import Logo from '../logo/Logo'
+import Badge from '../basicComponents/Badge'
+import Logo from '../basicComponents/Logo'
 
 const Footer = () => {
     return (

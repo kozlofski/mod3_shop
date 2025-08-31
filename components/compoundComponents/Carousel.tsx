@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from 'react'
-import DotIndicator from '../dotIndicator/DotIndicator'
-import CarouselButton from '../carouselButton/CarouselButton';
-import Button from '../button/Button';
+import DotIndicator from '../basicComponents/DotIndicator'
+import CarouselButton from '../basicComponents/CarouselButton';
+import Button from '../basicComponents/Button';
 
 const LeftArrow = () => {
     return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

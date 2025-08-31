@@ -1,10 +1,10 @@
 import React from 'react'
-import Logo from '../logo/Logo'
-import Input from '../input/Input'
+import Logo from '../basicComponents/Logo'
+import Input from '../basicComponents/Input'
 import { Search } from '../icons/icons'
-import HeaderButtons from '../headerButtons/HeaderButtons'
+import HeaderButtons from '../compoundComponents/HeaderButtons'
 import Navbar from '../navbar/Navbar'
-import Button from '../button/Button'
+import Button from '../basicComponents/Button'
 
 const userLoggedIn = true
 
