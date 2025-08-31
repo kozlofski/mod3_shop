@@ -3,7 +3,7 @@ import Logo from '../basicComponents/Logo'
 import Input from '../basicComponents/Input'
 import { Search } from '../icons/icons'
 import HeaderButtons from '../compoundComponents/HeaderButtons'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../compoundComponents/Navbar'
 import Button from '../basicComponents/Button'
 
 const userLoggedIn = true

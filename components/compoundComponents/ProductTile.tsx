@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import tempImg from "@/app/assets/mouse.png" // #TODO remove
 import Button from '../basicComponents/Button';
-import CartMiniButton from '../cartMiniButton/CartMiniButton';
+import CartMiniButton from '../basicComponents/CartMiniButton';
 
 interface ProductProps {
     product: {
