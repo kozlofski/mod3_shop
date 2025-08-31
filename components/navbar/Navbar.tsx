@@ -6,7 +6,6 @@ const tempLinks = {
     contact: "/"
 }
 
-const userLoggedIn = false
 
 const Navbar = () => {
     return (

@@ -3,36 +3,4 @@
         @apply border border-border rounded-md bg-secondaryBg;
     }
 
-    /* header */
-    /* #todo move this to separate css file */
-    .header {
-        @apply w-full flex flex-col gap-[40px] py-[32px]
-    }
-
-    .header-upperHalf {
-        @apply flex flex-row items-center justify-between gap-[106px]
-    }
-
-    .header-lowerHalf {
-        @apply border-b border-b-border;
-    }
-
-    .header-buttons {
-        @apply flex flex-row gap-[28px]
-    }
-
-    .icon-header-button {
-        @apply w-[24px] h-[24px] stroke-header
-    }
-
-    .navbar {
-        @apply pb-[40px]
-    }
-
-    .links {
-        @apply text-[16px] font-medium text-header capitalize;
-        @apply flex flex-row gap-[48px]
-    }
-
-
 }
