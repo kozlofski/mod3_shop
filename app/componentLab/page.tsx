@@ -19,6 +19,8 @@ import HeaderButtons from "@/components/compoundComponents/HeaderButtons";
 import Header from "@/components/sectionComponents/Header";
 import Footer from "@/components/sectionComponents/Footer";
 import ProgressBar from "@/components/basicComponents/ProgressBar";
+import Section from "@/components/compoundComponents/SectionWithHeader";
+import SectionWithHeader from "@/components/compoundComponents/SectionWithHeader";
 
 const alertText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sunt tempore fuga ab cupiditate sapiente, adipisci necessitatibus minus non ut aut, quas recusandae beatae aspernatur amet hic eum cumque possimus?"
 const shortAlertText = "Lorem, ipsum dolor sit amet"
@@ -33,7 +35,9 @@ const inputData = {
 export default function Home() {
   return (
     <>
-      <ProgressBar size="l" progress={37} />
+      <SectionWithHeader header="Category" >
+        <ProgressBar size="l" progress={37} />
+      </SectionWithHeader>
     </>
   );
 }

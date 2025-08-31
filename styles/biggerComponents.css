@@ -11,4 +11,13 @@
         @apply max-w-[1440px] m-auto
     }
 
+    section {
+        @apply w-full flex flex-col items-start justify-between gap-[32px];
+        @apply bg-transparent;
+    }
+
+    section h2 {
+        @apply font-medium text-header text-[28px] leading-[40px];
+    }
+
 }
