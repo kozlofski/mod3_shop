@@ -3,6 +3,10 @@ import Logo from '../logo/Logo'
 import Input from '../input/Input'
 import { Search } from '../icons/icons'
 import HeaderButtons from '../headerButtons/HeaderButtons'
+import Navbar from '../navbar/Navbar'
+import Button from '../button/Button'
+
+const userLoggedIn = true
 
 const Header = () => {
     return (
@@ -18,9 +22,13 @@ const Header = () => {
                         helper: '',
                     }}
                     size="xl" />
-                <HeaderButtons />
+                {userLoggedIn ? <HeaderButtons /> :
+                    <Button className="btn btn-xl btn-full btn-primary">Sign In</Button>}
+
             </div>
-            <div className={`header-lowerHalf`}></div>
+            <div className={`header-lowerHalf`}>
+                <Navbar />
+            </div>
         </div>
     )
 }

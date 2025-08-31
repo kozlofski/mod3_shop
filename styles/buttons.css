@@ -29,6 +29,26 @@
         @apply text-[12px] h-[34px]
     }
 
+    .btn-default {
+        @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
+    }
+
+    .btn-success {
+        @apply bg-alertBtnSuccess border border-alertBtnSuccess text-alertBtnSuccess
+    }
+
+    .btn-danger {
+        @apply bg-alertBtnDanger border border-alertBtnDanger text-alertBtnDanger
+    }
+
+    .btn-warning {
+        @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
+    }
+
+    .btn-primary {
+        @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary
+    }
+
     .btn-full {
         @apply bg-fullBtnBg text-fullBtnTxt;
 
@@ -103,25 +123,7 @@
         @apply text-[14px] h-[44px] text-alertWhiteTxt;
     }
 
-    .btn-default {
-        @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
-    }
 
-    .btn-success {
-        @apply bg-alertBtnSuccess border border-alertBtnSuccess text-alertBtnSuccess
-    }
-
-    .btn-danger {
-        @apply bg-alertBtnDanger border border-alertBtnDanger text-alertBtnDanger
-    }
-
-    .btn-warning {
-        @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
-    }
-
-    .btn-primary {
-        @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary
-    }
 
     .btn-alertStroke {
         @apply bg-transparent
