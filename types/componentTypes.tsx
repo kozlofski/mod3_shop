@@ -17,4 +17,6 @@ export type ToggleComponentSize = "m" | "s"
 
 export type CheckboxSize = "l" | "m" | "s"
 
+export type ProgressBarSize = "l" | "m"
+
 // export type AccordionInitState = "opened" | "closed"

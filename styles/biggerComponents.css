@@ -1,6 +1,6 @@
 @layer {
     body {
-        @apply h-full bg-mainBg;
+        @apply h-full bg-mainBg flex flex-col justify-between;
     }
 
     .framedComponent {

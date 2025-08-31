@@ -113,4 +113,7 @@
     --color-simpleLogo-left: #EE701D;
     --color-simpleLogo-right: #FDFDFD;
 
+    /* progress bars */
+    --color-progress-bar-indicator: #EE701D;
+
 }

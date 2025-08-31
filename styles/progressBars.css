@@ -1,0 +1,17 @@
+@layer {
+    .progress-bar-bg {
+        @apply w-full bg-secondaryBg rounded-full;
+    }
+
+    .progress-bar-indicator {
+        @apply bg-progress-bar-indicator h-full rounded-full z-10;
+    }
+
+    .progress-bar-l {
+        @apply h-[6px]
+    }
+
+    .progress-bar-m {
+        @apply h-[8px]
+    }
+}
