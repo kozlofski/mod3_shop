@@ -15,5 +15,4 @@ const SectionWithHeader = ({ children, className, header }: SectionWithHeaderPro
     )
 }
 
-
 export default SectionWithHeader

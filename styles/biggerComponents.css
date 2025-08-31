@@ -1,6 +1,13 @@
 @layer {
+
+    /* #todo maybe divide this css into big components, sections, etc. */
     body {
         @apply h-full bg-mainBg flex flex-col justify-between;
+    }
+
+    main {
+        @apply w-full max-w-[1440px] m-auto;
+        @apply flex flex-col items-start gap-1 p-[40px];
     }
 
     .framedComponent {
@@ -8,7 +15,7 @@
     }
 
     .container {
-        @apply max-w-[1440px] m-auto
+        @apply max-w-[1440px] m-auto p-[40px];
     }
 
     section {
@@ -19,5 +26,17 @@
     section h2 {
         @apply font-medium text-header text-[28px] leading-[40px];
     }
+
+    .category-bar {
+        @apply w-full flex flex-row justify-between;
+    }
+
+    .brand-category-btn {
+        @apply text-header text-xl bg-secondaryBg;
+        @apply w-[220px] h-[190px] p-[28px] rounded-md border border-border;
+        @apply flex flex-col items-center justify-between;
+    }
+
+
 
 }

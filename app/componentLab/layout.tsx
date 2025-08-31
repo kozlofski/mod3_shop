@@ -16,9 +16,9 @@ export default function RootLayout({
   return (
     <body>
       <Header />
-      <div className="bg-mainBg flex flex-col items-start gap-1 p-[40px]">
+      <main>
         {children}
-      </div>
+      </main>
       <Footer />
     </ body>
   );

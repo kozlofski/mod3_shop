@@ -1,33 +1,16 @@
 import React from 'react'
-import { MonitorIcon, MouseIcon, HeadphonesIcon, KeyboardIcon, WebcamIcon } from '../icons/icons'
 
 interface BrandCategoryButtonProps {
-    text: string;
+    icon: React.ReactNode,
+    text: string,
     onClick?: () => void
 }
 
-const BrandCategoryButton: React.FC<BrandCategoryButtonProps> = ({ text }) => {
-    const renderIcon = () => {
-        switch (text) {
-            case 'Mouse':
-                return <MouseIcon />;
-            case 'Monitor':
-                return <MonitorIcon />
-            case 'Headphones':
-                return <HeadphonesIcon />
-            case 'Keyboard':
-                return <KeyboardIcon />
-            case 'Webcam':
-                return <WebcamIcon />
-            default:
-                return null;
-        }
-    };
-
+const BrandCategoryButton = ({ icon, text }: BrandCategoryButtonProps) => {
     return (
-        <button className="text-primaryBtnTxt text-xl w-[220px] h-[190px] p-[28px] rounded-md border border-border flex flex-col items-center justify-between  bg-secondaryBg">
-            {renderIcon()}
-            {text}
+        <button className="brand-category-btn">
+            {icon}
+            <h4>{text}</h4>
         </button>
     );
 }
