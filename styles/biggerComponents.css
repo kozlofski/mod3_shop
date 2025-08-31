@@ -1,6 +1,14 @@
 @layer {
+    body {
+        @apply h-full bg-mainBg;
+    }
+
     .framedComponent {
         @apply border border-border rounded-md bg-secondaryBg;
+    }
+
+    .container {
+        @apply max-w-[1440px] m-auto
     }
 
 }

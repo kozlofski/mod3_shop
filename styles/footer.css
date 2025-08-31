@@ -1,0 +1,40 @@
+@layer {
+    .footer-container {
+        @apply w-full;
+        @apply bg-secondaryBg;
+        /* #todo this should be changed to the max-w of all containers */
+    }
+
+    .footer-wrapper {
+        @apply w-full grid grid-cols-[2fr_1fr_1fr_1fr_1fr] justify-between;
+        /* justify-content: space-between; */
+    }
+
+    .left-footer-column {
+        @apply flex flex-col gap-[24px]
+    }
+
+    .footer-copyright {
+        @apply text-header font-medium text-[16px]
+    }
+
+    .payment-services-bar {
+        @apply flex flex-row gap-[12px] justify-start;
+    }
+
+    .footer-link-column {
+        @apply flex flex-col text-header
+    }
+
+    .links-column-header {
+        @apply font-semibold text-[20px] leading-[30px] mb-[32px]
+    }
+
+    .footer-link {
+        @apply font-medium text-[16px] leading-[26px]
+    }
+
+    .footer-link-list {
+        @apply flex flex-col gap-[16px]
+    }
+}

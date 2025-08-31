@@ -3,6 +3,10 @@
         @apply flex flex-row px-[10px] rounded-md justify-center items-center;
     }
 
+    .badge-payment {
+        @apply border border-border bg-white h-[30.03px] w-[46.61px]
+    }
+
     .badge-default {
         @apply border border-badgeDefault bg-badgeDefault text-badgeDefault;
     }

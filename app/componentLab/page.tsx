@@ -17,6 +17,7 @@ import Checkbox from "@/components/checkbox/Checkbox";
 import Logo from "@/components/logo/Logo";
 import HeaderButtons from "@/components/headerButtons/HeaderButtons";
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const alertText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sunt tempore fuga ab cupiditate sapiente, adipisci necessitatibus minus non ut aut, quas recusandae beatae aspernatur amet hic eum cumque possimus?"
 const shortAlertText = "Lorem, ipsum dolor sit amet"
@@ -31,7 +32,6 @@ const inputData = {
 export default function Home() {
   return (
     <>
-      <Header />
 
     </>
   );

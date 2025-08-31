@@ -10,7 +10,7 @@ const userLoggedIn = true
 
 const Header = () => {
     return (
-        <div className={`header`}>
+        <div className={`header container`}>
             <div className={`header-upperHalf`}>
                 <Logo />
                 <Input id={''} value={''}
