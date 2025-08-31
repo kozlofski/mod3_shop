@@ -1,0 +1,26 @@
+@layer {
+    .toggle {
+        @apply border border-border bg-secondaryBg rounded-full;
+    }
+
+    .toggle-m {
+        @apply w-[68px] h-[36px] p-[4px];
+    }
+
+    .toggle-s {
+        @apply w-[52px] h-[28px] p-[2px];
+    }
+
+    .dot {
+        @apply h-full w-[46%] rounded-full;
+    }
+
+    .dot-on {
+        @apply bg-toggle-on duration-500 ml-[54%];
+    }
+
+    .dot-off {
+        @apply bg-toggle-off duration-500 ml-[0px];
+
+    }
+}

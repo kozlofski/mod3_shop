@@ -1,0 +1,78 @@
+@layer {
+    .accordion {
+        @apply text-header w-full flex flex-col;
+    }
+
+    .accBar {
+        @apply flex flex-row justify-between items-center;
+        @apply box-content;
+        @apply px-[16px]
+    }
+
+    .accBarOpened {
+        @apply border-b-1 border-border;
+    }
+
+    .accHeader {
+        @apply font-medium;
+    }
+
+    .acc-xxl-bar {
+        @apply h-[28px] py-[16px] text-[18px];
+    }
+
+    .acc-xl-bar {
+        @apply h-[26px] py-[14px] text-[16px];
+    }
+
+    .acc-l-bar {
+        @apply h-[26px] py-[12px] text-[16px];
+    }
+
+    .acc-m-bar {
+        @apply h-[24px] py-[10px] text-[14px];
+    }
+
+    .acc-s-bar {
+        @apply h-[24px] py-[8px] text-[14px];
+    }
+
+    .acc-xs-bar {
+        @apply h-[22px] py-[6px] text-[12px];
+    }
+
+    .acc-text {
+        @apply font-normal text-paragraph;
+        @apply px-[16px]
+    }
+
+    .acc-xxl-text,
+    .acc-xl-text,
+    .acc-l-text {
+        @apply text-[16px] leading-[26px] py-[16px]
+    }
+
+    .acc-m-text {
+        @apply text-[14px] leading-[24px] py-[14px]
+    }
+
+    .acc-s-text {
+        @apply text-[14px] leading-[24px] py-[12px]
+    }
+
+    .acc-xs-text {
+        @apply text-[12px] leading-[22px] py-[10px]
+    }
+
+
+    /* filter accordion */
+
+    .filterAccBar {
+        @apply h-[46px] mb-[16px];
+    }
+
+    .filterAccHeader {
+        @apply font-semibold text-[20px];
+    }
+
+}

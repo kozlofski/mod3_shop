@@ -1,0 +1,61 @@
+@layer badges {
+    .badge {
+        @apply flex flex-row px-[10px] rounded-md justify-center items-center;
+    }
+
+    .badge-payment {
+        @apply border border-border bg-white h-[30.03px] w-[46.61px]
+    }
+
+    .badge-default {
+        @apply border border-badgeDefault bg-badgeDefault text-badgeDefault;
+    }
+
+    .badge-success {
+        @apply border border-badgeSuccess bg-badgeSuccess text-badgeSuccess;
+    }
+
+    .badge-failed {
+        @apply border border-badgeFailed bg-badgeFailed text-badgeFailed;
+    }
+
+    .badge-pending {
+        @apply border border-badgePending bg-badgePending text-badgePending;
+    }
+
+    .badge-fill {
+        @apply text-badgeWhiteTxt
+    }
+
+    .badge-stroke {
+        @apply bg-transparent
+    }
+
+    .badge-default.badge-accent {
+        @apply bg-badgeAccentBgDefault text-badgeAccentTxtDefault border-none;
+    }
+
+    .badge-success.badge-accent {
+        @apply bg-badgeAccentBgSuccess text-badgeAccentTxtSuccess border-none;
+    }
+
+    .badge-failed.badge-accent {
+        @apply bg-badgeAccentBgFailed text-badgeAccentTxtFailed border-none;
+    }
+
+    .badge-pending.badge-accent {
+        @apply bg-badgeAccentBgPending text-badgeAccentTxtPending border-none;
+    }
+
+    .badge-l {
+        @apply h-[36px] text-[14px]
+    }
+
+    .badge-m {
+        @apply h-[26px] text-[14px]
+    }
+
+    .badge-s {
+        @apply h-[20px] text-[14px]
+    }
+}

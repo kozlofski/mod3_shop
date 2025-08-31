@@ -1,0 +1,118 @@
+@layer {
+    .dropdown {
+        @apply text-header w-full flex flex-col;
+        @apply gap-[6px]
+    }
+
+    .dropdown-bar {
+        @apply flex flex-row justify-between items-center;
+        @apply px-[16px]
+    }
+
+    .dropdown-options {
+        @apply overflow-y-scroll overflow-x-hidden;
+
+        @apply flex flex-col;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--color-slider);
+            border-radius: 4px;
+            /* margin is not supported on scrollbar thumbs in most browsers */
+            /* Instead, use 'border' with transparent color to simulate margin: */
+            border: 2px solid transparent;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+
+    .dropdown-option {
+        @apply flex flex-row justify-between items-center;
+    }
+
+    .option-selected {
+        @apply bg-option-selected-dark;
+    }
+
+    .dropdown-bar-xxl {
+        @apply h-[60px] text-[18px] py-[16px];
+    }
+
+    .dropdown-options-xxl {
+        @apply p-[16px] max-h-[172px];
+    }
+
+    .dropdown-option-xxl {
+        @apply p-[8px] h-[44px] text-[16px];
+    }
+
+    .dropdown-bar-xl {
+        @apply h-[54px] text-[16px] py-[14px];
+    }
+
+    .dropdown-options-xl {
+        @apply p-[16px] max-h-[166px] gap-[4px];
+    }
+
+    .dropdown-option-xl {
+        @apply p-[8px] h-[42px] text-[16px];
+    }
+
+    .dropdown-bar-l {
+        @apply h-[50px] text-[16px] py-[12px];
+    }
+
+    .dropdown-options-l {
+        @apply p-[16px] max-h-[166px] gap-[4px];
+    }
+
+    .dropdown-option-l {
+        @apply p-[8px] h-[42px] text-[16px];
+    }
+
+    .dropdown-bar-m {
+        @apply h-[44px] text-[14px] py-[10px];
+    }
+
+    .dropdown-options-m {
+        @apply p-[16px] max-h-[160px] gap-[4px];
+    }
+
+    .dropdown-option-m {
+        @apply p-[8px] h-[40px] text-[14px];
+    }
+
+    .dropdown-bar-s {
+        @apply h-[40px] text-[14px] py-[8px];
+    }
+
+    .dropdown-options-s {
+        @apply px-[16px] py-[12px] max-h-[152px] gap-[4px];
+    }
+
+    .dropdown-option-s {
+        @apply p-[8px] h-[40px] text-[14px];
+    }
+
+    .dropdown-bar-xs {
+        @apply h-[34px] text-[12px] py-[6px];
+    }
+
+    .dropdown-options-xs {
+        @apply px-[16px] py-[10px] max-h-[142px] gap-[4px];
+    }
+
+    .dropdown-option-xs {
+        @apply p-[4px] h-[38px] text-[12px];
+    }
+}
