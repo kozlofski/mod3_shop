@@ -9,14 +9,14 @@ interface InputProps {
     className?: string,
     disabled?: true,
     size: string,
-    // children: React.ReactNode,
+    children: React.ReactNode,
     leftIcon?: React.ReactNode,
     rightIcon?: React.ReactNode,
     text?: string,
     onClick?: () => void
 }
 
-const Input = ({ value, data: { placeholder, error, label, helper }, id, className, disabled, size, leftIcon, text, rightIcon }: InputProps) => {
+const Input = ({ value, data: { placeholder, error, label, helper }, id, className, children, disabled, size, leftIcon, text, rightIcon }: InputProps) => {
     return (
         <div className={`input-container`}>
             <label className={`input-label input-label-${size}`}>{label}</label>
@@ -31,6 +31,7 @@ const Input = ({ value, data: { placeholder, error, label, helper }, id, classNa
                     // value={value}
                     onClick={undefined}
                 />
+                {children && <div className={`inner-input-text inner-input-text-${size}`}>{children}</div>}
                 {text && <div className={`inner-input-text inner-input-text-${size}`}>{text}</div> || ""}
                 {rightIcon && <div className={`input-icon input-icon-${size} ${text && "input-right-icon-nextToText"}`}>{rightIcon}</div> || ""}
             </div>

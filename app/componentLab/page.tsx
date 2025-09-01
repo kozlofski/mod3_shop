@@ -37,6 +37,15 @@ const inputData = {
 export default function Home() {
   return (
     <>
+      <Input id={"dupa"} value={"a"} data={{
+        placeholder: "Min Price",
+        error: "invalid price",
+        label: "",
+        helper: ""
+      }} size={"xl"}>
+
+        <Dropdown options={["USD", "EUR"]} className="xxl" inputDropdown />
+      </Input>
       <SectionWithHeader header="Category" >
         <CategoryBar ></CategoryBar>
         <Pagination currentPage={1} totalPages={8} />

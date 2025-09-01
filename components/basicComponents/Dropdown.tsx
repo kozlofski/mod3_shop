@@ -7,13 +7,14 @@ interface DropdownProps {
     // children: React.ReactNode,
     options: string[],
     className: string,
-    disabled?: true,
+    disabled?: boolean,
+    inputDropdown?: boolean,
     onClick?: () => void
 }
 
 //onClick={() => setSelected(idx)}
 
-const Dropdown = ({ className, disabled, options }: DropdownProps) => {
+const Dropdown = ({ className, disabled, options, inputDropdown }: DropdownProps) => {
     const [opened, setOpened] = useState(false)
     const [selected, setSelected] = useState(0)
 
@@ -26,7 +27,7 @@ const Dropdown = ({ className, disabled, options }: DropdownProps) => {
 
     return (
         <div className={`dropdown`}>
-            <div className={`framedComponent dropdown-bar dropdown-bar-${className}`} onClick={setOptionsVisibility}>
+            <div className={`${inputDropdown || "framedComponent"} dropdown-bar dropdown-bar-${className}`} onClick={setOptionsVisibility}>
                 <h2 className="accHeader" >{options[selected]}</h2>
                 <div className={`${opened ? "rotate-540 duration-300" : "duration-300"}`}>
                     <FilterArrow />
@@ -40,7 +41,7 @@ const Dropdown = ({ className, disabled, options }: DropdownProps) => {
                             key={idx}
                             onClick={() => handleClickOption(idx)} >
                             {option}
-                            {idx === selected && <Tick></Tick>}
+                            {idx === selected && <span className="w-[16px]"><Tick /></span>}
                         </li>
                         )
                     })

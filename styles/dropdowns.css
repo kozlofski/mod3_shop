@@ -1,16 +1,18 @@
 @layer {
     .dropdown {
         @apply text-header w-full flex flex-col;
-        @apply gap-[6px]
+        @apply gap-[6px];
+        @apply relative;
     }
 
     .dropdown-bar {
         @apply flex flex-row justify-between items-center;
-        @apply px-[16px]
+        @apply px-[16px];
     }
 
     .dropdown-options {
         @apply overflow-y-scroll overflow-x-hidden;
+        @apply absolute w-full left-0;
 
         @apply flex flex-col;
 
@@ -37,7 +39,7 @@
     }
 
     .dropdown-option {
-        @apply flex flex-row justify-between items-center;
+        @apply w-full flex flex-row justify-between items-center;
     }
 
     .option-selected {
@@ -48,8 +50,9 @@
         @apply h-[60px] text-[18px] py-[16px];
     }
 
+    /* #todo top props for all sizes */
     .dropdown-options-xxl {
-        @apply p-[16px] max-h-[172px];
+        @apply p-[16px] max-h-[172px] top-[66px];
     }
 
     .dropdown-option-xxl {
