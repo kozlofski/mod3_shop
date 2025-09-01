@@ -27,6 +27,8 @@
         @apply font-medium text-header text-[28px] leading-[40px];
     }
 
+    /* category bar */
+
     .category-bar {
         @apply w-full flex flex-row justify-between;
     }
@@ -37,6 +39,14 @@
         @apply flex flex-col items-center justify-between;
     }
 
+    /* pagination */
 
+    .pagination {
+        @apply flex flex-row justify-between w-full;
+    }
+
+    .pagination-buttons {
+        @apply flex flex-row justify-between gap-[32px];
+    }
 
 }

@@ -29,6 +29,51 @@
         @apply text-[12px] h-[34px]
     }
 
+    .btn-pag {
+        @apply text-[16px] w-[44px] h-[44px] p-[11px];
+
+
+    }
+
+    .btn-pag-current {
+        @apply text-current-btn-txt;
+
+        @apply bg-fullBtnBg;
+
+        @variant hover {
+            @apply bg-fullBtnBgHover;
+        }
+
+        @variant active {
+            @apply bg-fullBtnBgPressed;
+        }
+
+        @variant disabled {
+            @apply bg-fullBtnBgDisabled;
+        }
+    }
+
+    .btn-pag-inactive {
+        @apply text-inactive-btn;
+
+        @apply bg-transparent;
+        @apply px-0;
+
+        @apply border-none;
+
+        @variant hover {
+            @apply text-nakedBtnTxtHover;
+        }
+
+        @variant active {
+            @apply text-nakedBtnTxtPressed;
+        }
+
+        @variant disabled {
+            @apply text-nakedBtnTxtDisabled;
+        }
+    }
+
     .btn-default {
         @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
     }
@@ -86,7 +131,9 @@
     .btn-naked {
         @apply bg-transparent;
         @apply text-nakedBtnTxt;
-        @apply h-fit w-fit px-0;
+        @apply px-0;
+
+        @apply border-none;
 
         @variant hover {
             @apply text-nakedBtnTxtHover;

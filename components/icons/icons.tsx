@@ -223,3 +223,19 @@ export const GooglePay = () => {
         </svg>
     )
 }
+
+export const LeftArrowIcon = () => {
+    return (
+        <svg width="100%" height="100%" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.33325 6L14.6666 6M1.33325 6L6.33325 1M1.33325 6L6.33325 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}
+
+export const RightArrowIcon = () => {
+    return (
+        <svg width="100%" height="100%" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.6666 6L1.33325 6M14.6666 6L9.66658 11M14.6666 6L9.66659 1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}

@@ -39,7 +39,7 @@ export default function Home() {
     <>
       <SectionWithHeader header="Category" >
         <CategoryBar ></CategoryBar>
-        <Pagination currentPage={1} totalPages={23} />
+        <Pagination currentPage={1} totalPages={8} />
       </SectionWithHeader>
     </>
   );

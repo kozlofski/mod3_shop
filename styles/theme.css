@@ -116,4 +116,7 @@
     /* progress bars */
     --color-progress-bar-indicator: #EE701D;
 
+    /* pagination */
+    --color-current-btn-txt: #262626;
+    --color-inactive-btn: #B0B0B0;
 }
