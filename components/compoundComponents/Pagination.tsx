@@ -71,8 +71,8 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
                     Previous
                 </Button>
                 <Button className="btn btn-m btn-stoke btn-white" onClick={() => page < totalPages && setPage(prev => prev + 1)}>
-                    <span className="w-[13.33px] stroke-white"><RightArrowIcon /></span>
                     Next
+                    <span className="w-[13.33px] stroke-white"><RightArrowIcon /></span>
                 </Button>
             </div>
 

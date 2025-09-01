@@ -36,9 +36,9 @@
     }
 
     .btn-pag-current {
-        @apply text-current-btn-txt;
+        @apply text-current-pag-btn-txt;
 
-        @apply bg-fullBtnBg;
+        @apply bg-current-pag-btn-bg;
 
         @variant hover {
             @apply bg-fullBtnBgHover;
@@ -54,7 +54,7 @@
     }
 
     .btn-pag-inactive {
-        @apply text-inactive-btn;
+        @apply text-inactive-pag-btn;
 
         @apply bg-transparent;
         @apply px-0;
