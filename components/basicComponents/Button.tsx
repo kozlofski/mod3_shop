@@ -1,16 +1,26 @@
+import { AlertButtonColor, ButtonSize } from "@/types/componentTypes";
 import React from "react";
 
 interface ButtonProps {
     children: React.ReactNode,
-    className: string,
+    className?: string,
+    size: ButtonSize,
+    variant: string,
     disabled?: true,
+    leftIcon?: React.ReactNode,
+    rightIcon?: React.ReactNode,
     onClick?: () => void
 }
 
-// #todo refactor className. Not necessary to write class 'btn' on parent
-
-const Button = ({ children, className, disabled, onClick }: ButtonProps) => {
-    return (<button className={className} disabled={disabled} onClick={onClick}>{children}</button>
+const Button = ({ children, className, size, variant, disabled, leftIcon, rightIcon, onClick }: ButtonProps) => {
+    return (<button
+        className={`btn btn-${size} btn-${variant} ${className}`}
+        disabled={disabled}
+        onClick={onClick}>
+        {leftIcon && <div className={`icon-${size}`}>{leftIcon}</div>}
+        {children}
+        {rightIcon && <div className={`icon-${size}`}>{rightIcon}</div>}
+    </button>
     )
 }
 

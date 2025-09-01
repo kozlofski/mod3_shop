@@ -1,10 +1,13 @@
 @layer buttons {
+
+    /* class applied to all buttons */
     .btn {
         @apply flex flex-row gap-[14px] justify-center items-center shrink-0;
         @apply rounded-md px-[20px] border-1;
         @apply font-medium;
     }
 
+    /* sizes */
     .btn-xxl {
         @apply text-[18px] h-[60px]
     }
@@ -29,10 +32,33 @@
         @apply text-[12px] h-[34px]
     }
 
+    .icon-xxl {
+        @apply w-[24px] h-[24px]
+    }
+
+    .icon-xl {
+        @apply w-[24px] h-[24px]
+    }
+
+    .icon-l {
+        @apply w-[24px] h-[24px]
+    }
+
+    .icon-m {
+        @apply w-[20px] h-[20px]
+    }
+
+    .icon-s {
+        @apply w-[20px] h-[20px]
+    }
+
+    .icon-xs {
+        @apply w-[16px] h-[16px]
+    }
+
+    /* special variants with specified size */
     .btn-pag {
         @apply text-[16px] w-[44px] h-[44px] p-[11px];
-
-
     }
 
     .btn-pag-current {
@@ -74,28 +100,9 @@
         }
     }
 
-    .btn-default {
-        @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
-    }
-
-    .btn-success {
-        @apply bg-alertBtnSuccess border border-alertBtnSuccess text-alertBtnSuccess
-    }
-
-    .btn-danger {
-        @apply bg-alertBtnDanger border border-alertBtnDanger text-alertBtnDanger
-    }
-
-    .btn-warning {
-        @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
-    }
-
-    .btn-primary {
-        @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary
-    }
-
+    /* variants of primary color button*/
     .btn-full {
-        @apply bg-fullBtnBg text-fullBtnTxt;
+        @apply bg-fullBtnBg text-fullBtnTxt stroke-fullBtnTxt border-none;
 
         @variant hover {
             @apply bg-fullBtnBgHover text-fullBtnTxtHover;
@@ -114,6 +121,7 @@
         @apply bg-transparent;
         @apply border border-strokeBtnBor text-strokeBtnTxt;
 
+        @apply stroke-strokeBtnTxt;
 
         @variant hover {
             @apply border border-strokeBtnBorHover text-strokeBtnTxtHover;
@@ -131,7 +139,8 @@
     .btn-naked {
         @apply bg-transparent;
         @apply text-nakedBtnTxt;
-        @apply px-0;
+        @apply stroke-nakedBtnTxt;
+        @apply w-fit h-fit p-0;
 
         @apply border-none;
 
@@ -170,17 +179,38 @@
         @apply text-[14px] h-[44px] text-alertWhiteTxt;
     }
 
+    /* styles for alert buttons */
+    /* colors */
+    .btn-alert-default {
+        @apply bg-alertBtnDefault border border-alertBtnDefault text-alertBtnDefault
+    }
 
+    .btn-alert-success {
+        @apply bg-alertBtnSuccess border border-alertBtnSuccess text-alertBtnSuccess
+    }
 
-    .btn-alertStroke {
+    .btn-alert-danger {
+        @apply bg-alertBtnDanger border border-alertBtnDanger text-alertBtnDanger
+    }
+
+    .btn-alert-warning {
+        @apply bg-alertBtnWarning border border-alertBtnWarning text-alertBtnWarning
+    }
+
+    .btn-alert-primary {
+        @apply bg-alertBtnPrimary border border-alertBtnPrimary text-alertBtnPrimary stroke-alertBtnPrimary
+    }
+
+    /* variants */
+    .btn-alert-stroke {
         @apply bg-transparent
     }
 
-    .btn-alertFull {
+    .btn-alert-full {
         @apply text-alertWhiteTxt
     }
 
-    .btn-alertNaked {
+    .btn-alert-naked {
         @apply bg-transparent border-none px-0
     }
 
