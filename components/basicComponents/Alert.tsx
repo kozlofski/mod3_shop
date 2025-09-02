@@ -19,8 +19,10 @@ const Alert = ({ className, type, alertHeader, alertText, size }: AlertProps) =>
         <div className={`alert alert-${type} `}>
             <QuestionMarkCircled />
             <div className="flex flex-col grow">
-                <h3 className="text-[20px] font-medium">{alertHeader}</h3>
-                <p className="text-[16px] font-normal leading-[26px] mb-[32px]">{alertText}</p>
+                <div className={`flex ${size === 's' ? "flex-row justify-start items-baseline gap-[12px]" : "flex-col"} mb-[32px]`}>
+                    <h3 className="text-[20px] font-medium">{alertHeader}</h3>
+                    <p className="text-[16px] font-normal leading-[26px] ">{alertText}</p>
+                </div>
                 <div className={`${size === 'l' ? "alert-buttonsL" : "alert-buttonsSM"}`}>
                     <AlertButton color={type} variant={size === 'l' ? "stroke" : "naked"}>Opcja 1</AlertButton>
                     <AlertButton color={type} variant={size === 'l' ? "full" : "naked"}>Opcja 2</AlertButton>

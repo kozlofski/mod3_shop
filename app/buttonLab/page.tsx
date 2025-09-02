@@ -13,7 +13,7 @@ const inputData = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 w-full">
       <div className="flex flex-row gap-1">
         <div className="flex flex-col gap-1 w-fit">
           <Button size="xxl" variant="full" leftIcon={<LeftArrowIcon />} rightIcon={<RightArrowIcon />} >XXL full</Button>
@@ -63,8 +63,8 @@ export default function Home() {
           <AlertButton variant="naked" color="warning">warning</AlertButton>
         </div>
       </div>
-      <div className="flex flex-row gap-1 w-fit">
-        <div className="flex flex-col gap-1">
+      <div className="flex flex-row gap-1 w-full">
+        <div className="flex flex-col gap-1 w-full">
           <Alert alertHeader={"header"} alertText={" bardzo wielkie niebespieczęsfo"} type="danger" size={"l"} ></Alert>
           <Alert alertHeader={"header"} alertText={" bardzo wielkie niebespieczęsfo"} type="success" size={"l"} ></Alert>
           <Alert alertHeader={"header"} alertText={" bardzo wielkie niebespieczęsfo"} type="warning" size={"l"} ></Alert>
