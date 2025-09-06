@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  PENDING
+  AWAITING_PAYMENT
+  PLACED
+  PROCESSING
+  AWAITING_SHIPMENT
+  SHIPPED
+  IN_TRANSIT
+  OUT_FOR_DELIVERY
+  CANCELLED
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  passwordHash String
+  addresses    Address[]
+  orders       Order[]
+}
+
+model Address {
+  id         Int    @id @default(autoincrement())
+  street     String
+  postalCode String
+  city       String
+  country    String
+  user       User   @relation(fields: [userId], references: [id])
+  userId     Int
+}
+
+model Product {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String?
+  price       Decimal     @default(0)
+  stock       Int         @default(0)
+  imageUrls   String[]
+  categories  Category[]
+  OrderItem   OrderItem[]
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String?
+  exploreInfo String?
+  image       String?
+  products    Product[]
+}
+
+model Order {
+  id          Int         @id @default(autoincrement())
+  user        User        @relation(fields: [userId], references: [id])
+  userId      Int
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  status      OrderStatus
+  totalAmount Decimal
+}
+
+model OrderItem {
+  id              Int     @id @default(autoincrement())
+  order           Order   @relation(fields: [orderId], references: [id])
+  orderId         Int
+  product         Product @relation(fields: [productId], references: [id])
+  productId       Int
+  quantity        Int
+  priceAtPurchase Decimal
+}
