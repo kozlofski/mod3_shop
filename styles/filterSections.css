@@ -1,7 +1,11 @@
 @layer {
+    .category-filter-container {
+        @apply flex flex-col w-full gap-[20px];
+    }
+
     .filterOptionsList {
         @apply flex flex-col gap-[20px];
-        @apply pl-[16px]
+        @apply pl-[16px];
     }
 
     .filterOptionItem {
@@ -9,7 +13,16 @@
     }
 
     .filterLoadMoreFooter {
-        @apply flex flex-row justify-between items-center;
-        @apply w-full p-[16px];
+        @apply flex flex-row justify-start items-center gap-[21px];
+        @apply px-[16px];
+    }
+
+    .load-more-paragraph {
+        @apply text-base font-medium text-header leading-[26px];
+    }
+
+    .load-more-sign {
+        @apply stroke-header;
+        @apply w-[12x] h-[12px]
     }
 }

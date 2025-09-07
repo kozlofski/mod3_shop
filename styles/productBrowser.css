@@ -1,0 +1,10 @@
+@layer {
+    .product-browser-container {
+        @apply grid grid-cols-[1fr_4fr];
+    }
+
+    .product-browser-filters {
+        @apply flex flex-col gap-[52px];
+    }
+
+}

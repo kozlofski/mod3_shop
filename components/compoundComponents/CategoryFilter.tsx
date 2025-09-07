@@ -1,21 +1,25 @@
 "use client"
 
 import React, { useState } from 'react'
-import Checkbox from './FilterCheckbox'
 import { MinusSign, PlusSign } from '../icons/icons'
+import FilterCheckbox from './FilterCheckbox'
 
 // #todo mock data
-const categoryFilterInitialSettings: Record<string, boolean> = {
-    all: true,
-    mouse: false,
-    headphone: false,
-    keyboard: false,
-    monitor: false,
-    webcam: false
+// const categoryFilterInitialSettings: Record<string, boolean> = {
+//     all: true,
+//     mouse: false,
+//     headphone: false,
+//     keyboard: false,
+//     monitor: false,
+//     webcam: false
+// }
+
+interface CategoryFilterProps {
+    initialFilterSettings: Record<string, boolean>,
 }
 
-const CategoryFilter = () => {
-    const [filter, setFilter] = useState(categoryFilterInitialSettings)
+const CategoryFilter = ({ initialFilterSettings }: CategoryFilterProps) => {
+    const [filter, setFilter] = useState(initialFilterSettings)
     const [loadAll, setLoadAll] = useState(false)
 
     const handleLoadMore = () => {
@@ -23,24 +27,19 @@ const CategoryFilter = () => {
     }
 
     return (
-        <div>
+        <div className={`category-filter-container`}>
             <ul className="filterOptionsList">
-                {Object.entries(categoryFilterInitialSettings).map((category, idx) => {
+                {Object.entries(filter).map((category, idx) => {
                     if (!loadAll && idx > 4) return
                     const categoryName = category[0]
                     return <li className="filterOptionItem" key={idx}>
-                        <Checkbox
-                            name={categoryName}
-                            filterSettings={filter}
-                            onClickProps={setFilter}
-                        />
-                        {categoryName}
+                        <FilterCheckbox name={categoryName} filter={filter} setFilter={setFilter} />
                     </li>
                 })}
             </ul>
             <div className="filterLoadMoreFooter" onClick={handleLoadMore}>
-                <p className="text-base font-medium">Load {loadAll ? "less" : "more"}</p>
-                {loadAll ? <MinusSign /> : <PlusSign />}
+                <p className="load-more-paragraph">Load {loadAll ? "less" : "more"}</p>
+                <span className="load-more-sign">{loadAll ? <MinusSign /> : <PlusSign />}</span>
             </div>
         </div>
     )

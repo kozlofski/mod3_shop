@@ -9,12 +9,17 @@ interface CheckboxProps {
     label: string,
     size: CheckboxSize,
     className?: string,
+    checked: boolean,
+    setChecked: (arg0: boolean) => void,
 }
 
-const Checkbox = ({ size, className, id, label }: CheckboxProps) => {
-    const [checked, setChecked] = useState(false)
+const Checkbox = ({ size, className, id, label, checked, setChecked }: CheckboxProps) => {
+    // const [checked, setChecked] = useState(initiallyChecked)
 
-    const handleOnClick = () => { setChecked(prev => !prev) }
+    const handleOnClick = () => {
+        const newCheckedValue = !checked
+        setChecked(newCheckedValue)
+    }
 
     return (
         <div className={`checkbox-with-label`}>

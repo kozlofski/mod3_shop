@@ -119,8 +119,8 @@ export const PlusSign = () => {
 
 export const MinusSign = () => {
     return (
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 6H11" stroke="#E7E7E7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <svg width="100%" height="100%" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6H11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
     )

@@ -1,37 +1,38 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
-import { Tick } from '../icons/icons'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import Checkbox from '../basicComponents/Checkbox'
 
 interface FilterCheckboxProps {
     name: string,
     className?: string,
-    filterSettings: Record<string, boolean>,
-    onClickProps?: React.Dispatch<React.SetStateAction<Record<string, boolean>>>
+    filter: Record<string, boolean>,
+    setFilter: Dispatch<SetStateAction<Record<string, boolean>>>
 }
 
-const getCheckboxClass = (checked: boolean) => {
-    if (checked) return "bg-checked"
-    return "framedComponent"
-}
-
-const FilterCheckbox = ({ name, className, filterSettings, onClickProps }: FilterCheckboxProps) => {
-    const [checked, setChecked] = useState(filterSettings[name])
+const FilterCheckbox = ({ name, filter, setFilter }: FilterCheckboxProps) => {
+    const [checked, setChecked] = useState(filter[name])
 
     useEffect(() => {
-        setChecked(filterSettings[name]);
-    }, [filterSettings, name]);
+        setChecked(filter[name]);
+    }, [filter, name]);
 
-    const handleOnClick = () => {
-        let newChecked = !checked;
+    useEffect(() => {
+        // useEffect for updating the filter object
+        // when state of this checkbox is modified
+        const newChecked = checked;
+        const newFilterState = { ...filter }
 
-        const newFilterState = { ...filterSettings }
-        if (name !== 'all') {
-            newFilterState[name] = !checked
+        if (name !== 'all' && newChecked === true) {
+            newFilterState[name] = newChecked
             newFilterState["all"] = false
+        } else if (name !== 'all' && newChecked === false) {
+            newFilterState[name] = newChecked
         } else {
-            if (newChecked === false) newChecked = true;
-            else {
+            // this is done to avoid situation
+            // when no category OR 'all' option is checked
+            // when user unclick the 'all' option
+            if (newChecked === true) {
                 for (const property in newFilterState) {
                     newFilterState[property] = false
                 }
@@ -39,21 +40,22 @@ const FilterCheckbox = ({ name, className, filterSettings, onClickProps }: Filte
             }
         }
 
-        setChecked(newFilterState[name]);
-
-        if (onClickProps) {
-            onClickProps(newFilterState)
+        // when user uncheck all categories, 
+        // 'all' option should be checked
+        let everyPropertyIsFalse = true
+        for (const property in newFilterState) {
+            if (newFilterState[property] === true) {
+                everyPropertyIsFalse = false;
+            }
         }
-    }
+        if (everyPropertyIsFalse) newFilterState["all"] = true
 
-    // #TODO move simple checkbox to separate component
+        setFilter(newFilterState);
+    }, [checked])
+
+
     return (
-        <div
-            className={`${getCheckboxClass(checked)} checkbox ${className || ""}`}
-            onClick={handleOnClick}
-        >
-            {checked && <Tick />}
-        </div>
+        <Checkbox id={'name'} label={name} size={'l'} checked={filter[name]} setChecked={setChecked} />
     )
 }
 
