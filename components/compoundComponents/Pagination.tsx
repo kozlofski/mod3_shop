@@ -49,7 +49,7 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
     return (
         <div className={`pagination`}>
             {totalPages >= 2 &&
-                <ul className="flex flex-row text-header gap-[16px]">
+                <ul className="flex flex-row text-header gap-[8px]">
                     {numbers.map((number) =>
                     (<li key={number}>
                         {number > 0 ?
@@ -58,8 +58,6 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
                                 onClick={() => setPage(number)}>{number}</Button> :
                             <Button
                                 className={`btn btn-pag btn-naked btn-white`}>...</Button>}
-
-
                     </li>)
                     )
                     }
@@ -75,7 +73,6 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
                     <span className="w-[13.33px] stroke-white"><RightArrowIcon /></span>
                 </Button>
             </div>
-
         </ div>
     )
 }

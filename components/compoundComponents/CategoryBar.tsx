@@ -3,13 +3,13 @@ import { HeadphonesIcon, KeyboardIcon, MonitorIcon, MouseIcon, WebcamIcon } from
 import BrandCategoryButton from './BrandCategoryButton'
 import { prisma } from '@/prisma/clientSingleton'
 
-// const categories = {
-//     Mouse: <MouseIcon />,
-//     Monitor: <MonitorIcon />,
-//     Headphones: <HeadphonesIcon />,
-//     Keyboard: <KeyboardIcon />,
-//     Webcam: <WebcamIcon />
-// }
+const categoryIcons: Record<string, React.ReactNode> = {
+    mouse: <MouseIcon />,
+    monitor: <MonitorIcon />,
+    headphones: <HeadphonesIcon />,
+    keyboard: <KeyboardIcon />,
+    webcam: <WebcamIcon />
+}
 
 const CategoryBar = async () => {
     const categories = await prisma.category.findMany()
@@ -18,7 +18,7 @@ const CategoryBar = async () => {
         <ul className="category-bar">
             {categories.map((category) => (
                 <li key={category.id}>
-                    <BrandCategoryButton icon={<MouseIcon />} text={category.name} />
+                    <BrandCategoryButton icon={categoryIcons[category.name]} text={category.name} />
                 </li>
             ))}
         </ul>

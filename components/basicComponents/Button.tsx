@@ -1,11 +1,11 @@
-import { AlertButtonColor, ButtonSize } from "@/types/componentTypes";
+import { ButtonSize } from "@/types/componentTypes";
 import React from "react";
 
 interface ButtonProps {
     children: React.ReactNode,
     className?: string,
-    size: ButtonSize,
-    variant: string,
+    size?: ButtonSize,
+    variant?: string,
     disabled?: true,
     leftIcon?: React.ReactNode,
     rightIcon?: React.ReactNode,
