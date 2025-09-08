@@ -1,5 +1,5 @@
-import CategoryFilter from "@/components/compoundComponents/CategoryFilter";
-import ProductBrowser from "@/components/sectionComponents/ProductBrowser";
+import CategoryFilter from "@/_components/compoundComponents/CategoryFilter";
+import ProductBrowser from "@/_components/sectionComponents/ProductBrowser";
 
 const alertText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sunt tempore fuga ab cupiditate sapiente, adipisci necessitatibus minus non ut aut, quas recusandae beatae aspernatur amet hic eum cumque possimus?"
 const shortAlertText = "Lorem, ipsum dolor sit amet"

@@ -1,7 +1,7 @@
-import Alert from "@/components/basicComponents/Alert";
-import AlertButton from "@/components/basicComponents/AlertButton";
-import Button from "@/components/basicComponents/Button";
-import { LeftArrowIcon, RightArrowIcon } from "@/components/icons/icons";
+import Alert from "@/_components/basicComponents/Alert";
+import AlertButton from "@/_components/basicComponents/AlertButton";
+import Button from "@/_components/basicComponents/Button";
+import { LeftArrowIcon, RightArrowIcon } from "@/_components/icons/icons";
 
 const inputData = {
   label: "Labelek",
