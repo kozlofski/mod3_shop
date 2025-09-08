@@ -8,7 +8,7 @@ interface SectionWithHeaderProps {
 
 const SectionWithHeader = ({ children, className, header }: SectionWithHeaderProps) => {
     return (
-        <section className={`{className}`}>
+        <section className={`section-with-header ${className}`}>
             <h2>{header}</h2>
             {children}
         </section>

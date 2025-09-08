@@ -16,6 +16,8 @@ export type AlertButtonVariant = "stroke" | "full" | "naked"
 export type ButtonVariant = "stroke" | "full" | "naked" | "white"
 export type ButtonSize = XXLtoXS
 
+/* DROPDOWN */
+export type DropdownSize = XXLtoXS
 
 
 export type InputData = {
@@ -23,6 +25,14 @@ export type InputData = {
     error: string,
     label: string,
     helper: string,
+}
+
+export type ProductForCard = {
+    name: string,
+    id: number,
+    price: string,
+    categories: { name: string }[],
+    imageUrl: string,
 }
 
 

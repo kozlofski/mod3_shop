@@ -1,6 +1,6 @@
 import React from 'react'
 import { Bell, CartIcon, Message } from '../icons/icons'
-import tempAvatar from "@/app/assets/avatar.png" // #TODO remove
+import tempAvatar from "@/app/_assets/avatar.png" // #TODO remove
 import Image from 'next/image'
 
 const HeaderButtons = () => {

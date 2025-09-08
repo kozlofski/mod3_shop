@@ -2,12 +2,14 @@
 
     /* #todo maybe divide this css into big components, sections, etc. */
     body {
-        @apply h-full bg-mainBg flex flex-col justify-between;
+        @apply bg-mainBg flex flex-col justify-between gap-0;
+        @apply min-h-screen;
     }
 
     main {
-        @apply w-full max-w-[1440px] m-auto;
-        @apply flex flex-col items-start gap-1 p-[40px];
+        @apply h-full max-w-[1440px];
+        @apply grow;
+        /* @apply flex flex-col items-start gap-1 p-[40px]; */
     }
 
     .framedComponent {
@@ -15,7 +17,7 @@
     }
 
     .container {
-        @apply max-w-[1440px] m-auto p-[40px];
+        @apply max-w-[1440px] mx-auto p-[40px];
     }
 
     section {
@@ -48,5 +50,8 @@
     .pagination-buttons {
         @apply flex flex-row justify-between gap-[32px];
     }
+
+    /* section with header */
+
 
 }

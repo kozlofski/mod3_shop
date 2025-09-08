@@ -4,7 +4,7 @@
     }
 
     .product-browser-filters {
-        @apply flex flex-col gap-[52px];
+        @apply flex flex-col gap-[52px] justify-start;
     }
 
 }

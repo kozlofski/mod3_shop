@@ -17,4 +17,7 @@
 @import "./../styles/header.css";
 @import "./../styles/footer.css";
 @import "./../styles/progressBars.css";
-@import "./../styles/productBrowser.css"
+@import "./../styles/productBrowser.css";
+
+/* pages styles */
+@import "./../styles/productPage.css";
