@@ -11,7 +11,7 @@ export const productData = [
         categories: ["mouse"]
     },
     {
-        name: "STEELSERIES Rival 3 Wireless Gen 2 Bialy 3",
+        name: "STEELSERIES Rival 3 Wireless",
         description: "This is description",
         price: 199,
         stock: 50,
@@ -83,7 +83,7 @@ export const productData = [
 
     },
     {
-        name: "SAMSUNG Odyssey G6 S27DG600SU",
+        name: "SAMSUNG Odyssey G6 S27",
         description: "This is description",
         price: 2698,
         stock: 50,
@@ -107,7 +107,7 @@ export const productData = [
 
     },
     {
-        name: "ACER Nitro ED343CURHbmiippx",
+        name: "ACER Nitro ED343CURH",
         description: "This is description",
         price: 890,
         stock: 50,

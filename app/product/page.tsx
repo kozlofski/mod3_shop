@@ -14,8 +14,7 @@ const ProductList = async () => {
                 }
             },
         }
-    }
-    )
+    })
 
     return (
         <ul className='products-list'>
@@ -27,7 +26,7 @@ const ProductList = async () => {
                     categories: product.categories,
                     imageUrl: product.imageUrls[0]
                 }
-                return (<li key={product.id}>
+                return (<li key={product.id} className='product-item'>
                     <ProductCard product={productForCard}></ProductCard>
                 </li>)
             })}

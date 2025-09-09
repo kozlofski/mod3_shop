@@ -19,6 +19,10 @@ export type ButtonSize = XXLtoXS
 /* DROPDOWN */
 export type DropdownSize = XXLtoXS
 
+/* BADGE */
+export type BadgeColor = "default" | "success" | "failed" | "pending" | "payment"
+export type BadgeSize = LtoS
+export type BadgeType = "fill" | "stroke" | "accent"
 
 export type InputData = {
     placeholder: string,

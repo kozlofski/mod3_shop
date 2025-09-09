@@ -1,15 +1,19 @@
+import { BadgeColor, BadgeSize, BadgeType } from '@/types/componentTypes'
 import React from 'react'
 
 interface BadgeProps {
-    children: React.ReactNode,
+    children?: React.ReactNode,
+    size: BadgeSize,
+    color: BadgeColor,
+    type: BadgeType,
     className?: string,
     disabled?: true,
     onClick?: () => void
 }
 
-const Badge = ({ children, className }: BadgeProps) => {
+const Badge = ({ children, size, color, type, className }: BadgeProps) => {
     return (
-        <div className={className}>{children}</div>
+        <div className={`badge badge-${size} badge-${color} badge-${type} ${className}`}>{children}</div>
     )
 }
 

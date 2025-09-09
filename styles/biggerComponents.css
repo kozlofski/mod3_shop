@@ -2,12 +2,12 @@
 
     /* #todo maybe divide this css into big components, sections, etc. */
     body {
-        @apply bg-mainBg flex flex-col justify-between gap-0;
+        @apply bg-mainBg flex flex-col justify-between items-center gap-0;
         @apply min-h-screen;
     }
 
     main {
-        @apply h-full max-w-[1440px];
+        @apply h-full max-w-[1440px] px-[40px];
         @apply grow;
         /* @apply flex flex-col items-start gap-1 p-[40px]; */
     }
