@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { inter } from '@/styles/fonts'
 import Header from "@/_components/sectionComponents/Header";
 import Footer from "@/_components/sectionComponents/Footer";
 
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className} antialiased`} >
         <Header></Header>
         <main>
           {children}
