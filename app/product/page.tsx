@@ -1,10 +1,7 @@
-
-// import ProductList from '@/_components/sectionComponents/ProductList'
 import Dropdown from '@/_components/basicComponents/Dropdown'
 import FilterAccordion from '@/_components/basicComponents/FilterAccordion'
 import Input from '@/_components/basicComponents/Input'
 import CategoryFilter from '@/_components/compoundComponents/CategoryFilter'
-import Pagination from '@/_components/compoundComponents/Pagination'
 import ProductList from '@/_components/sectionComponents/ProductList'
 import { prisma } from '@/prisma/clientSingleton'
 

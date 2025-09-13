@@ -60,30 +60,32 @@ const Pagination = ({ totalPages }: PaginationProps) => {
     return (
         <div className={`pagination`}>
             {totalPages >= 2 &&
-                <ul className="flex flex-row text-header gap-[8px]">
-                    {numbers.map((number) =>
-                    (<li key={number}>
-                        {number > 0 ?
-                            <Button
-                                className={`btn  ${number === page ? "btn-pag-current" : "btn-pag-inactive"} btn-pag`}
-                                onClick={() => setPage(number)}>{number}</Button> :
-                            <Button
-                                className={`btn btn-pag btn-naked btn-white`}>...</Button>}
-                    </li>)
-                    )
-                    }
-                </ ul>}
+                <>
+                    <ul className="flex flex-row text-header gap-[8px]">
+                        {numbers.map((number) =>
+                        (<li key={number}>
+                            {number > 0 ?
+                                <Button
+                                    className={`btn  ${number === page ? "btn-pag-current" : "btn-pag-inactive"} btn-pag`}
+                                    onClick={() => setPage(number)}>{number}</Button> :
+                                <Button
+                                    className={`btn btn-pag btn-naked btn-white`}>...</Button>}
+                        </li>)
+                        )
+                        }
+                    </ ul>
 
-            <div className={`pagination-buttons`}>
-                <Button className="btn btn-m btn-stoke btn-white" onClick={() => page > 1 && setPage(prev => prev - 1)}>
-                    <span className="w-[13.33px] stroke-white"><LeftArrowIcon /></span>
-                    Previous
-                </Button>
-                <Button className="btn btn-m btn-stoke btn-white" onClick={() => page < totalPages && setPage(prev => prev + 1)}>
-                    Next
-                    <span className="w-[13.33px] stroke-white"><RightArrowIcon /></span>
-                </Button>
-            </div>
+                    <div className={`pagination-buttons`}>
+                        <Button className="btn btn-m btn-stoke btn-white" onClick={() => page > 1 && setPage(prev => prev - 1)}>
+                            <span className="w-[13.33px] stroke-white"><LeftArrowIcon /></span>
+                            Previous
+                        </Button>
+                        <Button className="btn btn-m btn-stoke btn-white" onClick={() => page < totalPages && setPage(prev => prev + 1)}>
+                            Next
+                            <span className="w-[13.33px] stroke-white"><RightArrowIcon /></span>
+                        </Button>
+                    </div>
+                </>}
         </ div>
     )
 }
