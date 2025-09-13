@@ -1,3 +1,5 @@
+import { FieldError } from "react-hook-form"
+
 // sizes
 type XXLtoXS = "xxl" | "xl" | "l" | "m" | "s" | "xs"
 type LtoS = "l" | "m" | "s"
@@ -26,7 +28,7 @@ export type BadgeType = "fill" | "stroke" | "accent"
 
 export type InputData = {
     placeholder: string,
-    error: string,
+    error: string | FieldError,
     label: string,
     helper: string,
 }
