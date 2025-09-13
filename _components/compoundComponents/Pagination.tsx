@@ -3,22 +3,27 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../basicComponents/Button'
 import { LeftArrowIcon, RightArrowIcon } from '../icons/icons'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 interface PaginationProps {
     // current page will be setCurrentPage
-    currentPage: number,
+    // currentPage: number,
     totalPages: number,
 }
 
 const buttonsLimit = 7
 
-const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
-    // this use state will come from the props
-    const [page, setPage] = useState(currentPage)
+const Pagination = ({ totalPages }: PaginationProps) => {
+    const [page, setPage] = useState(1)
     const [numbers, setNumbers] = useState<number[]>([])
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const { push } = useRouter();
 
     useEffect(() => {
         // #todo refactor rename variables and array
+        setPage(Math.min(page, totalPages))
         const numbersArray = [];
         if (totalPages >= 2 && totalPages <= buttonsLimit) {
             for (let i = 1; i <= totalPages; i++)
@@ -43,8 +48,14 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
 
             numbersArray.push(totalPages);
             setNumbers(numbersArray)
+
         }
-    }, [page, currentPage, totalPages])
+
+        const params = new URLSearchParams(searchParams)
+        params.set("page", page.toString())
+        push(`${pathname}?${params.toString()}`)
+
+    }, [page, totalPages])
 
     return (
         <div className={`pagination`}>

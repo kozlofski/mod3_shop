@@ -3,11 +3,13 @@
 import React, { useState } from 'react'
 import { FilterArrow, Tick } from '../icons/icons'
 import { DropdownSize } from '@/types/componentTypes'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 interface DropdownProps {
     // children: React.ReactNode,
     options: string[],
     className?: string,
+    name: string,
     size: DropdownSize,
     disabled?: boolean,
     inputDropdown?: boolean,
@@ -16,15 +18,22 @@ interface DropdownProps {
 
 //onClick={() => setSelected(idx)}
 
-const Dropdown = ({ className, disabled, options, inputDropdown, size }: DropdownProps) => {
+const Dropdown = ({ className, disabled, name, options, inputDropdown, size }: DropdownProps) => {
     const [opened, setOpened] = useState(false)
     const [selected, setSelected] = useState(0)
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const { push } = useRouter();
 
     const setOptionsVisibility = () => setOpened(prev => !prev)
 
     const handleClickOption = (index: number) => {
         setSelected(index)
         setOpened(false)
+        const params = new URLSearchParams(searchParams)
+        params.set(name, options[index])
+        push(`${pathname}?${params.toString()}`)
     }
 
     return (

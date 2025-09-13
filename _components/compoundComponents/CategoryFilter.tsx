@@ -17,13 +17,20 @@ const CategoryFilter = ({ initialFilterSettings }: CategoryFilterProps) => {
     const { push } = useRouter();
 
     useEffect(() => {
-        console.log("FILTER CHANGED")
         const params = new URLSearchParams(searchParams)
+        const paramsArray: string[] = []
+
         for (const category in filter) {
-            if (category !== 'all' && filter[category] === true) params.set(category, 'true')
-            else params.delete(category)
+            if (category !== 'all' && filter[category] === true) paramsArray.push(category)
+        }
+        if (paramsArray.length > 0) {
+            const paramsString = paramsArray.join(",")
+            params.set("category", paramsString)
+        } else {
+            params.delete("category")
         }
         push(`${pathname}?${params.toString()}`)
+
 
     }, [filter, searchParams])
 
