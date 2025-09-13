@@ -3,7 +3,6 @@
 import { ProductForCard } from '@/types/componentTypes'
 import Image from 'next/image'
 import Badge from '../basicComponents/Badge'
-import CartMiniButton from '../basicComponents/CartMiniButton'
 import { CartIcon } from '../icons/icons'
 
 interface ProductForCardProps {

@@ -1,18 +1,9 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MinusSign, PlusSign } from '../icons/icons'
 import FilterCheckbox from './FilterCheckbox'
-
-// #todo mock data
-// const categoryFilterInitialSettings: Record<string, boolean> = {
-//     all: true,
-//     mouse: false,
-//     headphone: false,
-//     keyboard: false,
-//     monitor: false,
-//     webcam: false
-// }
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
 interface CategoryFilterProps {
     initialFilterSettings: Record<string, boolean>,
@@ -21,6 +12,20 @@ interface CategoryFilterProps {
 const CategoryFilter = ({ initialFilterSettings }: CategoryFilterProps) => {
     const [filter, setFilter] = useState(initialFilterSettings)
     const [loadAll, setLoadAll] = useState(false)
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const { push } = useRouter();
+
+    useEffect(() => {
+        console.log("FILTER CHANGED")
+        const params = new URLSearchParams(searchParams)
+        for (const category in filter) {
+            if (category !== 'all' && filter[category] === true) params.set(category, 'true')
+            else params.delete(category)
+        }
+        push(`${pathname}?${params.toString()}`)
+
+    }, [filter, searchParams])
 
     const handleLoadMore = () => {
         setLoadAll(prev => !prev)
