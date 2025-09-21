@@ -1,0 +1,5 @@
+@layer {
+    .register-container {
+        @apply flex flex-col
+    }
+}

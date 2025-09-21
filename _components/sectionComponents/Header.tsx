@@ -1,14 +1,27 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 import Logo from '../basicComponents/Logo'
 import Input from '../basicComponents/Input'
 import { Search } from '../icons/icons'
 import HeaderButtons from '../compoundComponents/HeaderButtons'
 import Navbar from '../compoundComponents/Navbar'
 import Button from '../basicComponents/Button'
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 const userLoggedIn = true
 
 const Header = () => {
+    const { data: session, status } = useSession();
+    console.log("Session data: ", session, status)
+    // const [isLoading, setIsLoading] = useState(true)
+
+    // useEffect(() => {
+    //     if (status !== 'loading') setIsLoading(false)
+    //     console.log("status after use effect", status)
+    // }, [status])
+
     return (
         <div className={`header container`}>
             <div className={`header-upperHalf`}>
@@ -21,10 +34,11 @@ const Header = () => {
                         label: '',
                         helper: '',
                     }}
-                    size="xl" />
-                {userLoggedIn ? <HeaderButtons /> :
-                    <Button className="btn btn-xl btn-full btn-primary">Sign In</Button>}
-
+                    size="xl" type={''} />
+                {status === "authenticated" ? <HeaderButtons /> :
+                    <Link href={'/login'} >
+                        <Button className="btn btn-xl btn-full btn-primary">Sign In</Button>
+                    </Link>}
             </div>
             <div className={`header-lowerHalf`}>
                 <Navbar />

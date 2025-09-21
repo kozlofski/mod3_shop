@@ -9,14 +9,16 @@ interface ButtonProps {
     disabled?: true,
     leftIcon?: React.ReactNode,
     rightIcon?: React.ReactNode,
+    type?: "submit" | "reset" | "button" | undefined,
     onClick?: () => void
 }
 
-const Button = ({ children, className, size, variant, disabled, leftIcon, rightIcon, onClick }: ButtonProps) => {
+const Button = ({ children, className, size, variant, disabled, leftIcon, rightIcon, onClick, type }: ButtonProps) => {
     return (<button
         className={`btn btn-${size} btn-${variant} ${className}`}
         disabled={disabled}
-        onClick={onClick}>
+        onClick={onClick}
+        type={type}>
         {leftIcon && <div className={`icon-${size}`}>{leftIcon}</div>}
         {children}
         {rightIcon && <div className={`icon-${size}`}>{rightIcon}</div>}

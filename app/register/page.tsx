@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from 'zod'
 import Button from '@/_components/basicComponents/Button';
+import { RegisterData } from '@/types/dataTypes';
 
 const signupFormSchema = z.object({
     email: z.string().trim().email({ message: "Invalid email address" }),
@@ -28,10 +29,25 @@ const signupFormSchema = z.object({
 const Page = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(signupFormSchema) })
 
+    const onSubmit = async (data: RegisterData) => {
+        // console.log("Submitting data: ", data)
+        const response = await fetch("/api/register", {
+            method: 'POST',
+            body: JSON.stringify({
+                email: data.email,
+                password: data.password,
+                mobile: data.mobile,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
     return (
         <div className='register-container'>
             <Logo></Logo>
-            <form onSubmit={handleSubmit((data) => console.log(data))}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <Input
                     id='email'
                     type='text'
@@ -80,7 +96,7 @@ const Page = () => {
                         helper: "helper?"
                     }}
                 />
-                <Button type="submit" width="8rem">Zarejestruj</Button>
+                <button type="submit">Zarejestruj</button>
             </form>
         </div>
     )

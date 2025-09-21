@@ -3,6 +3,7 @@ import "./globals.css";
 import { inter } from '@/styles/fonts'
 import Header from "@/_components/sectionComponents/Header";
 import Footer from "@/_components/sectionComponents/Footer";
+import NextAuthSessionProvider from "@/_components/wrappers/NextAuthSessionProvider";
 
 export const metadata: Metadata = {
   title: "DevstockShop",
@@ -18,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`} >
-        <Header></Header>
-        <main>
-          {children}
-        </main>
-        <Footer></Footer>
+        <NextAuthSessionProvider>
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </NextAuthSessionProvider>
       </body>
-    </html>
+    </html >
   );
 }
