@@ -37,13 +37,16 @@ const ProductList = async ({ searchParams }: ProductListProps) => {
                 }
             },
         },
-        where: categoriesArrayFromParams.length > 0 ? {
-            categories: {
-                some: {
-                    name: { in: categoriesArrayFromParams }
+        where: {
+            ...(categoriesArrayFromParams.length > 0 && {
+                categories: {
+                    some: {
+                        name: { in: categoriesArrayFromParams }
+                    }
                 }
-            }
-        } : undefined
+            }),
+            stock: { gt: 0 }
+        },
     })
 
     const totalPages = Math.ceil(productListLength / show)
