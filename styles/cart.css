@@ -1,0 +1,16 @@
+@layer {
+    .cart-container {
+        @apply flex flex-row gap-[48px];
+    }
+
+    .cart-content {
+        @apply flex flex-col gap-[32px] items-start;
+
+    }
+
+    .cart-items {
+        @apply flex flex-col gap-[32px];
+    }
+
+    .cart-summary {}
+}
