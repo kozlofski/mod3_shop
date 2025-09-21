@@ -2,12 +2,12 @@ import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 import { prisma } from '@/prisma/clientSingleton';
-import { emailRegex, mobileRegex } from '@/types/regex';
 import { verifyPassword } from '@/lib/auth';
 
-const handler = NextAuth({
+export const authOptions = {
+  secret: process.env.AUTH_SECRET,
   session: {
-    strategy: 'jwt'
+    strategy: 'jwt' as const
   },
   pages: {
     signIn: '/',
@@ -44,6 +44,8 @@ const handler = NextAuth({
 
     }
   })]
-});
+}
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST }
