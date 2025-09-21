@@ -14,45 +14,76 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const itemId = body.itemId
-
-    console.log("Trying to add item:", itemId)
+    const itemId = parseInt(body.itemId)
 
     try {
-        // Find the user's cart first
         const user = await prisma.user.findUnique({
             where: { email: userEmail },
             include: { cart: true }
         });
 
-        if(!user) return
+        if(!user || !user.cart) return
 
-        let cartId = user.cart.id;
+        const cartId = user.cart.id;
         console.log("Found cart:", cartId)
 
-        if (!cartId) {
-            // Create a new cart for the user if it doesn't exist
-            const newCart = await prisma.cart.create({
-                data: {
-                    userId: user.id,
-                    totalAmount: 0
-                }
-            });
-            cartId = newCart.id;
-        }
+        const product = await prisma.product.findUnique({
+            where:
+            {
+                id: itemId
+            }
+        })
+        if(!product) return
 
-        console.log("Cart after if:", cartId)
+        const {stock: itemsLeft, name: productName } = product
 
-        const newCartItem = await prisma.cartItem.create({
+        if(itemsLeft === 0) {
+            return new Response(JSON.stringify({ message: `Item ${productName} is out of stock` }), {
+            status: 404,
+            headers: { "Content-Type": "application/json" }
+        });}
+
+        const updatedProduct = await prisma.product.update({
+            where: {
+                id: itemId
+            },
             data: {
-                productId: parseInt(itemId),
-                cartId: cartId
+                stock: { decrement: 1}
             }
         })
 
-        console.log("Order item result: ", newCartItem)
+
+
+        const newOrUpdatedCartItem = await prisma.cartItem.upsert({
+            where: {
+            productId_cartId: {
+                productId: itemId,
+                cartId: cartId
+            }
+            },
+            update: {
+                quantity: { increment: 1 }
+            },
+            create: {
+                productId: itemId,
+                cartId: cartId,
+                quantity: 1
+            }
+        })
+
+        const {quantity: quantityInCart } = newOrUpdatedCartItem
+
+        return new Response(JSON.stringify({ message: `Item ${productName} (total: ${quantityInCart}) added to cart.` }), {
+            status: 201,
+            headers: { "Content-Type": "application/json" }
+        });
+
     } catch (error) {
         console.log(error)
+        return new Response(JSON.stringify({ message: "Internal server error" }), {
+            status: 500,
+            headers: { "Content-Type": "application/json" }
+        });
     }
 
 
@@ -75,7 +106,11 @@ export async function GET(request: Request) {
                 email: userEmail
             },
             include: {
-                cart: true
+                cart: {
+                    include: {
+                        cartItems: true
+                    }
+                }
             }
         });
 
