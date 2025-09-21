@@ -48,7 +48,8 @@ model Product {
   stock       Int         @default(0)
   imageUrls   String[]
   categories  Category[]
-  OrderItem   OrderItem[]
+  orderItems  OrderItem[]
+  cartItems   CartItem[]
 }
 
 model Category {
@@ -61,11 +62,20 @@ model Category {
 }
 
 model Cart {
-  id          Int         @id @default(autoincrement())
-  user        User        @relation(fields: [userId], references: [id])
-  userId      Int         @unique
-  orderItems  OrderItem[]
-  totalAmount Decimal
+  id          Int        @id @default(autoincrement())
+  user        User       @relation(fields: [userId], references: [id])
+  userId      Int        @unique
+  cartItems   CartItem[]
+  totalAmount Decimal    @default(0)
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+  cart      Cart    @relation(fields: [cartId], references: [id])
+  cartId    Int
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  quantity  Int
 }
 
 model Order {
@@ -84,8 +94,6 @@ model OrderItem {
   orderId         Int
   product         Product @relation(fields: [productId], references: [id])
   productId       Int
-  cart            Cart    @relation(fields: [cartId], references: [id])
-  cartId          Int
   quantity        Int
   priceAtPurchase Decimal
 }

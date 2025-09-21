@@ -10,6 +10,17 @@ interface ProductForCardProps {
 }
 
 const ProductCard = ({ product }: ProductForCardProps) => {
+    const handleAddToCart = async (id: number) => {
+        const response = await fetch('/api/cart', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ itemId: id.toString() })
+        })
+        console.log("Add to cart item:", id)
+    }
+
     return (
         <div className={`framedComponent product-card-wrapper`}>
             <div className={`picture-wrapper`}>
@@ -30,7 +41,7 @@ const ProductCard = ({ product }: ProductForCardProps) => {
             </ul>
             <h3 className="product-card-header">{product.name}</h3>
             <p className="product-card-price">$ {product.price}</p>
-            <button className="mini-cart-btn">
+            <button className="mini-cart-btn" onClick={handleAddToCart.bind(null, product.id)}>
                 <div className='mini-cart-btn-icon-wrapper'>
                     <CartIcon />
                 </div>

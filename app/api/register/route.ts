@@ -15,6 +15,11 @@ export async function POST(request: Request) {
                 email: email,
                 passwordHash: hashedPassword,
                 mobile: mobile,
+                cart: { 
+                    create: {
+                        totalAmount: 0
+                    }
+                }
             }
         }) 
         console.log("Created: ", result)       
