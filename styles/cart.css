@@ -1,6 +1,6 @@
 @layer {
     .cart-container {
-        @apply grid grid-cols-[2fr_1fr] gap-[48px] w-full;
+        @apply grid grid-cols-[2fr_1fr] gap-[48px] w-full pb-[40px];
     }
 
     .cart-content {
@@ -41,6 +41,15 @@
         @apply flex flex-row justify-start gap-[8px];
     }
 
+    .cart-item-price-input-wrapper {
+        @apply flex flex-row justify-between;
+
+    }
+
+    .cart-item-price {
+        @apply text-header font-medium text-[24px] leading-[36px];
+    }
+
     .cart-item-headerAndDelete {
         @apply w-full flex flex-row justify-between;
     }
@@ -49,7 +58,29 @@
         @apply w-[20px] h-[21.25px]
     }
 
-    .cart-summary {}
+    .cart-summary {
+        @apply h-fit p-[24px];
+        @apply text-header;
+    }
+
+    .cart-summary-total-product {
+        @apply border-b border-b-border;
+    }
+
+    .cart-summary-header {
+        @apply font-medium text-[18px] leading-[28px];
+        @apply mb-[16px];
+    }
+
+    .cart-product-price-wrapper {
+        @apply flex flex-row justify-between pb-[25px];
+        @apply text-[16px] font-medium;
+    }
+
+    .cart-subtotal-wrapper {
+        @apply flex flex-row justify-between pt-[24px] pb-[32px];
+        @apply text-[18px] leading-[28px] font-medium;
+    }
 
 
 }

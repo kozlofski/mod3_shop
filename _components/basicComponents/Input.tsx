@@ -19,7 +19,7 @@ interface InputProps {
 
 const Input = ({ value, data: { placeholder, error, label, helper }, id, className, type, children, disabled, size, leftIcon, text, rightIcon, ...rest }: InputProps) => {
     return (
-        <div className={`input-container`}>
+        <div className={`input-container ${className || ""}`}>
             <label className={`input-label input-label-${size}`}>{label}</label>
             <div className={`framedComponent input-wrapper input-${typeof error === 'string' && error.length > 0 ? "error" : "valid"}-wrapper`}>
                 {leftIcon && <div className={`input-icon input-icon-${size}`}>{leftIcon}</div> || ""}
@@ -27,9 +27,9 @@ const Input = ({ value, data: { placeholder, error, label, helper }, id, classNa
                     id={id}
                     type={type}
                     disabled={disabled}
-                    className={`input input-${size} ${className || ""}`}
+                    className={`input input-${size}`}
                     placeholder={placeholder}
-                    // value={value}
+                    value={value}
                     onClick={undefined}
                     {...rest}
                 />

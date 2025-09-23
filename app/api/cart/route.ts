@@ -1,7 +1,7 @@
 import { authOptions } from "../auth/[...nextauth]/route";
 import { getServerSession } from "next-auth/next";
 import { NextRequest, NextResponse } from "next/server";
-import { createOrUpdateCartItem, decrementProductInStock, getCurrentUserWithCartWithItems, getProductById } from "@/lib/prismaQueries";
+import { changeProductAmountInStock, createOrUpdateCartItem, getCurrentUserWithCartWithItems, getProductById } from "@/lib/prismaQueries";
 
 // Get whole cart
 export async function GET(req: Request) {
@@ -14,6 +14,7 @@ export async function GET(req: Request) {
     try {
         const user = await getCurrentUserWithCartWithItems(userEmail)
         const cart = user?.cart
+        if(!user || !cart) throw new Error()
         return NextResponse.json({cart}, {status: 200})
     } catch (error) {
         console.log(error)
@@ -49,7 +50,7 @@ export async function POST(req: NextRequest) {
         if(itemsLeft === 0) 
             return NextResponse.json({message: `product ${productName} is currently out of stock`}, {status: 404})
 
-        await decrementProductInStock(productId)
+        await changeProductAmountInStock(productId, -1)
         const newOrUpdatedCartItem = await createOrUpdateCartItem(cartId, productId) 
         const {quantity: quantityInCart } = newOrUpdatedCartItem
 

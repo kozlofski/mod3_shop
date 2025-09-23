@@ -78,6 +78,22 @@ export const deleteCartItemByProductId = async (userEmail: string, deletedProduc
     return result  
 }
 
+// CART - CHANGE quantity of product in cartItem
+export const changeQuantity = async (cartId: number, productId: number, amount: number) => {
+    const result = prisma.cartItem.update({
+        where: {
+            productId_cartId: {
+                productId: productId,
+                cartId: cartId
+            },
+        },
+        data: {
+            quantity: { increment: amount }
+        },
+    })     
+    return result
+}
+
 // PRODUCT - GET by productId
 export const getProductById = async (productId: number) => {
     const result = prisma.product.findUnique({
@@ -93,13 +109,13 @@ export const getProductById = async (productId: number) => {
 }
 
 // PRODUCT - decrement product amount in stock
-export const decrementProductInStock = async (productId: number) => {
+export const changeProductAmountInStock = async (productId: number, amount: number) => {
     const result = prisma.product.update({
             where: {
                 id: productId
             },
             data: {
-                stock: { decrement: 1}
+                stock: { increment: amount}
             }
         })
     return result
