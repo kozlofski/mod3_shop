@@ -18,13 +18,11 @@ const Cart = () => {
                 method: "GET"
             })
             const data = await response.json()
-            console.log("data:", data)
-            setCart(data.items.cartItems)
+            setCart(data.cart.cartItems)
         }
         if (session) fetchCart()
     }, [session])
 
-    console.log("Cart page, cart: ", cart)
 
     return (
         <div className='cart-container'>

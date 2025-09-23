@@ -9,12 +9,8 @@ export async function GET(req: NextRequest, res: NextResponse) {
     const session = await getServerSession(authOptions);
     const userEmail = session?.user?.email
 
-    if (!session || !userEmail) {
-        return new Response(JSON.stringify({ message: "You must be logged in." }), {
-            status: 401,
-            headers: { "Content-Type": "application/json" }
-        });
-    }
+    if (!session || !userEmail)         
+        return NextResponse.json({message: "you must be logged in"}, {status: 401})
     
     try {
         const user = await getCurrentUserWithCartWithItems(userEmail)

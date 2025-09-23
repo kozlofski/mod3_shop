@@ -1,9 +1,7 @@
-"use server";
-
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/prisma/clientSingleton";
 import { authOptions } from "../../auth/[...nextauth]/route";
 import { getServerSession } from "next-auth/next";
+import { getProductById } from "@/lib/prismaQueries";
 
 type Params = Promise<{ id: string }>;
 
@@ -18,15 +16,10 @@ export async function GET(request: NextRequest, segmentData: { params: Params })
     }
 
     try {
-        const product = await prisma.product.findUnique({
-            where: { id: productId},
-            include: {
-                categories: true
-            }
-        })
-
-        return NextResponse.json(product);
+        const product = await getProductById(productId)      
+        return NextResponse.json({product});
     } catch (error) {       
+        console.log(error)
         return NextResponse.json({error: "Internal server error"}, { status: 500 });
     }
 }

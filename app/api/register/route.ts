@@ -1,50 +1,23 @@
 import { hashPassword } from "@/lib/auth";
-import { prisma } from "@/prisma/clientSingleton";
+import { createNewUser } from "@/lib/prismaQueries";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: Request) {
-    const body: Record<string, string> = await request.json();
-    console.log("ROUTE: ", body);
+export async function POST(req: NextRequest) {
+    const body: Record<string, string> = await req.json();
     const { email, password, mobile } = body
-
     const hashedPassword = await hashPassword(password)
-    console.log(hashedPassword)
 
     try {
-        const result = await prisma.user.create({
-            data: {
-                email: email,
-                passwordHash: hashedPassword,
-                mobile: mobile,
-                cart: { 
-                    create: {
-                        totalAmount: 0
-                    }
-                }
-            }
-        }) 
-        console.log("Created: ", result)       
+        await createNewUser(email, hashedPassword, mobile)
+
+        return NextResponse.json({message: `user ${email} created\nplease log in`}, {status: 201})
     } catch (error) {
-        // #fixme find proper type for error
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        if (typeof error === "object" 
-            && error !== null 
-            && "code" in error 
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            && (error as any).code === 'P2002') {
-        return new Response(
-            JSON.stringify({ message: "User with given email address already exists" }),
-            {
-                status: 400,
-                headers: { "Content-Type": "application/json" }
-            }
-        );
+        if (typeof error === "object" && error !== null &&
+            "code" in error && (error as { code?: string }).code === 'P2002') {
+            return NextResponse.json({message: "user with given email already exists"}, {status: 400})
+        
         } else {
-            console.log("ERROR FROM DB:", error)
+            return NextResponse.json({message: "server error"}, {status: 500})
         }
     }
-
-    return new Response(JSON.stringify({ message: "User created" }), {
-        status: 201,
-        headers: { "Content-Type": "application/json" }
-    });
 }

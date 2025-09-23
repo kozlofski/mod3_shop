@@ -25,8 +25,8 @@ const CartListItem = ({ productId, cart, setCart }: CartListItemProps) => {
         // is this necessary? Maybe get product info in cart query
         const fetchProduct = async () => {
             const response = await fetch(`${baseUrl}/api/product/${productId}`)
-            const product = await response.json()
-            setProduct(product)
+            const data = await response.json()
+            setProduct(data.product)
             console.log(product)
         }
         fetchProduct()
