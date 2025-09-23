@@ -7,7 +7,7 @@
     }
 
     main {
-        @apply h-full max-w-[1440px] px-[40px];
+        @apply w-full h-full max-w-[1440px] px-[40px];
         @apply grow;
         /* @apply flex flex-col items-start gap-1 p-[40px]; */
     }

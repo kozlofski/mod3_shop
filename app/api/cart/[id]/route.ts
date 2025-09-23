@@ -1,10 +1,15 @@
 import { prisma } from "@/prisma/clientSingleton";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "../../auth/[...nextauth]/route";
 import { getServerSession } from "next-auth/next";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+type Params = Promise<{ id: string }>;
+
+export async function DELETE(request: NextRequest, segmentData: { params: Params }) {
     const session = await getServerSession(authOptions);
     const userEmail = session?.user?.email
+    const params = await segmentData.params;
+    const deletedProductId = parseInt(params.id);
 
     if (!session || !userEmail) {
         return new Response(JSON.stringify({ message: "You must be logged in." }), {
@@ -13,66 +18,23 @@ export async function POST(request: Request) {
         });
     }
 
-    const body = await request.json()
-    const itemId = parseInt(body.itemId)
-
     try {
-        const user = await prisma.user.findUnique({
+        const user = await prisma.user.update({
             where: { email: userEmail },
-            include: { cart: true }
-        });
-
-        if(!user || !user.cart) return
-
-        const cartId = user.cart.id;
-        console.log("Found cart:", cartId)
-
-        const product = await prisma.product.findUnique({
-            where:
-            {
-                id: itemId
-            }
-        })
-        if(!product) return
-
-        const {stock: itemsLeft, name: productName } = product
-
-        if(itemsLeft === 0) {
-            return new Response(JSON.stringify({ message: `Item ${productName} is out of stock` }), {
-            status: 404,
-            headers: { "Content-Type": "application/json" }
-        });}
-
-        const updatedProduct = await prisma.product.update({
-            where: {
-                id: itemId
-            },
             data: {
-                stock: { decrement: 1}
+            cart: {
+                update: {
+                    cartItems: {
+                        deleteMany: [{ productId: deletedProductId }],
+                        }
+                    }
+                }
             }
-        })
+           }
+        );        
 
-        const newOrUpdatedCartItem = await prisma.cartItem.upsert({
-            where: {
-            productId_cartId: {
-                productId: itemId,
-                cartId: cartId
-            }
-            },
-            update: {
-                quantity: { increment: 1 }
-            },
-            create: {
-                productId: itemId,
-                cartId: cartId,
-                quantity: 1
-            }
-        })
-
-        const {quantity: quantityInCart } = newOrUpdatedCartItem
-
-        return new Response(JSON.stringify({ message: `Item ${productName} (total: ${quantityInCart}) added to cart.` }), {
-            status: 201,
+        return new Response(JSON.stringify({ message: `Item ${deletedProductId} removed from your cart.` }), {
+            status: 200,
             headers: { "Content-Type": "application/json" }
         });
 

@@ -2,13 +2,16 @@ import React from 'react'
 import { Bell, CartIcon, Message } from '../icons/icons'
 import tempAvatar from "@/app/_assets/avatar.png" // #TODO remove
 import Image from 'next/image'
+import Link from 'next/link'
 
 const HeaderButtons = () => {
     return (
         <div className={`header-buttons`}>
-            <button className={`icon-header-button`}>
-                <CartIcon />
-            </button>
+            <Link href='/cart'>
+                <button className={`icon-header-button`}>
+                    <CartIcon />
+                </button>
+            </Link>
             <button className={`icon-header-button`}>
                 <Bell />
             </button>
