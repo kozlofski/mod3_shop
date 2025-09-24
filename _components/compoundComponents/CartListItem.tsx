@@ -37,12 +37,8 @@ const CartListItem = ({ item, cart, setCart }: CartListItemProps) => {
     const modifyQuantity = async (amount: number) => {
         const response = await fetch(`${baseUrl}/api/cart/${item.productId}`, {
             method: 'PATCH',
-            body: JSON.stringify({
-                amount: amount
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: JSON.stringify({ amount: amount }),
+            headers: { 'Content-Type': 'application/json' }
         })
         if (response.status === 201) {
             const updatedCartItems = cart?.cartItems.map((cartItem) => {
