@@ -1,7 +1,7 @@
 import { authOptions } from "../../auth/[...nextauth]/route";
 import { getServerSession } from "next-auth/next";
 import { NextRequest, NextResponse } from "next/server";
-import { changeProductAmountInStock, changeQuantity, deleteCartItemByProductId, getCurrentUserWithCartWithItems, getProductById } from "@/lib/prismaQueries";
+import { changeProductAmountInStock, changeQuantity, deleteCartItemByProductId, getCartItem, getCurrentUserWithCartWithItems, getProductById } from "@/lib/prismaQueries";
 import { prisma } from "@/prisma/clientSingleton";
 
 type Params = Promise<{ id: string }>;
@@ -103,6 +103,13 @@ export async function DELETE(req: NextRequest, segmentData: { params: Params }) 
         return NextResponse.json({ message: "you must be logged in" }, {status: 401})
 
     try {
+        const user = await getCurrentUserWithCartWithItems(userEmail)
+        if(!user || !user.cart) throw new Error()
+        const cartId = user.cart.id    
+        const cartItem = await getCartItem(cartId, deletedProductId)
+        if(!cartItem) throw new Error()
+        const quantityBeforeDelete = cartItem.quantity
+        await changeProductAmountInStock(deletedProductId, quantityBeforeDelete)
         await deleteCartItemByProductId(userEmail, deletedProductId)    
 
         return NextResponse.json({ message: `product removed from your cart` }, {status: 204})

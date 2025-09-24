@@ -60,6 +60,18 @@ export const createOrUpdateCartItem = async (cartId: number, productId: number) 
     return result
 }
 
+// CART - READ cartItem
+export const getCartItem = async(cartId: number, productId: number) => {
+    const result = prisma.cartItem.findUnique({
+            where: {productId_cartId: {
+                productId: productId,
+                cartId: cartId
+            }
+        }
+    })
+    return result
+}
+
 // CART - DELETE cartItem
 export const deleteCartItemByProductId = async (userEmail: string, deletedProductId: number) => {
     const result = prisma.user.update({
