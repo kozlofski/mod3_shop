@@ -53,7 +53,7 @@ const Cart = () => {
                             {cart.cartItems.map((item) => (
                                 <li className='cart-items-item' key={item.productId}>
                                     <Checkbox id={''} label='' size={'l'} checked={false} setChecked={() => { }} ></Checkbox>
-                                    <CartListItem item={item} cart={cart} setCart={setCart}></CartListItem>
+                                    <CartListItem item={item} cart={cart} setCart={setCart} className='framedComponent'></CartListItem>
                                 </li>
                             ))}
                         </ul>

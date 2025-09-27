@@ -11,6 +11,7 @@ import { CartWithProductInfo, CartItemWithProduct } from '@/types/dataTypes';
 interface CartListItemProps {
     item: CartItemWithProduct;
     cart: CartWithProductInfo;
+    className?: string;
     setCart: React.Dispatch<React.SetStateAction<CartWithProductInfo | undefined>>;
 }
 
@@ -18,7 +19,7 @@ interface ProductWithCategories extends Product {
     categories: Category[];
 }
 
-const CartListItem = ({ item, cart, setCart }: CartListItemProps) => {
+const CartListItem = ({ item, cart, setCart, className }: CartListItemProps) => {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
     const [itemAmount, setItemAmount] = useState(item.quantity)
@@ -59,7 +60,7 @@ const CartListItem = ({ item, cart, setCart }: CartListItemProps) => {
     }
 
     return (<>
-        {item && <div className='cart-item-container framedComponent'>
+        {item && <div className={`cart-item-container ${className}`}>
             <div className="picture-wrapper-frame framedComponent">
                 <div className={`picture-wrapper-cart`}>
                     <div className={`picture-sizer-cart`}>

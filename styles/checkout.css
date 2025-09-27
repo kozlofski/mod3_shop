@@ -1,0 +1,26 @@
+@layer {
+    .checkout-container {
+        @apply w-full mt-[40px] grid grid-cols-[2fr_1fr];
+    }
+
+    .checkout-left {
+        @apply flex flex-col gap-[40px];
+    }
+
+    .checkout-cart-content {
+        @apply w-full p-[32px];
+    }
+
+    .checkout-product-protection {
+        @apply w-full border-t border-border pt-[24px];
+        @apply flex flex-row justify-between;
+    }
+
+    .claim-process {
+        @apply ml-[40px] mt-[5px] text-paragraph;
+    }
+
+    .checkout-product-protection-right {
+        @apply font-normal text-[14px] leading-[24px] text-header;
+    }
+}

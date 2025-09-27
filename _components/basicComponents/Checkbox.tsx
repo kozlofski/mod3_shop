@@ -14,8 +14,6 @@ interface CheckboxProps {
 }
 
 const Checkbox = ({ size, className, id, label, checked, setChecked }: CheckboxProps) => {
-    // const [checked, setChecked] = useState(initiallyChecked)
-
     const handleOnClick = () => {
         const newCheckedValue = !checked
         setChecked(newCheckedValue)
