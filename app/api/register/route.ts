@@ -4,11 +4,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     const body: Record<string, string> = await req.json();
-    const { email, password, mobile } = body
+    const { email, password, mobile, country } = body
     const hashedPassword = await hashPassword(password)
 
     try {
-        await createNewUser(email, hashedPassword, mobile)
+        await createNewUser(email, hashedPassword, mobile, country)
 
         return NextResponse.json({message: `user ${email} created\nplease log in`}, {status: 201})
     } catch (error) {

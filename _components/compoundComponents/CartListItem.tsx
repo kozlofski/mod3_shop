@@ -56,7 +56,6 @@ const CartListItem = ({ item, cart, setCart }: CartListItemProps) => {
             const updatedCart = { ...cart, cartItems: updatedCartItems }
             setCart(updatedCart)
         }
-        console.log("Increment")
     }
 
     return (<>

@@ -3,20 +3,20 @@ import { getServerSession } from "next-auth/next";
 import { NextRequest, NextResponse } from "next/server";
 import { changeProductAmountInStock, changeQuantity, deleteCartItemByProductId, getCartItem, getCurrentUserWithCartWithItems, getProductById } from "@/lib/prismaQueries";
 import { prisma } from "@/prisma/clientSingleton";
+import { getUserEmail } from "@/lib/auth";
 
 type Params = Promise<{ id: string }>;
 
-export async function GET(request: Request) {
-    const session = await getServerSession(authOptions);
-    const userEmail = session?.user?.email
+export async function GET(req: NextRequest) {
+    // const session = await getServerSession(authOptions);
+    // const userEmail = session?.user?.email
 
-    if (!session || !userEmail) {
-        return new Response(JSON.stringify({ message: "You must be logged in." }), {
-            status: 401,
-            headers: { "Content-Type": "application/json" }
-        });
-    }
-    
+    // if (!session || !userEmail) {
+    //     return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
+    // }
+    const userEmail = await getUserEmail()
+    if(!userEmail) return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
+
     try {    
         const user = await getCurrentUserWithCartWithItems(userEmail)
         if(!user) throw new Error("server error")
@@ -28,21 +28,15 @@ export async function GET(request: Request) {
     }
 }
 
-export async function PATCH(req: Request, segmentData: { params: Params }) {
-    const session = await getServerSession(authOptions);
-    const userEmail = session?.user?.email
+export async function PATCH(req: NextRequest, segmentData: { params: Params }) {
+    const userEmail = await getUserEmail()
+    if(!userEmail) return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
+    
     const params = await segmentData.params;
     const editedProductId = parseInt(params.id);
     const body: Record<string, string> = await req.json();
     const { amount } = body
 
-    if (!session || !userEmail) {
-        return new Response(JSON.stringify({ message: "You must be logged in." }), {
-            status: 401,
-            headers: { "Content-Type": "application/json" }
-        });
-    }
-    
     try {    
         const user = await getCurrentUserWithCartWithItems(userEmail)
         if(!user) throw new Error("server error")
@@ -94,13 +88,16 @@ export async function PATCH(req: Request, segmentData: { params: Params }) {
 }
 
 export async function DELETE(req: NextRequest, segmentData: { params: Params }) {
-    const session = await getServerSession(authOptions);
-    const userEmail = session?.user?.email
+    const userEmail = await getUserEmail();
+    if(!userEmail) return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
+
+    // const session = await getServerSession(authOptions);
+    // const userEmail = session?.user?.email
     const params = await segmentData.params;
     const deletedProductId = parseInt(params.id);
 
-    if (!session || !userEmail)         
-        return NextResponse.json({ message: "you must be logged in" }, {status: 401})
+    // if (!session || !userEmail)         
+    //     return NextResponse.json({ message: "you must be logged in" }, {status: 401})
 
     try {
         const user = await getCurrentUserWithCartWithItems(userEmail)

@@ -25,20 +25,28 @@ const ProductBrowser = async ({ searchParams }: {
                     <CategoryFilter initialFilterSettings={categoriesFilterInitialObject} />
                 </FilterAccordion>
                 <FilterAccordion header='Price'>
-                    <Input id='min=price' value={''} data={{
-                        placeholder: 'Min price',
-                        error: '',
-                        label: '',
-                        helper: ''
-                    }} size='xl'>
+                    <Input
+                        id='min=price'
+                        value={''}
+                        type='text'
+                        data={{
+                            placeholder: 'Min price',
+                            error: '',
+                            label: '',
+                            helper: ''
+                        }} size='xl'>
                         <Dropdown name='currency-min' options={['PLN', 'USD']} size='xl' inputDropdown></Dropdown>
                     </Input>
-                    <Input id='max=price' value={''} data={{
-                        placeholder: 'Max price',
-                        error: '',
-                        label: '',
-                        helper: ''
-                    }} size='xl'>
+                    <Input
+                        id='max=price'
+                        value={''}
+                        type='text'
+                        data={{
+                            placeholder: 'Max price',
+                            error: '',
+                            label: '',
+                            helper: ''
+                        }} size='xl'>
                         <Dropdown name='currency-max' options={['PLN', 'USD']} size='xl' inputDropdown></Dropdown>
                     </Input>
                 </FilterAccordion>
