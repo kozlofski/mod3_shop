@@ -25,6 +25,7 @@ model User {
   email        String    @unique
   passwordHash String
   mobile       String
+  country      String
   addresses    Address[]
   orders       Order[]
   cart         Cart?

@@ -1,12 +1,13 @@
 import { prisma } from "@/prisma/clientSingleton";
 
 // USER - CREATE (register)
-export const createNewUser = async(email: string, hashedPassword: string, mobile: string) => {
+export const createNewUser = async(email: string, hashedPassword: string, mobile: string, country: string) => {
     const result = prisma.user.create({
         data: {
             email: email,
             passwordHash: hashedPassword,
             mobile: mobile,
+            country: country,
             cart: { 
                 create: {
                     totalAmount: 0
