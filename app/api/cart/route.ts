@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json()
     const productId = parseInt(body.itemId)
+    const quantity = parseInt(body.quantity)
 
     try {
         const user = await getCurrentUserWithCartWithItems(userEmail)
@@ -50,8 +51,9 @@ export async function POST(req: NextRequest) {
         if(itemsLeft === 0) 
             return NextResponse.json({message: `product ${productName} is currently out of stock`}, {status: 404})
 
-        await changeProductAmountInStock(productId, -1)
-        const newOrUpdatedCartItem = await createOrUpdateCartItem(cartId, productId) 
+
+        await changeProductAmountInStock(productId, -1 * quantity)
+        const newOrUpdatedCartItem = await createOrUpdateCartItem(cartId, productId, quantity) 
         const {quantity: quantityInCart } = newOrUpdatedCartItem
 
         return NextResponse.json({message: `product ${productName} added to cart\n(total: ${quantityInCart})`}, {status: 201})

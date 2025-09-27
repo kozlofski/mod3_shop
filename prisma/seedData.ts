@@ -1,7 +1,7 @@
 export const productData = [
     {
         name: "STEELSERIES Rival 3 Gen 2",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 129,
         stock: 50,
         imageUrls: [
@@ -12,7 +12,7 @@ export const productData = [
     },
     {
         name: "STEELSERIES Rival 3 Wireless",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 199,
         stock: 50,
         imageUrls: [
@@ -24,7 +24,7 @@ export const productData = [
     },
     {
         name: "ASUS ROG Harpe Ace Extreme 1",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 199,
         stock: 50,
         imageUrls: [
@@ -36,7 +36,7 @@ export const productData = [
     },
     {
         name: "LOGITECH M185 001 7",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 59,
         stock: 50,
         imageUrls: [
@@ -48,7 +48,7 @@ export const productData = [
     },
     {
         name: "LOGITECH G502 Hero bok 2x",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 199,
         stock: 50,
         imageUrls: [
@@ -60,7 +60,7 @@ export const productData = [
     },
     {
         name: "LENOVO R32QC 30",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 1289,
         stock: 50,
         imageUrls: [
@@ -72,7 +72,7 @@ export const productData = [
     },
     {
         name: "ACER Nitro XZ273U P2",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 899,
         stock: 50,
         imageUrls: [
@@ -84,7 +84,7 @@ export const productData = [
     },
     {
         name: "SAMSUNG Odyssey G6 S27",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 2698,
         stock: 50,
         imageUrls: [
@@ -96,7 +96,7 @@ export const productData = [
     },
     {
         name: "TCL 27G64",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 1749,
         stock: 50,
         imageUrls: [
@@ -108,7 +108,7 @@ export const productData = [
     },
     {
         name: "ACER Nitro ED343CURH",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 890,
         stock: 50,
         imageUrls: [
@@ -120,7 +120,7 @@ export const productData = [
     },
     {
         name: "MAD DOG GK960K",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 299,
         stock: 50,
         imageUrls: [
@@ -132,7 +132,7 @@ export const productData = [
     },
     {
         name: "REDRAGON Ucal K673 Pro",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 279,
         stock: 50,
         imageUrls: [
@@ -144,7 +144,7 @@ export const productData = [
     },
     {
         name: "STEELSERIES Apex 3 TKL US",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 219,
         stock: 50,
         imageUrls: [
@@ -156,7 +156,7 @@ export const productData = [
     },
     {
         name: "MAD DOG GK600 Outemu Red",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 149,
         stock: 50,
         imageUrls: [
@@ -168,7 +168,7 @@ export const productData = [
     },
     {
         name: "LOGITECH K400 Plus",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 149,
         stock: 50,
         imageUrls: [
@@ -180,7 +180,7 @@ export const productData = [
     },
     {
         name: "TECHNICS EAH AZ100E K ANC",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 1239,
         stock: 50,
         imageUrls: [
@@ -192,7 +192,7 @@ export const productData = [
     },
     {
         name: "SONY WH 1000XM6 ANC",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 1799,
         stock: 50,
         imageUrls: [
@@ -204,7 +204,7 @@ export const productData = [
     },
     {
         name: "SAMSUNG Buds3 Pro",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 611,
         stock: 50,
         imageUrls: [
@@ -216,7 +216,7 @@ export const productData = [
     },
     {
         name: "APPLE AirPods Pro II",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 1049,
         stock: 50,
         imageUrls: [
@@ -228,7 +228,7 @@ export const productData = [
     },
     {
         name: "JBL Tune 245 NC ANC",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 499,
         stock: 50,
         imageUrls: [
@@ -240,7 +240,7 @@ export const productData = [
     },
     {
         name: "HP 320 FHD",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 149,
         stock: 50,
         imageUrls: [
@@ -252,7 +252,7 @@ export const productData = [
     },
     {
         name: "LOGITECH C920S Pro",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 329,
         stock: 50,
         imageUrls: [
@@ -264,7 +264,7 @@ export const productData = [
     },
     {
         name: "LOGITECH HD Webcam C270",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 119,
         stock: 50,
         imageUrls: [
@@ -275,7 +275,7 @@ export const productData = [
     },
     {
         name: "CANYON C2N box",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 89,
         stock: 50,
         imageUrls: [
@@ -286,7 +286,7 @@ export const productData = [
     },
     {
         name: "INSTA360 CINSABNA LINK",
-        description: "This is description",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Proin euismod, nisl eget.",
         price: 799,
         stock: 50,
         imageUrls: [

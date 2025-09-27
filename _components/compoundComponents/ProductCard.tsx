@@ -19,7 +19,7 @@ const ProductCard = ({ product }: ProductForCardProps) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ itemId: id.toString() })
+            body: JSON.stringify({ itemId: id.toString(), quantity: 1 })
         })
         console.log("Add to cart item:", id)
     }
