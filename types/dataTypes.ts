@@ -4,7 +4,8 @@ export type RegisterData = {
     email: string,
     mobile: string,
     password: string,
-    confirm: string
+    confirm: string,
+    country: string
 }
 
 export type LoginData = {

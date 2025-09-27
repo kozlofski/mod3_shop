@@ -1,5 +1,37 @@
 @layer {
     .register-container {
-        @apply flex flex-col
+        @apply flex flex-col items-center mx-auto gap-[32px] mb-[40px];
     }
+
+    .register-subcontainer {
+        @apply p-[24px] w-[448px];
+    }
+
+    .create-account-header {
+        @apply font-medium text-[24px] leading-[36px] text-header pb-[20px] mb-[32px];
+        @apply border-b border-b-border;
+    }
+
+    .register-form {
+        @apply flex flex-col gap-[24px];
+    }
+
+    .register-successful {
+        @apply flex flex-col items-center my-[80px];
+        @apply text-header;
+    }
+
+    .register-successful h2 {
+        @apply font-bold text-[44px] leading-[54px] mt-[40px] mb-[16px];
+    }
+
+    .register-successful h3 {
+        @apply font-medium text-[24px] leading-[38px] mb-[32px];
+    }
+
+    .register-successful p {
+        @apply font-normal text-[18px] leading-[28px] pb-[19px];
+    }
+
+
 }
