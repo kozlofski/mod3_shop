@@ -1,4 +1,6 @@
 import { prisma } from "@/prisma/clientSingleton";
+import { CartItem, OrderItem, OrderStatus, Prisma } from "@/prisma/generated/prisma";
+import { SavedItem } from "@/types/dataTypes";
 
 // USER - CREATE (register)
 export const createNewUser = async(email: string, hashedPassword: string, mobile: string, country: string) => {
@@ -36,6 +38,16 @@ export const getCurrentUserWithCartWithItems = async (userEmail: string) => {
             }
         }
     });
+    return result
+}
+
+// USER - get id
+export const getUserByEmail = async (userEmail: string) => {
+    const result = prisma.user.findUnique({
+        where: {
+            email: userEmail
+        }
+    })
     return result
 }
 
@@ -107,6 +119,21 @@ export const changeQuantity = async (cartId: number, productId: number, amount: 
     return result
 }
 
+// CART - clear cart for current user 
+export const clearCart = async(userId: number) => {
+    const result = prisma.cart.update({
+        where: {
+            userId: userId
+        },
+        data: {
+            cartItems: {
+                deleteMany: {},
+            }
+        }
+    })
+    return result
+}
+
 // PRODUCT - GET by productId
 export const getProductById = async (productId: number) => {
     const result = prisma.product.findUnique({
@@ -131,5 +158,104 @@ export const changeProductAmountInStock = async (productId: number, amount: numb
                 stock: { increment: amount}
             }
         })
+    return result
+}
+
+// ADDRESS - get main address
+export const getMainAddress = async(userId: number) => {
+    const result = prisma.address.findFirst({
+        where: {
+            userId: userId,
+            isMain: true
+        }
+    })    
+    return result
+}
+
+export const getFirstAddress = async(userId: number) => {
+    const result = prisma.address.findFirst({
+        where: {
+            userId: userId,
+        }
+    })    
+    return result
+}
+
+// ADDRESS - create new address
+export const createAddress = async(
+    country: string, 
+    province: string, 
+    city: string, 
+    postalCode: string, 
+    completeAddress: string, 
+    isMain: boolean, 
+    userId: number) => {
+
+    if(isMain) {
+        console.log("UPDATING MANY ADDRESSES")
+        await prisma.address.updateMany({
+            where: {
+                userId: userId
+            },
+            data: {
+                isMain: false
+            }
+        })
+    }
+
+    const result = prisma.address.create({
+        data: {
+            country: country,
+            province: province,
+            city: city,
+            postalCode: postalCode,
+            completeAddress: completeAddress,
+            isMain: isMain,
+            user: {
+                connect: {
+                    id: userId
+                }
+            }
+        }
+    })
+    return result
+}
+
+
+
+// ORDER - create
+export const createOrder = async(userId: number, totalAmount: number, status: string, items: SavedItem[], addressId: number) => {
+    const result = prisma.order.create({
+        data: {
+            user: { connect: { id: userId } },
+            totalAmount: totalAmount,
+            status: OrderStatus.PLACED,
+            orderItems: {
+                create: items.map((item) => ({
+                    product: { connect: { id: item.product.id } },
+                    quantity: item.quantity,
+                    priceAtPurchase: new Prisma.Decimal(Number(item.product.price))
+                }))
+            },
+            address: { connect: {id: addressId} },
+        }
+    });
+    return result;
+}
+
+// ORDER - get last order
+
+export const getLastOrder = async(userId: number) => {
+    const result = await prisma.order.findFirst({
+        where: { userId: userId },
+        orderBy: { createdAt: "desc" },
+        include: {
+            orderItems: {
+                include: {
+                    product: true
+                }
+            }
+        }
+    });
     return result
 }

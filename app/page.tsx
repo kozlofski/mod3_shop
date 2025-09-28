@@ -1,8 +1,10 @@
+import Carousel from "@/_components/compoundComponents/Carousel";
+
 export default function Home() {
   return (
-    <>
-      <h1>HOME PAGE</h1>
-      
-    </>
+    <div className='home-container'>
+      <Carousel></Carousel>
+
+    </div>
   );
 }

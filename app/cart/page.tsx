@@ -7,6 +7,7 @@ import CartListItem from '@/_components/compoundComponents/CartListItem'
 import { CartWithProductInfo } from '@/types/dataTypes'
 import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface CartSummary {
     totalAmount: number,
@@ -18,6 +19,13 @@ const Cart = () => {
     const session = useSession()
     const [cart, setCart] = useState<CartWithProductInfo>()
     const [cartSummary, setCartSummary] = useState<CartSummary>()
+    const router = useRouter()
+
+    useEffect(() => {
+        if (session.status === "unauthenticated") {
+            router.push("/login")
+        }
+    }, [session.status, router])
 
     useEffect(() => {
         console.log("Fetching cart")
@@ -45,35 +53,43 @@ const Cart = () => {
 
     return (
         <div className='cart-container'>
-            <div className="cart-content">
-                {session && cart &&
-                    <>
-                        <Checkbox id={''} label='Select All' size={'l'} checked={false} setChecked={() => { }} ></Checkbox>
-                        <ul className="cart-items">
-                            {cart.cartItems.map((item) => (
-                                <li className='cart-items-item' key={item.productId}>
-                                    <Checkbox id={''} label='' size={'l'} checked={false} setChecked={() => { }} ></Checkbox>
-                                    <CartListItem item={item} cart={cart} setCart={setCart} className='framedComponent'></CartListItem>
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-                }
-            </div>
-            <div className="cart-summary framedComponent">
-                <div className="cart-summary-total-product">
-                    <h3 className='cart-summary-header'>Total Product</h3>
-                    <div className="cart-product-price-wrapper">
-                        <span className='cart-price-header'>Total Product Price ({cartSummary?.totalItems} item{cartSummary?.totalItems !== 1 && 's'})</span>
-                        <span className='cart-total-product-price'>${cartSummary?.totalAmount}</span>
+            {session && cart && cart.cartItems.length > 0 &&
+                (<>
+                    <div className="cart-content">
+                        <>
+                            {/* <Checkbox id={''} label='Select All' size={'l'} checked={false} setChecked={() => { }} ></Checkbox> */}
+                            <ul className="cart-items">
+                                {cart.cartItems.map((item) => (
+                                    <li className='cart-items-item' key={item.productId}>
+                                        {/* <Checkbox id={''} label='' size={'l'} checked={false} setChecked={() => { }} ></Checkbox> */}
+                                        <CartListItem item={item} cart={cart} setCart={setCart} className='framedComponent'></CartListItem>
+                                    </li>
+                                ))}
+                            </ul>
+                        </>
+
                     </div>
-                </div>
-                <div className="cart-subtotal-wrapper">
-                    <span className="cart-subtotal-header">Subtotal</span>
-                    <span className="cart-subtotal-price">${cartSummary?.totalAmount}</span>
-                </div>
-                <Button size='xl' variant='full' className='w-full'>Checkout</Button>
-            </div>
+                    <div className="cart-summary framedComponent">
+                        <div className="cart-summary-total-product">
+                            <h3 className='cart-summary-header'>Total Product</h3>
+                            <div className="cart-product-price-wrapper">
+                                <span className='cart-price-header'>Total Product Price ({cartSummary?.totalItems} item{cartSummary?.totalItems !== 1 && 's'})</span>
+                                <span className='cart-total-product-price'>${cartSummary?.totalAmount}</span>
+                            </div>
+                        </div>
+                        <div className="cart-subtotal-wrapper">
+                            <span className="cart-subtotal-header">Subtotal</span>
+                            <span className="cart-subtotal-price">${cartSummary?.totalAmount}</span>
+                        </div>
+                        <Button
+                            size='xl'
+                            variant='full'
+                            className='w-full'
+                            onClick={() => router.push("/checkout")}>Checkout</Button>
+                    </div>
+                </>)
+            }
+            {cart?.cartItems.length === 0 && <p className='text-[26px] text-header'>Cart is empty</p>}
         </div>
     )
 }

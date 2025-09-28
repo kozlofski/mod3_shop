@@ -94,10 +94,10 @@ const CartListItem = ({ item, cart, setCart, className }: CartListItemProps) => 
                         data={{ placeholder: '', error: '', label: '', helper: '' }}
                         size='m'
                         type={''}
-                        leftIcon={<button onClick={modifyQuantity.bind(null, -1)}><MinusSign /></button>}
+                        leftIcon={<button className='w-full h-full' onClick={modifyQuantity.bind(null, -1)}><MinusSign /></button>}
                         value={itemAmount.toString()}
-                        rightIcon={<button onClick={modifyQuantity.bind(null, 1)}><PlusSign /></button>}
-                        className='w-fit'>
+                        rightIcon={<button className='w-full h-full' onClick={modifyQuantity.bind(null, 1)}><PlusSign /></button>}
+                        className='w-[140px]'>
                     </Input>
                 </div>
             </div>

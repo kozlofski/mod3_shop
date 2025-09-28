@@ -10,15 +10,25 @@ import { generateShippingDate } from '@/lib/services'
 import { CartIcon, MinusSign, PlusSign, Shield } from '@/_components/icons/icons'
 import Input from '@/_components/basicComponents/Input'
 import { changeProductAmountInStock } from '@/lib/prismaQueries'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const ProductDetails = () => {
     const { id: productId } = useParams()
+    const session = useSession()
     const [product, setProduct] = useState<Product & { categories: Category[] }>()
     const [selectedImage, setSelectedImage] = useState(0)
     const [viewMore, setViewMore] = useState(false)
     const maxDescriptionLength = 150;
     const [shippingDate] = useState(generateShippingDate())
     const [quantity, setQuantity] = useState(1)
+    const router = useRouter()
+
+    useEffect(() => {
+        if (session.status === "unauthenticated") {
+            router.push("/login")
+        }
+    }, [session.status, router])
 
     useEffect(() => {
         const fetchProduct = async () => {

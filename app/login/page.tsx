@@ -50,46 +50,49 @@ const Page = () => {
     }
 
     return (
-        <div className='register-container'>
+        <div className='login-container'>
             <Logo></Logo>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                {signInInputVisible === "email" &&
-                    <>
+            <div className='login-subcontainer framedComponent'>
+
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    {signInInputVisible === "email" &&
+                        <>
+                            <Input
+                                id='emailOrMobile'
+                                type='text'
+                                size='xl'
+                                {...register('emailOrMobile')}
+                                data={{
+                                    placeholder: "Your Email or Mobile",
+                                    label: 'Email or mobile phone number',
+                                    error: errors.emailOrMobile?.message ?? "",
+                                    helper: "helper?"
+                                }}
+                            />
+                            <Button
+                                onClick={handleSetInput}
+                                variant='full'
+                                size='xl'>Continue</Button>
+                            {/* <button onClick={handleSetInput} >Continue</button>) */}
+                        </>
+                    }
+                    {signInInputVisible === "password" && (<>
                         <Input
-                            id='emailOrMobile'
-                            type='text'
+                            id='password'
+                            type='password'
                             size='xl'
-                            {...register('emailOrMobile')}
+                            {...register('password')}
                             data={{
-                                placeholder: "Your Email or Mobile",
-                                label: 'Email or Mobile',
-                                error: errors.emailOrMobile?.message ?? "",
+                                placeholder: "Password",
+                                label: 'Password',
+                                error: errors.password?.message ?? "",
                                 helper: "helper?"
                             }}
                         />
-                        <Button
-                            onClick={handleSetInput}
-                            variant='full'
-                            size='xl'>Continue</Button>
-                        {/* <button onClick={handleSetInput} >Continue</button>) */}
-                    </>
-                }
-                {signInInputVisible === "password" && (<>
-                    <Input
-                        id='password'
-                        type='password'
-                        size='xl'
-                        {...register('password')}
-                        data={{
-                            placeholder: "Password",
-                            label: 'Password',
-                            error: errors.password?.message ?? "",
-                            helper: "helper?"
-                        }}
-                    />
-                    <Button type="submit" variant='full' size='xl'>Zaloguj</Button>
-                </>)}
-            </form>
+                        <Button type="submit" variant='full' size='xl'>Zaloguj</Button>
+                    </>)}
+                </form>
+            </div>
         </div>
     )
 }

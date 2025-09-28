@@ -6,6 +6,9 @@ import ProductList from '@/_components/sectionComponents/ProductList'
 import { prisma } from '@/prisma/clientSingleton'
 
 import React from 'react'
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
 const ProductBrowser = async ({ searchParams }: {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -17,6 +20,12 @@ const ProductBrowser = async ({ searchParams }: {
     categoriesArray.map(category => {
         categoriesFilterInitialObject[category] = (category === 'all')
     })
+
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        redirect("/login");
+    }
 
     return (
         <div className="product-layout-container">

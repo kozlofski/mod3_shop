@@ -22,7 +22,7 @@ const Carousel = () => {
                 <div className="flex flex-col gap-[40px] w-[433px]">
                     <h2 className="text-header text-[32px]">{categoryTitle}</h2>
                     <p className="text-paragraph text-base" >{categoryDescription}</p>
-                    <Button type="secondary" >Explore Category<LeftArrow /></Button>
+                    <Button size='xl' variant='stroke' className='w-[220px]'>Explore Category<LeftArrow /></Button>
                 </div>
                 <CarouselButton direction='right' />
             </div>

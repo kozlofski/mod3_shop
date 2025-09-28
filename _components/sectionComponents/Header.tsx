@@ -10,17 +10,9 @@ import Button from '../basicComponents/Button'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-const userLoggedIn = true
-
 const Header = () => {
     const { data: session, status } = useSession();
     console.log("Session data: ", session, status)
-    // const [isLoading, setIsLoading] = useState(true)
-
-    // useEffect(() => {
-    //     if (status !== 'loading') setIsLoading(false)
-    //     console.log("status after use effect", status)
-    // }, [status])
 
     return (
         <div className={`header container`}>

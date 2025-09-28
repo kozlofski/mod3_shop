@@ -1,6 +1,6 @@
 @layer {
     .input-container {
-        @apply flex flex-col w-full;
+        @apply flex flex-col;
     }
 
     .input-label {

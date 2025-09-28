@@ -19,9 +19,9 @@ interface InputProps {
 
 const Input = ({ value, data: { placeholder, error, label, helper }, id, className, type, children, disabled, size, leftIcon, text, rightIcon, ...rest }: InputProps) => {
     return (
-        <div className={`input-container ${className || ""}`}>
+        <div className={`input-container ${className}`}>
             <label className={`input-label input-label-${size}`}>{label}</label>
-            <div className={`framedComponent input-wrapper input-${typeof error === 'string' && error.length > 0 ? "error" : "valid"}-wrapper`}>
+            <div className={`framedComponent input-wrapper input-${typeof error === 'string' && error.length > 0 ? "error" : "valid"}-wrapper w-fit`}>
                 {leftIcon && <div className={`input-icon input-icon-${size}`}>{leftIcon}</div> || ""}
                 <input
                     id={id}

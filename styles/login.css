@@ -1,0 +1,9 @@
+@layer {
+    .login-container {
+        @apply w-[448px] mx-auto flex flex-col items-center gap-[32px];
+    }
+
+    .login-subcontainer {
+        @apply w-full
+    }
+}
