@@ -1,6 +1,6 @@
 @layer {
     .header {
-        @apply w-full flex flex-col gap-[40px] py-[32px]
+        @apply h-fit w-full flex flex-col gap-[40px] py-[32px]
     }
 
     .header-upperHalf {

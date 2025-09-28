@@ -1,0 +1,46 @@
+@layer {
+    .order-success-container {
+        @apply flex flex-col items-center text-header p-[24px] w-[640px] mx-auto mb-[24px];
+    }
+
+    .order-success-container h2 {
+        @apply font-medium text-[28px] leading-[40px] mt-[40px]
+    }
+
+    .order-success-container>h3 {
+        @apply font-medium text-[16px] leading-[26px] mt-[40px] mb-[24px] text-paragraph
+    }
+
+    .order-success-transaction-details {
+        @apply border-b border-border py-[24px] w-full;
+    }
+
+    .order-success-transaction-details h4 {
+        @apply text-[18px] leading-[28px] font-medium mb-[16px];
+    }
+
+    .order-success-transaction-details p {
+        @apply text-[16px] leading-[26px] font-medium text-paragraph;
+    }
+
+    .order-success-order-items {
+        @apply flex flex-col gap-[16px];
+    }
+
+    .order-item-price-quantity {
+        @apply flex flex-row justify-between items-center;
+    }
+
+    .order-item-price {
+        @apply text-[24px] leading-[36px] font-medium;
+    }
+
+    .order-success-price-details {
+        @apply py-[24px] w-full flex flex-row justify-between;
+    }
+
+    .order-success-price-details>p {
+        @apply text-[28px] leading-[40px] text-header;
+    }
+
+}

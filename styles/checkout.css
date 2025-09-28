@@ -1,0 +1,73 @@
+@layer {
+    .checkout-container {
+        @apply w-full my-[40px] grid grid-cols-[2fr_1fr] gap-[48px];
+    }
+
+    .checkout-left {
+        @apply flex flex-col gap-[40px];
+    }
+
+    .checkout-cart-content {
+        @apply w-full p-[32px];
+    }
+
+    .checkout-product-protection {
+        @apply w-full border-t border-border pt-[24px];
+        @apply flex flex-row justify-between;
+    }
+
+    .claim-process {
+        @apply ml-[40px] mt-[5px] text-paragraph;
+    }
+
+    .checkout-product-protection-right {
+        @apply font-normal text-[14px] leading-[24px] text-header;
+    }
+
+    .address-section {
+        @apply flex flex-col;
+        @apply w-full p-[32px];
+    }
+
+    .address-picker {
+        @apply grid grid-cols-[1fr_1fr] w-full;
+    }
+
+    .address-type {
+        @apply text-center border-b border-border pb-[12px];
+        @apply font-semibold text-[18px] leading-[28px] text-placeholder;
+    }
+
+    .address-type-active {
+        @apply text-primary border-primary;
+    }
+
+    .existing-address {
+        @apply flex flex-col mt-[32px];
+    }
+
+    .existing-address-header {
+        @apply flex flex-row justify-start items-center gap-[16px];
+        @apply text-paragraph text-[16px] leading-[26px];
+    }
+
+    .existing-address-complete-address {
+        @apply font-medium text-[18px] leading-[28px] text-header mt-[12px];
+    }
+
+    .existing-address-fields {
+        @apply flex flex-row justify-between mt-[40px];
+    }
+
+    .existing-address-field {
+        @apply flex flex-col gap-[8px] text-[16px] leading-[26px] text-paragraph;
+    }
+
+    .existing-address-field p {
+        @apply text-header;
+    }
+
+    .no-address {
+        @apply text-[16px] text-header mt-[16px]
+    }
+}

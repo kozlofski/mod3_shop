@@ -1,0 +1,113 @@
+@layer {
+    .product-details-container {
+        @apply flex flex-row gap-[32px];
+    }
+
+    .product-details-product {
+        @apply flex flex-row gap-[40px];
+    }
+
+    .product-details-images {
+        @apply flex flex-col gap-[32px];
+    }
+
+    .product-details-big-image {
+        @apply w-[398px] h-[317px] relative m-[12px];
+    }
+
+    .product-details-three-images {
+        @apply flex flex-row gap-[16px] justify-between;
+    }
+
+    .product-details-small-image {
+        @apply w-[130px] h-[99px] relative;
+    }
+
+    .product-details-details {
+        @apply flex flex-col;
+        @apply w-[427px];
+    }
+
+    .product-details-h3 {
+        @apply font-medium text-[28px] leading-[40px] text-header mb-[20px];
+    }
+
+    .product-details-category-list {
+        @apply flex flex-row gap-[8px] pb-[32px];
+    }
+
+    .product-details-price {
+        @apply text-[32px] leading-[44px] font-medium text-header pb-[32px];
+    }
+
+    .product-details-description {
+        @apply pb-[32px];
+    }
+
+
+    .product-details-description p {
+        @apply text-[16px] leading-[26px] font-normal text-header mb-[4px];
+    }
+
+    .shipping-available {
+        @apply text-[18px] font-medium text-placeholder mb-[14px];
+    }
+
+    .product-details-shipping {
+        @apply border border-white rounded-md p-[16px] w-fit mb-[16px];
+        @apply flex flex-row gap-[8px];
+    }
+
+    .shield-icon-wrapper {
+        @apply h-[24px] w-[24pxpx] p-[3px];
+    }
+
+    .product-details-shipping-right {
+        @apply flex flex-col gap-[4px] justify-between;
+        @apply text-header text-[16px] leading-[26px];
+    }
+
+    .shipping-vendor {
+        @apply text-[16px] font-medium;
+    }
+
+    .estimated-arrival {
+        @apply font-normal
+    }
+
+    .product-details-cart {
+        @apply flex flex-col gap-[32px];
+        @apply w-[423px] p-[24px];
+    }
+
+    .product-details-color-picker {
+        @apply flex flex-col gap-[14px]
+    }
+
+    .product-details-cart h4,
+    .product-details-cart span {
+        @apply text-[18px] leading-[28px] font-medium text-placeholder;
+    }
+
+    .picker-colors {
+        @apply flex flex-row justify-start gap-[16px];
+    }
+
+    .color-to-pick {
+        @apply rounded-md w-[54px] h-[54px];
+    }
+
+    .product-details-subtotal {
+        @apply flex flex-row justify-between;
+    }
+
+    .product-details-subtotal-price {
+        @apply font-medium text-[28px] leading-[40px] text-header;
+    }
+
+    .product-details-cart-icon-wrapper {
+        @apply w-[18px] h-[18px];
+    }
+
+
+}

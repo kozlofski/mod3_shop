@@ -1,0 +1,18 @@
+@layer {
+    .login-container {
+        @apply w-[448px] mx-auto flex flex-col items-center gap-[32px];
+    }
+
+    .login-subcontainer {
+        @apply w-full p-[24px]
+    }
+
+    .login-subcontainer>h2 {
+        @apply font-medium text-[24px] leading-[36px] text-header pb-[20px] mb-[32px];
+        @apply border-b border-border;
+    }
+
+    .login-subcontainer p {
+        @apply text-paragraph
+    }
+}
