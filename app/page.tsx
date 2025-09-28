@@ -1,10 +1,24 @@
-import Carousel from "@/_components/compoundComponents/Carousel";
+"use client"
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
-  return (
-    <div className='home-container'>
-      <Carousel></Carousel>
+  const router = useRouter();
+  const { status } = useSession();
 
-    </div>
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.replace("/login");
+    }
+  }, [status, router]);
+
+  return (
+    <>
+      {status === 'authenticated' && <div className='home-container text-header text-[32px]'>
+        {`Not implemented yet :(`}<br />{`Please check 'product' page`}
+      </div>}
+    </>
   );
 }

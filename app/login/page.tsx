@@ -13,6 +13,7 @@ import * as z from 'zod'
 import Button from '@/_components/basicComponents/Button';
 import { LoginData } from '@/types/dataTypes';
 import { emailOrMobileRegex } from '@/types/regex';
+import Link from 'next/link';
 
 const signupFormSchema = z.object({
     emailOrMobile: z.string().trim().min(1, { message: "Provide an email or mobile number" }).regex(emailOrMobileRegex, { message: "Invalid email or mobile number" }),
@@ -53,7 +54,7 @@ const Page = () => {
         <div className='login-container'>
             <Logo></Logo>
             <div className='login-subcontainer framedComponent'>
-
+                <h2>Sign In</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {signInInputVisible === "email" &&
                         <>
@@ -66,14 +67,15 @@ const Page = () => {
                                     placeholder: "Your Email or Mobile",
                                     label: 'Email or mobile phone number',
                                     error: errors.emailOrMobile?.message ?? "",
-                                    helper: "helper?"
+                                    helper: ""
                                 }}
                             />
                             <Button
                                 onClick={handleSetInput}
                                 variant='full'
-                                size='xl'>Continue</Button>
-                            {/* <button onClick={handleSetInput} >Continue</button>) */}
+                                size='xl'
+                                className='mt-[32px] mb-[24px] w-full'>Continue</Button>
+                            <p>{`Don't have an account?`} <Link href="/register" className='text-header'>Register</Link></p>
                         </>
                     }
                     {signInInputVisible === "password" && (<>
@@ -89,7 +91,11 @@ const Page = () => {
                                 helper: "helper?"
                             }}
                         />
-                        <Button type="submit" variant='full' size='xl'>Zaloguj</Button>
+                        <Button
+                            type="submit"
+                            variant='full'
+                            size='xl'
+                            className='mt-[32px] mb-[24px] w-full'>Zaloguj</Button>
                     </>)}
                 </form>
             </div>

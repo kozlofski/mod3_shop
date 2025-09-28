@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Logo from '../basicComponents/Logo'
 import Input from '../basicComponents/Input'
 import { Search } from '../icons/icons'
@@ -18,7 +18,7 @@ const Header = () => {
         <div className={`header container`}>
             <div className={`header-upperHalf`}>
                 <Logo />
-                <Input id={''} value={''}
+                {status === "authenticated" && <Input id={''} value={''}
                     leftIcon={<Search />}
                     data={{
                         placeholder: 'Search',
@@ -26,7 +26,7 @@ const Header = () => {
                         label: '',
                         helper: '',
                     }}
-                    size="xl" type={''} />
+                    size="xl" type={''} />}
                 {status === "authenticated" ? <HeaderButtons /> :
                     <Link href={'/login'} >
                         <Button className="btn btn-xl btn-full btn-primary">Sign In</Button>

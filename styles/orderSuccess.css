@@ -1,6 +1,6 @@
 @layer {
     .order-success-container {
-        @apply flex flex-col items-center text-header p-[24px] w-[640px] mx-auto;
+        @apply flex flex-col items-center text-header p-[24px] w-[640px] mx-auto mb-[24px];
     }
 
     .order-success-container h2 {
