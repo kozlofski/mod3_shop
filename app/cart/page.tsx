@@ -1,9 +1,7 @@
 "use client"
 
 import Button from '@/_components/basicComponents/Button'
-import Checkbox from '@/_components/basicComponents/Checkbox'
 import CartListItem from '@/_components/compoundComponents/CartListItem'
-// import { Cart, CartItem } from '@/prisma/generated/prisma'
 import { CartWithProductInfo } from '@/types/dataTypes'
 import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
@@ -28,7 +26,6 @@ const Cart = () => {
     }, [session.status, router])
 
     useEffect(() => {
-        console.log("Fetching cart")
         const fetchCart = async () => {
             const response = await fetch(`${baseUrl}/api/cart`, {
                 method: "GET"
@@ -40,11 +37,9 @@ const Cart = () => {
     }, [session])
 
     useEffect(() => {
-        console.log("Fetching cart summary")
         const fetchCartSummary = async () => {
             const response = await fetch(`${baseUrl}/api/cart/summary`)
             const data = await response.json()
-            console.log(data)
             setCartSummary(data)
         }
         if (session) fetchCartSummary()
@@ -57,11 +52,9 @@ const Cart = () => {
                 (<>
                     <div className="cart-content">
                         <>
-                            {/* <Checkbox id={''} label='Select All' size={'l'} checked={false} setChecked={() => { }} ></Checkbox> */}
                             <ul className="cart-items">
                                 {cart.cartItems.map((item) => (
                                     <li className='cart-items-item' key={item.productId}>
-                                        {/* <Checkbox id={''} label='' size={'l'} checked={false} setChecked={() => { }} ></Checkbox> */}
                                         <CartListItem item={item} cart={cart} setCart={setCart} className='framedComponent'></CartListItem>
                                     </li>
                                 ))}

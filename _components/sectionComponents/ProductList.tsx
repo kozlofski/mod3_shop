@@ -4,7 +4,6 @@ import ProductCard from '@/_components/compoundComponents/ProductCard'
 import { ProductForCard } from '@/types/componentTypes'
 import Pagination from '../compoundComponents/Pagination'
 
-
 interface ProductListProps {
     searchParams?: Promise<{ [key: string]: string | undefined }>
 }

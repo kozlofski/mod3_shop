@@ -1,16 +1,11 @@
-import { authOptions } from "../../auth/[...nextauth]/route";
-import { getServerSession } from "next-auth/next";
 import { getCurrentUserWithCartWithItems } from "@/lib/prismaQueries";
 import { NextRequest, NextResponse } from "next/server";
+import { getUserEmail } from "@/lib/auth";
 
 
 export async function GET(req: NextRequest, res: NextResponse) {
-    // #todo move auth into middleware
-    const session = await getServerSession(authOptions);
-    const userEmail = session?.user?.email
-
-    if (!session || !userEmail)         
-        return NextResponse.json({message: "you must be logged in"}, {status: 401})
+   const userEmail = await getUserEmail()
+       if(!userEmail) return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
     
     try {
         const user = await getCurrentUserWithCartWithItems(userEmail)

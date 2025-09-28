@@ -1,7 +1,7 @@
 "use client"
 
 import { CheckboxSize } from '@/types/componentTypes'
-import React, { useState } from 'react'
+import React from 'react'
 import { Tick } from '../icons/icons'
 
 interface CheckboxProps {
@@ -34,7 +34,6 @@ const Checkbox = ({ size, className, id, label, checked, setChecked }: CheckboxP
             </div>
             <label className={`checkbox-label checkbox-label-${size}`} htmlFor={id}>{label}</label>
         </div>
-
     )
 }
 

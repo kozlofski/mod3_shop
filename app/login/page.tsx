@@ -45,7 +45,6 @@ const Page = () => {
     }
 
     const handleSetInput = () => {
-        // trigger()
         if (("emailOrMobile" in touchedFields) && !errors.emailOrMobile) setSignInInputVisible("password")
         else setSignInInputVisible("email")
     }

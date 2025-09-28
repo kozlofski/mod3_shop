@@ -11,7 +11,6 @@ interface AlertButtonProps {
     onClick?: () => void
 }
 
-
 const AlertButton = ({ children, className, size = "m", color, variant, disabled, onClick }: AlertButtonProps) => {
     return (<button
         className={`btn btn-${size} btn-alert-${color} btn-alert-${variant} ${className}`}

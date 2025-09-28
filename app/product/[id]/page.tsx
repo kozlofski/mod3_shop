@@ -9,7 +9,6 @@ import Button from '@/_components/basicComponents/Button'
 import { generateShippingDate } from '@/lib/services'
 import { CartIcon, MinusSign, PlusSign, Shield } from '@/_components/icons/icons'
 import Input from '@/_components/basicComponents/Input'
-import { changeProductAmountInStock } from '@/lib/prismaQueries'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 

@@ -6,8 +6,6 @@ import { LeftArrowIcon, RightArrowIcon } from '../icons/icons'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 interface PaginationProps {
-    // current page will be setCurrentPage
-    // currentPage: number,
     totalPages: number,
 }
 
@@ -22,7 +20,6 @@ const Pagination = ({ totalPages }: PaginationProps) => {
     const { push } = useRouter();
 
     useEffect(() => {
-        // #todo refactor rename variables and array
         setPage(Math.min(page, totalPages))
         const numbersArray = [];
         if (totalPages >= 2 && totalPages <= buttonsLimit) {

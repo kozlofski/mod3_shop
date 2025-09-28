@@ -52,7 +52,6 @@ const Checkout = () => {
     const [grandTotal, setGrandTotal] = useState(0)
 
     useEffect(() => {
-        console.log("Fetching cart")
         const fetchCart = async () => {
             const response = await fetch(`${baseUrl}/api/cart`, {
                 method: "GET"
@@ -64,22 +63,18 @@ const Checkout = () => {
     }, [session, baseUrl])
 
     useEffect(() => {
-        console.log("Fetching cart summary")
         const fetchCartSummary = async () => {
             const response = await fetch(`${baseUrl}/api/cart/summary`)
             const data = await response.json()
-            console.log("Fetched cart:", data.cart)
             setCartSummary(data)
         }
         if (session) fetchCartSummary()
     }, [cart, session, baseUrl])
 
     useEffect(() => {
-        console.log("Fetching main address")
         const fetchCartSummary = async () => {
             const response = await fetch(`${baseUrl}/api/address/`)
             const data = await response.json()
-            console.log("Fetched address:", data.address)
             setMainAddress(data.address)
         }
         if (session) fetchCartSummary()
@@ -94,7 +89,6 @@ const Checkout = () => {
     }, [cartSummary, productProtection])
 
     const onSubmitWithNewAddress = async (data: NewAddressData) => {
-        console.log("paying + new address ", data)
         const response = await fetch("/api/checkout", {
             method: 'POST',
             body: JSON.stringify({
@@ -118,7 +112,6 @@ const Checkout = () => {
     }
 
     const submitWithExistingAddress = async () => {
-        console.log("paying with old address ")
         if (!mainAddress) return
         const response = await fetch("/api/checkout", {
             method: 'POST',

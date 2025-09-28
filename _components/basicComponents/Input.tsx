@@ -2,9 +2,8 @@ import { InputData } from '@/types/componentTypes'
 import React from 'react'
 
 interface InputProps {
-    // children: React.ReactNode,
     id: string,
-    value?: string, // to be replaced by state or sth from form hook
+    value?: string,
     data: InputData,
     className?: string,
     disabled?: boolean,

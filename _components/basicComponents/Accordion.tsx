@@ -7,7 +7,6 @@ interface AccordionProps {
     children: React.ReactNode,
     className?: string,
     header: string,
-    // onClick?: () => void
 }
 
 const Accordion = ({ children, className, header }: AccordionProps) => {

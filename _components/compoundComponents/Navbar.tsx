@@ -13,7 +13,6 @@ const Navbar = () => {
             <ul className="links">
                 {Object.entries(tempLinks).map(([destination, url]) => (
                     <li key={destination}>
-                        {/* <a href={url}>{destination}</a> */}
                         <Link href={url}>{destination}</Link>
                     </li>
                 ))}

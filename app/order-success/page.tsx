@@ -5,7 +5,6 @@ import { SuccessCircle } from '@/_components/icons/icons'
 import { Order } from '@/prisma/generated/prisma'
 import { OrderItemWithProduct } from '@/types/dataTypes'
 import { useRouter } from 'next/navigation'
-import { Router } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
 const OrderSuccess = () => {

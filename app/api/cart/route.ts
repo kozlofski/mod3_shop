@@ -1,15 +1,11 @@
-import { authOptions } from "../auth/[...nextauth]/route";
-import { getServerSession } from "next-auth/next";
 import { NextRequest, NextResponse } from "next/server";
 import { changeProductAmountInStock, createOrUpdateCartItem, getCurrentUserWithCartWithItems, getProductById } from "@/lib/prismaQueries";
+import { getUserEmail } from "@/lib/auth";
 
 // Get whole cart
 export async function GET(req: Request) {
-    const session = await getServerSession(authOptions);
-    const userEmail = session?.user?.email
-
-    if (!session || !userEmail)         
-        return NextResponse.json({message: "you must be logged in"}, {status: 401})
+    const userEmail = await getUserEmail()
+    if(!userEmail) return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
     
     try {
         const user = await getCurrentUserWithCartWithItems(userEmail)
@@ -25,11 +21,8 @@ export async function GET(req: Request) {
 
 // add product to cart; productId is hidden inside request body
 export async function POST(req: NextRequest) {
-    const session = await getServerSession(authOptions);
-    const userEmail = session?.user?.email
-
-    if (!session || !userEmail)         
-            return NextResponse.json({message: "you must be logged in"}, {status: 401})
+    const userEmail = await getUserEmail()
+    if(!userEmail) return NextResponse.json({ message: "You must be logged in." }, { status: 401 });
 
     const body = await req.json()
     const productId = parseInt(body.itemId)

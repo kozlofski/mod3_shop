@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { OrderItemWithProduct } from '@/types/dataTypes';
 
@@ -8,10 +8,6 @@ interface CartListItemProps {
     item: OrderItemWithProduct;
     className?: string;
 }
-
-// interface ProductWithCategories extends Product {
-//     categories: Category[];
-// }
 
 const CartListItem = ({ item, className }: CartListItemProps) => {
     console.log("ITEM::", item)
@@ -40,7 +36,6 @@ const CartListItem = ({ item, className }: CartListItemProps) => {
                     <span className="order-item-price">$ {item.product.price?.toString()}</span>
                     <span className="order-item-quantity">x{item.quantity}</span>
                 </div>
-
             </div>
         </div>}
     </>)

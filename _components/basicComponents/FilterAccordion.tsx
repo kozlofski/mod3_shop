@@ -7,7 +7,6 @@ interface FilterAccordionProps {
     children: React.ReactNode,
     className?: string,
     header: string,
-    // onClick?: () => void
 }
 
 const FilterAccordion = ({ children, className, header }: FilterAccordionProps) => {

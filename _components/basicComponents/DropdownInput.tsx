@@ -17,8 +17,6 @@ interface DropdownProps {
     onClick?: () => void
 }
 
-//onClick={() => setSelected(idx)}
-
 const Dropdown = ({ id, className, disabled, label, name, options, inputDropdown, size, ...rest }: DropdownProps) => {
     const [opened, setOpened] = useState(false)
     const [selected, setSelected] = useState(0)
@@ -65,7 +63,6 @@ const Dropdown = ({ id, className, disabled, label, name, options, inputDropdown
                         }
                     </ul>}
             </div>
-
         </div>
     )
 }

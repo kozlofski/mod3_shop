@@ -6,7 +6,6 @@ import { DropdownSize } from '@/types/componentTypes'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 interface DropdownProps {
-    // children: React.ReactNode,
     options: string[],
     className?: string,
     name: string,
@@ -15,8 +14,6 @@ interface DropdownProps {
     inputDropdown?: boolean,
     onClick?: () => void
 }
-
-//onClick={() => setSelected(idx)}
 
 const Dropdown = ({ className, disabled, name, options, inputDropdown, size }: DropdownProps) => {
     const [opened, setOpened] = useState(false)

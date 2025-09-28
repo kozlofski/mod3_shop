@@ -244,7 +244,6 @@ export const createOrder = async(userId: number, totalAmount: number, status: st
 }
 
 // ORDER - get last order
-
 export const getLastOrder = async(userId: number) => {
     const result = await prisma.order.findFirst({
         where: { userId: userId },

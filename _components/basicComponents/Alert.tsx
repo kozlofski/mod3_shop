@@ -3,15 +3,12 @@ import React from 'react'
 import { QuestionMarkCircled, XSign } from '../icons/icons';
 import AlertButton from './AlertButton';
 
-// header, text, etc. should be in an alert object
-
 interface AlertProps {
     alertHeader: string,
     alertText: string,
     type: AlertType;
     size: AlertSize;
     className?: string,
-    // onClick?: () => void
 }
 
 const Alert = ({ className, type, alertHeader, alertText, size }: AlertProps) => {
